@@ -1,1 +1,10 @@
 res://Scripts/ObstacleTemplate.gd
+res://Scenes/main_scene.tscn
+res://Scripts/Player.gd
+res://Scripts/CollectableTemplate.gd
+res://Scenes/Options.gd
+res://Scenes/player.tscn
+res://Scripts/MainMenu.gd
+res://Scenes/main_menu.tscn
+res://Scripts/Options.gd
+res://Scenes/option_canvas.tscn

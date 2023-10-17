@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://woq60hl2l3mm"]
+
+[ext_resource type="Script" path="res://Scripts/Options.gd" id="1_udiqp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_07xbm"]
+specular_color = Color(0.615686, 0.984314, 0.94902, 1)
+
+[node name="OptionCanvas" type="CanvasLayer"]
+script = ExtResource("1_udiqp")
+mainMenu = "res://Scenes/main_menu.tscn"
+
+[node name="OptionMenu" type="TextureRect" parent="."]
+offset_left = 222.0
+offset_top = 120.0
+offset_right = 262.0
+offset_bottom = 160.0
+scale = Vector2(17.7916, 9.93325)
+texture = SubResource("CanvasTexture_07xbm")
+
+[node name="Continue" type="Button" parent="OptionMenu"]
+layout_mode = 0
+offset_left = 10.4544
+offset_top = 15.1008
+offset_right = 89.4544
+offset_bottom = 46.1008
+scale = Vector2(0.243272, 0.1897)
+text = "Continue"
+
+[node name="Quit" type="Button" parent="OptionMenu"]
+layout_mode = 0
+offset_left = 11.4661
+offset_top = 29.3962
+offset_right = 76.4661
+offset_bottom = 60.3962
+scale = Vector2(0.243272, 0.1897)
+text = "Quit"
+
+[node name="Options" type="Button" parent="OptionMenu"]
+layout_mode = 0
+offset_left = 10.6792
+offset_top = 21.9465
+offset_right = 80.6792
+offset_bottom = 52.9465
+scale = Vector2(0.243272, 0.1897)
+text = "Options"
+
+[connection signal="pressed" from="OptionMenu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="OptionMenu/Quit" to="." method="_on_quit_pressed"]

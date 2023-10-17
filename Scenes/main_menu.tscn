@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://rrx4v40ylfty"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_e0na1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+script = ExtResource("1_e0na1")
+startScene = "res://Scenes/main_scene.tscn"
+
+[node name="Play" type="Button" parent="MainMenu"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+offset_top = 71.0
+offset_right = 42.0
+offset_bottom = 102.0
+text = "Quit"
+
+[connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="MainMenu" method="_on_quit_pressed"]
