@@ -10,6 +10,7 @@ script = ExtResource("1_udiqp")
 mainMenu = "res://Scenes/main_menu.tscn"
 
 [node name="OptionMenu" type="TextureRect" parent="."]
+modulate = Color(0.254902, 1, 1, 1)
 offset_left = 222.0
 offset_top = 120.0
 offset_right = 262.0

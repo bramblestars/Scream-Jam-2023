@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cvqx4vbkv6cmv"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_am05y"]
-[ext_resource type="Texture2D" uid="uid://dcgxlkckoe2ya" path="res://Sprites/Character/witch.png" id="2_4u8l3"]
+[ext_resource type="Texture2D" uid="uid://ced8rmg5ovti8" path="res://Sprites/Character/witch_sprites.png" id="2_pklbu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr033"]
 radius = 14.0
@@ -9,6 +9,7 @@ height = 60.0
 
 [sub_resource type="Animation" id="Animation_7301u"]
 resource_name = "idle"
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -20,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [11]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,7 +33,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -41,10 +42,10 @@ tracks/2/path = NodePath("Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 2, 3]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_0tbij"]
@@ -88,6 +89,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_vprls"]
 resource_name = "move"
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -96,10 +98,10 @@ tracks/0/path = NodePath("Sprite:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.3),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [11]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -108,10 +110,10 @@ tracks/1/path = NodePath("Sprite:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -120,10 +122,10 @@ tracks/2/path = NodePath("Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4, 5, 6]
+"values": [7, 8, 9, 10]
 }
 
 [sub_resource type="Animation" id="Animation_hujcn"]
@@ -136,10 +138,10 @@ tracks/0/path = NodePath("Sprite:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [11]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -148,10 +150,10 @@ tracks/1/path = NodePath("Sprite:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -160,10 +162,10 @@ tracks/2/path = NodePath("Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 0.7, 0.8),
+"times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [6, 7, 8]
+"values": [4, 5, 6]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6k8ty"]
@@ -179,7 +181,7 @@ script = ExtResource("1_am05y")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_4u8l3")
+texture = ExtResource("2_pklbu")
 hframes = 4
 vframes = 3
 

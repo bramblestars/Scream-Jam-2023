@@ -30,9 +30,9 @@ func _physics_process(delta):
 func updateAnimation():
 	if is_on_floor():
 		if velocity.x == 0:
-			ap.play("move")
-		else:
 			ap.play("idle")
+		else:
+			ap.play("move")
 	else:
 		ap.play("jump")
 	

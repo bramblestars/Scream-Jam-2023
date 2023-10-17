@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chf0dc4rp150x"
-path="res://.godot/imported/testSprite.png-efda7b634cbfd9c911012d25c38f3311.ctex"
+uid="uid://dj7ho8r6e78wi"
+path="res://.godot/imported/witch_walk.png-508ce5d969f6c05c0d326e3f915c9086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Character/testSprite.png"
-dest_files=["res://.godot/imported/testSprite.png-efda7b634cbfd9c911012d25c38f3311.ctex"]
+source_file="res://Sprites/Character/witch_walk.png"
+dest_files=["res://.godot/imported/witch_walk.png-508ce5d969f6c05c0d326e3f915c9086.ctex"]
 
 [params]
 
