@@ -54,7 +54,7 @@ shape = SubResource("RectangleShape2D_vifq1")
 
 [node name="Branch1" type="Sprite2D" parent="Platforms/Tree branch 1"]
 z_index = 1
-position = Vector2(-423.625, 138.375)
+position = Vector2(-387, 96)
 scale = Vector2(0.53419, 0.611464)
 texture = ExtResource("5_swfnf")
 
