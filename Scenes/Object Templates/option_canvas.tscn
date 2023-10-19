@@ -2,49 +2,53 @@
 
 [ext_resource type="Script" path="res://Scripts/Options.gd" id="1_udiqp"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_07xbm"]
-specular_color = Color(0.615686, 0.984314, 0.94902, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_4q2at"]
 
 [node name="OptionCanvas" type="CanvasLayer"]
 script = ExtResource("1_udiqp")
 mainMenu = "res://Scenes/Levels/main_menu.tscn"
 
-[node name="OptionMenu" type="TextureRect" parent="."]
-modulate = Color(0.254902, 1, 1, 1)
-offset_left = 222.0
-offset_top = 120.0
-offset_right = 262.0
-offset_bottom = 160.0
-scale = Vector2(17.7916, 9.93325)
-texture = SubResource("CanvasTexture_07xbm")
+[node name="OptionMenu" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -133.0
+offset_right = 124.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Continue" type="Button" parent="OptionMenu"]
-layout_mode = 0
-offset_left = 10.4544
-offset_top = 15.1008
-offset_right = 89.4544
-offset_bottom = 46.1008
-scale = Vector2(0.243272, 0.1897)
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionMenu"]
+layout_mode = 2
+alignment = 1
+
+[node name="VolumeLabel" type="Label" parent="OptionMenu/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_4q2at")
+horizontal_alignment = 1
+
+[node name="Audio" type="HSlider" parent="OptionMenu/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Continue" type="Button" parent="OptionMenu/VBoxContainer"]
+layout_mode = 2
 text = "Continue"
 
-[node name="Quit" type="Button" parent="OptionMenu"]
-layout_mode = 0
-offset_left = 11.4661
-offset_top = 29.3962
-offset_right = 76.4661
-offset_bottom = 60.3962
-scale = Vector2(0.243272, 0.1897)
-text = "Quit"
-
-[node name="Restart" type="Button" parent="OptionMenu"]
-layout_mode = 0
-offset_left = 10.6792
-offset_top = 21.9465
-offset_right = 80.6792
-offset_bottom = 52.9465
-scale = Vector2(0.243272, 0.1897)
+[node name="Restart" type="Button" parent="OptionMenu/VBoxContainer"]
+layout_mode = 2
 text = "Restart"
 
-[connection signal="pressed" from="OptionMenu/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="OptionMenu/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="OptionMenu/Restart" to="." method="_on_restart_pressed"]
+[node name="Quit" type="Button" parent="OptionMenu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="drag_ended" from="OptionMenu/VBoxContainer/Audio" to="." method="_on_audio_drag_ended"]
+[connection signal="pressed" from="OptionMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="OptionMenu/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="OptionMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
