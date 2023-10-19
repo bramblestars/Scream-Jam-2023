@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://vvak38g6m3rh"]
+
+[ext_resource type="Script" path="res://Scripts/FogCloud2.gd" id="1_hsyw3"]
+[ext_resource type="Texture2D" uid="uid://d1kx231uwonir" path="res://Sprites/Setting/fog_cloud_2.png" id="2_vjf72"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxxnk"]
+
+[node name="FogCloud2" type="Area2D"]
+position = Vector2(-155, -318)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_hsyw3")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_vjf72")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(16, 225)
+scale = Vector2(51.4673, 14.898)
+shape = SubResource("CapsuleShape2D_cxxnk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgrl3g31su7ae"]
+[gd_scene load_steps=29 format=3 uid="uid://bgrl3g31su7ae"]
 
-[ext_resource type="Texture2D" uid="uid://clv4a1aaq6a0m" path="res://Sprites/Setting/branch_1.png" id="1_krrd8"]
+[ext_resource type="PackedScene" uid="uid://bqmcbdxren24i" path="res://Scenes/Object Templates/Floor/fog_cloud_1.tscn" id="1_ej6hy"]
+[ext_resource type="PackedScene" uid="uid://vvak38g6m3rh" path="res://Scenes/Object Templates/Floor/fog_cloud_2.tscn" id="2_g5vvh"]
+[ext_resource type="PackedScene" uid="uid://dprs3xj4ko2sf" path="res://Scenes/Object Templates/Floor/fog_cloud_3.tscn" id="3_bevfy"]
+[ext_resource type="PackedScene" uid="uid://dedyjchea0vih" path="res://Scenes/Object Templates/Background/trunk_1.tscn" id="4_nurpn"]
+[ext_resource type="PackedScene" uid="uid://bdkankbwnpm45" path="res://Scenes/Object Templates/Background/trunk_1_night.tscn" id="5_oy0tm"]
+[ext_resource type="PackedScene" uid="uid://cyjldj78whpfg" path="res://Scenes/Object Templates/Background/trunk_2.tscn" id="6_idhnf"]
+[ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="7_fchkr"]
+[ext_resource type="PackedScene" uid="uid://fsegp5dnwqlc" path="res://Scenes/Object Templates/Background/cottage_day.tscn" id="8_41pj0"]
+[ext_resource type="PackedScene" uid="uid://mhdbpt3fjhse" path="res://Scenes/Object Templates/Background/cottage_night.tscn" id="9_jdi7c"]
+[ext_resource type="PackedScene" uid="uid://bsouwlt160kfj" path="res://Scenes/Object Templates/Platforms/branch_1.tscn" id="10_2801u"]
+[ext_resource type="PackedScene" uid="uid://tl50tt2krvly" path="res://Scenes/Object Templates/Platforms/branch_1_night.tscn" id="11_8pjuo"]
+[ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="12_xbkyw"]
+[ext_resource type="PackedScene" uid="uid://cedhxnkrmjvbf" path="res://Scenes/Object Templates/Platforms/branch_2_night.tscn" id="13_asyrt"]
+[ext_resource type="PackedScene" uid="uid://cw1vk73drmek3" path="res://Scenes/Object Templates/Platforms/branch_3.tscn" id="14_tqabc"]
+[ext_resource type="PackedScene" uid="uid://b7t4j5o8uej5s" path="res://Scenes/Object Templates/Platforms/branch_3_night.tscn" id="15_22y4l"]
+[ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="16_w1ulp"]
+[ext_resource type="PackedScene" uid="uid://hjeaw20tyyiv" path="res://Scenes/Object Templates/Platforms/branch_4_night.tscn" id="17_8ik1x"]
+[ext_resource type="PackedScene" uid="uid://buaotmu35upe6" path="res://Scenes/Object Templates/Platforms/small_branch.tscn" id="18_63bs2"]
+[ext_resource type="PackedScene" uid="uid://bbic3inpab8lo" path="res://Scenes/Object Templates/Platforms/small_branch_night.tscn" id="19_ti7oh"]
+[ext_resource type="PackedScene" uid="uid://cfw6qnf5bihnv" path="res://Scenes/Object Templates/Platforms/ground_1.tscn" id="20_dtl22"]
+[ext_resource type="PackedScene" uid="uid://cstmd762jppsq" path="res://Scenes/Object Templates/Platforms/ground_1_night.tscn" id="21_k1eef"]
+[ext_resource type="PackedScene" uid="uid://b8qfue4vm772i" path="res://Scenes/Object Templates/Platforms/ground_2.tscn" id="22_3l48v"]
+[ext_resource type="PackedScene" uid="uid://orrnbl4cvw3w" path="res://Scenes/Object Templates/Platforms/ground_2_night.tscn" id="23_37bxp"]
+[ext_resource type="PackedScene" uid="uid://d2yh7c2c3hnc3" path="res://Scenes/Object Templates/Obstacles/spike_1.tscn" id="24_jfpvd"]
+[ext_resource type="PackedScene" uid="uid://t8x4ixo1woab" path="res://Scenes/Object Templates/Obstacles/spike_2.tscn" id="25_6vfo0"]
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="26_gjvuy"]
+[ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="32_7in6y"]
+[ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="33_ks14y"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Branch1" type="Area2D" parent="."]
+[node name="Floor" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite2D" parent="Branch1"]
-texture = ExtResource("1_krrd8")
+[node name="FogCloud1" parent="Floor" instance=ExtResource("1_ej6hy")]
+
+[node name="FogCloud2" parent="Floor" instance=ExtResource("2_g5vvh")]
+
+[node name="FogCloud3" parent="Floor" instance=ExtResource("3_bevfy")]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Trunk1" parent="Background" instance=ExtResource("4_nurpn")]
+
+[node name="Trunk1Night" parent="Background" instance=ExtResource("5_oy0tm")]
+
+[node name="Trunk2" parent="Background" instance=ExtResource("6_idhnf")]
+
+[node name="Trunk2Night" parent="Background" instance=ExtResource("7_fchkr")]
+
+[node name="CottageDay" parent="Background" instance=ExtResource("8_41pj0")]
+
+[node name="CottageNight" parent="Background" instance=ExtResource("9_jdi7c")]
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Branch1" parent="Platforms" instance=ExtResource("10_2801u")]
+
+[node name="Branch1Night" parent="Platforms" instance=ExtResource("11_8pjuo")]
+
+[node name="Branch2" parent="Platforms" instance=ExtResource("12_xbkyw")]
+
+[node name="Branch2Night" parent="Platforms" instance=ExtResource("13_asyrt")]
+
+[node name="Branch3" parent="Platforms" instance=ExtResource("14_tqabc")]
+
+[node name="Branch3Night" parent="Platforms" instance=ExtResource("15_22y4l")]
+
+[node name="Branch4" parent="Platforms" instance=ExtResource("16_w1ulp")]
+
+[node name="Branch4Night" parent="Platforms" instance=ExtResource("17_8ik1x")]
+
+[node name="SmallBranch" parent="Platforms" instance=ExtResource("18_63bs2")]
+
+[node name="SmallBranchNight" parent="Platforms" instance=ExtResource("19_ti7oh")]
+
+[node name="Ground1" parent="Platforms" instance=ExtResource("20_dtl22")]
+
+[node name="Ground1Night" parent="Platforms" instance=ExtResource("21_k1eef")]
+
+[node name="Ground2" parent="Platforms" instance=ExtResource("22_3l48v")]
+
+[node name="Ground2Night" parent="Platforms" instance=ExtResource("23_37bxp")]
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Spike1" parent="Obstacles" instance=ExtResource("24_jfpvd")]
+
+[node name="Spike2" parent="Obstacles" instance=ExtResource("25_6vfo0")]
+
+[node name="Player" parent="." instance=ExtResource("26_gjvuy")]
+position = Vector2(4, -792)
+
+[node name="ChaseShadow" parent="." instance=ExtResource("32_7in6y")]
+position = Vector2(-140, -790)
+
+[node name="MirrorShadow" parent="." instance=ExtResource("33_ks14y")]
+position = Vector2(164, -790)

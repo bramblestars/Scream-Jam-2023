@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://keiovxqjopak"]
+
+[ext_resource type="Texture2D" uid="uid://xou20s535ply" path="res://Sprites/Setting/branch_4.png" id="1_wtsjq"]
+
+[node name="Branch4" type="StaticBody2D"]
+position = Vector2(-431, -436)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_wtsjq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(186, -59, 228, 57, 195, 33, 94, 18, 42, 31, 13, 24, -9, 34, -65, -26, -122, -49, -166, -34, -172, -22, -153, -5, -176, 17, -163, 51, -190, 18, -178, -3, -229, -5, -182, -17, -174, -50, -194, -57, -143, -57, -78, -72, -18, -33, 25, -24, 87, -33, 96, -26)

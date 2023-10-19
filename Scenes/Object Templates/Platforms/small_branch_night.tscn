@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbic3inpab8lo"]
+
+[ext_resource type="Texture2D" uid="uid://s4nhl2fcq4ap" path="res://Sprites/Setting/small_branch_night.png" id="1_qghct"]
+
+[node name="SmallBranchNight" type="StaticBody2D"]
+position = Vector2(339, -492)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_qghct")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(90, -17, 65, -9, 55, -12, 13, 8, -30, 5, -62, 48, -79, 11, -60, -16, 11, -14, 58, -28)
