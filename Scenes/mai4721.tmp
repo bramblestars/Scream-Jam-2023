@@ -13,7 +13,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u75c1"]
 radius = 14.0
-height = 56.0
+height = 60.0
 
 [sub_resource type="Animation" id="Animation_dybkp"]
 resource_name = "idle"
@@ -193,7 +193,7 @@ size = Vector2(81.7778, 81.7778)
 [node name="Node2D" type="Node2D"]
 
 [node name="ChaseShadow" type="CharacterBody2D" parent="."]
-position = Vector2(501, -19)
+position = Vector2(167, -5)
 script = ExtResource("1_ghgyw")
 
 [node name="Sprite" type="Sprite2D" parent="ChaseShadow"]
@@ -219,7 +219,7 @@ position = Vector2(92, 71)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform 1" type="StaticBody2D" parent="Platforms" groups=["Platform"]]
+[node name="Platform 1" type="StaticBody2D" parent="Platforms"]
 position = Vector2(108, 0)
 scale = Vector2(2.28, 1)
 
@@ -233,7 +233,7 @@ position = Vector2(2.99998, 154)
 scale = Vector2(0.62, 0.62)
 texture = ExtResource("8_dbcnx")
 
-[node name="Platform 2" type="StaticBody2D" parent="Platforms" groups=["Platform"]]
+[node name="Platform 2" type="StaticBody2D" parent="Platforms"]
 
 [node name="Platform2" type="Sprite2D" parent="Platforms/Platform 2"]
 position = Vector2(-176, 117)
@@ -245,7 +245,7 @@ position = Vector2(-177, 115)
 scale = Vector2(0.5625, 0.5625)
 shape = SubResource("RectangleShape2D_vifq1")
 
-[node name="Tree branch 1" type="StaticBody2D" parent="Platforms" groups=["Platform"]]
+[node name="Tree branch 1" type="StaticBody2D" parent="Platforms"]
 
 [node name="Branch1" type="Sprite2D" parent="Platforms/Tree branch 1"]
 z_index = 1
@@ -256,7 +256,7 @@ texture = ExtResource("5_swfnf")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Tree branch 1"]
 polygon = PackedVector2Array(-545, 83, -505, 70, -456, 78, -360, 77, -292, 58, -242, 70, -393, 102, -516, 103)
 
-[node name="Tree branch 2" type="StaticBody2D" parent="Platforms" groups=["Platform"]]
+[node name="Tree branch 2" type="StaticBody2D" parent="Platforms"]
 
 [node name="Branch2" type="Sprite2D" parent="Platforms/Tree branch 2"]
 z_index = 1

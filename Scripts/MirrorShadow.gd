@@ -5,10 +5,6 @@ var jumpForce : float = 300.0
 var gravity : float = 500.0
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer
-
-var inventory = {}
-
-var score : int = 0
 	
 func _physics_process(delta):
 	if not is_on_floor():
@@ -16,11 +12,11 @@ func _physics_process(delta):
 		
 	velocity.x = 0
 	if Input.is_action_pressed("moveLeft"):
-		velocity.x -= moveSpeed
-		sprite.flip_h = false
-	if Input.is_action_pressed("moveRight"):
 		velocity.x += moveSpeed
 		sprite.flip_h = true
+	if Input.is_action_pressed("moveRight"):
+		velocity.x -= moveSpeed
+		sprite.flip_h = false
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -jumpForce
 		
@@ -35,14 +31,5 @@ func updateAnimation():
 			ap.play("move")
 	else:
 		ap.play("jump")
-	
-
-func gameOver():
-	get_tree().reload_current_scene()
-	
-func addObject(item):
-	if item not in inventory:
-		inventory[item] = 0
-	inventory[item] = inventory[item] + 1
 	
 	

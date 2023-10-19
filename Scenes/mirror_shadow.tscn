@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvqx4vbkv6cmv"]
+[gd_scene load_steps=9 format=3 uid="uid://bk0f1xn73o6ox"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_am05y"]
-[ext_resource type="Texture2D" uid="uid://ced8rmg5ovti8" path="res://Sprites/Character/witch_sprites.png" id="2_pklbu"]
+[ext_resource type="Script" path="res://Scripts/MirrorShadow.gd" id="1_lhvvf"]
+[ext_resource type="Texture2D" uid="uid://bs0cl8g4n4d1f" path="res://Sprites/Character/shadow_sprites.png" id="2_4lkja"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr033"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lg7ao"]
 radius = 14.0
 height = 60.0
 
-[sub_resource type="Animation" id="Animation_0tbij"]
+[sub_resource type="Animation" id="Animation_vsv4h"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [11]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -31,7 +31,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -46,7 +46,7 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_7301u"]
+[sub_resource type="Animation" id="Animation_2o661"]
 resource_name = "idle"
 length = 0.8
 loop_mode = 1
@@ -87,9 +87,9 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_hujcn"]
+[sub_resource type="Animation" id="Animation_swo66"]
 resource_name = "jump"
-loop_mode = 1
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -121,16 +121,15 @@ tracks/2/path = NodePath("Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
+"times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [4, 5, 6]
 }
 
-[sub_resource type="Animation" id="Animation_vprls"]
+[sub_resource type="Animation" id="Animation_hw5rm"]
 resource_name = "move"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -168,29 +167,27 @@ tracks/2/keys = {
 "values": [7, 8, 9, 10]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6k8ty"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykyop"]
 _data = {
-"RESET": SubResource("Animation_0tbij"),
-"idle": SubResource("Animation_7301u"),
-"jump": SubResource("Animation_hujcn"),
-"move": SubResource("Animation_vprls")
+"RESET": SubResource("Animation_vsv4h"),
+"idle": SubResource("Animation_2o661"),
+"jump": SubResource("Animation_swo66"),
+"move": SubResource("Animation_hw5rm")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_am05y")
+[node name="MirrorShadow" type="CharacterBody2D" groups=["Shadow"]]
+position = Vector2(-31, 0)
+script = ExtResource("1_lhvvf")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_pklbu")
-hframes = 4
-vframes = 3
+texture = ExtResource("2_4lkja")
+hframes = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_kr033")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+shape = SubResource("CapsuleShape2D_lg7ao")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_6k8ty")
+"": SubResource("AnimationLibrary_ykyop")
 }
