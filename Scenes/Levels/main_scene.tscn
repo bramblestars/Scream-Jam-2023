@@ -192,6 +192,8 @@ size = Vector2(81.7778, 81.7778)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="OptionCanvas" parent="." instance=ExtResource("2_onjn4")]
+
 [node name="ChaseShadow" type="CharacterBody2D" parent="." groups=["Pause"]]
 position = Vector2(299, -19)
 script = ExtResource("1_ghgyw")
@@ -208,8 +210,6 @@ shape = SubResource("CapsuleShape2D_u75c1")
 libraries = {
 "": SubResource("AnimationLibrary_qs3y4")
 }
-
-[node name="OptionCanvas" parent="." instance=ExtResource("2_onjn4")]
 
 [node name="Player" parent="." instance=ExtResource("3_nu7xf")]
 position = Vector2(-36, 0)

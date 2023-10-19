@@ -1,5 +1,5 @@
 extends CanvasLayer
-@onready var optionMenu : TextureRect = $OptionMenu
+@onready var optionMenu : CenterContainer = $OptionMenu
 @onready var movingObject = get_tree().get_nodes_in_group("Pause")
 @export_file("*.tscn") var mainMenu
 
@@ -33,3 +33,6 @@ func _on_quit_pressed():
 
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
+
+func _on_audio_drag_ended(value_changed):
+	pass # Replace with function body.
