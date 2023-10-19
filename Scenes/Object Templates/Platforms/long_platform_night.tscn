@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ctlu8lw02mh"]
+
+[ext_resource type="Texture2D" uid="uid://cvyvymx3ivv35" path="res://Sprites/Setting/long_platform_night.png" id="1_u77oa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp2f7"]
+size = Vector2(966, 82)
+
+[node name="long_platform_night" type="StaticBody2D"]
+
+[node name="LongPlatformNight" type="Sprite2D" parent="."]
+texture = ExtResource("1_u77oa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 3)
+shape = SubResource("RectangleShape2D_jp2f7")
