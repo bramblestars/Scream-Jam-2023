@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cghyeyapg7p2n"
-path="res://.godot/imported/shadow_sprites.png-ef2a6ecca48d33342033d2fdcaf7ef50.ctex"
+uid="uid://cprf07jjmlh0n"
+path="res://.godot/imported/branch_1_night.png-5257fb63740b9732682a4857f988f2e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Character/shadow_sprites.png"
-dest_files=["res://.godot/imported/shadow_sprites.png-ef2a6ecca48d33342033d2fdcaf7ef50.ctex"]
+source_file="res://Sprites/Setting/branch_1_night.png"
+dest_files=["res://.godot/imported/branch_1_night.png-5257fb63740b9732682a4857f988f2e7.ctex"]
 
 [params]
 

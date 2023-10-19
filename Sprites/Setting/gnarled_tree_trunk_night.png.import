@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cghyeyapg7p2n"
-path="res://.godot/imported/shadow_sprites.png-ef2a6ecca48d33342033d2fdcaf7ef50.ctex"
+uid="uid://b7fqmvpf0jdke"
+path="res://.godot/imported/gnarled_tree_trunk_night.png-da4f7d9b9e43ce56708718d21869c097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Character/shadow_sprites.png"
-dest_files=["res://.godot/imported/shadow_sprites.png-ef2a6ecca48d33342033d2fdcaf7ef50.ctex"]
+source_file="res://Sprites/Setting/gnarled_tree_trunk_night.png"
+dest_files=["res://.godot/imported/gnarled_tree_trunk_night.png-da4f7d9b9e43ce56708718d21869c097.ctex"]
 
 [params]
 
