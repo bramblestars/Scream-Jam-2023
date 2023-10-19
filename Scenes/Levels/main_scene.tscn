@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/ChaseShadow.gd" id="1_ghgyw"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_onjn4"]
-[ext_resource type="Texture2D" uid="uid://bs0cl8g4n4d1f" path="res://Sprites/Character/shadow_sprites.png" id="2_ws006"]
+[ext_resource type="Texture2D" uid="uid://cghyeyapg7p2n" path="res://Sprites/Character/shadow_sprites.png" id="2_ws006"]
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="3_nu7xf"]
 [ext_resource type="PackedScene" uid="uid://dm0b1l2mxqlg2" path="res://Scenes/Object Templates/collectable_template.tscn" id="4_ggbd0"]
 [ext_resource type="Texture2D" uid="uid://clv4a1aaq6a0m" path="res://Sprites/Setting/branch_1.png" id="5_swfnf"]

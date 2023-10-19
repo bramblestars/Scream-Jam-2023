@@ -12,8 +12,8 @@ var paused : bool = false
 
 func _physics_process(delta):
 	if not paused:
-		var dir = jumpVersion(delta)
-		#var dir = floatVersion(delta)
+		#var dir = jumpVersion(delta)
+		var dir = floatVersion(delta)
 		if dir.x > 0:
 			velocity.x += moveSpeed * delta
 		else:
