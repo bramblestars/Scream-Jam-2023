@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bgrl3g31su7ae"]
+[gd_scene load_steps=30 format=3 uid="uid://bgrl3g31su7ae"]
 
 [ext_resource type="PackedScene" uid="uid://bqmcbdxren24i" path="res://Scenes/Object Templates/Floor/fog_cloud_1.tscn" id="1_ej6hy"]
 [ext_resource type="PackedScene" uid="uid://vvak38g6m3rh" path="res://Scenes/Object Templates/Floor/fog_cloud_2.tscn" id="2_g5vvh"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://d2yh7c2c3hnc3" path="res://Scenes/Object Templates/Obstacles/spike_1.tscn" id="24_jfpvd"]
 [ext_resource type="PackedScene" uid="uid://t8x4ixo1woab" path="res://Scenes/Object Templates/Obstacles/spike_2.tscn" id="25_6vfo0"]
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="26_gjvuy"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="29_vhhjp"]
 [ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="32_7in6y"]
 [ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="33_ks14y"]
 
@@ -34,60 +35,85 @@
 [node name="Floor" type="Node2D" parent="."]
 
 [node name="FogCloud1" parent="Floor" instance=ExtResource("1_ej6hy")]
+position = Vector2(-523, -224)
 
 [node name="FogCloud2" parent="Floor" instance=ExtResource("2_g5vvh")]
+position = Vector2(0, -319)
 
 [node name="FogCloud3" parent="Floor" instance=ExtResource("3_bevfy")]
+position = Vector2(595, -276)
 
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Trunk1" parent="Background" instance=ExtResource("4_nurpn")]
+position = Vector2(1289, -257)
 
 [node name="Trunk1Night" parent="Background" instance=ExtResource("5_oy0tm")]
+position = Vector2(1817, -295)
 
 [node name="Trunk2" parent="Background" instance=ExtResource("6_idhnf")]
+position = Vector2(2274, -333)
 
 [node name="Trunk2Night" parent="Background" instance=ExtResource("7_fchkr")]
+position = Vector2(2655, -333)
 
 [node name="CottageDay" parent="Background" instance=ExtResource("8_41pj0")]
+position = Vector2(1370, -766)
 
 [node name="CottageNight" parent="Background" instance=ExtResource("9_jdi7c")]
+position = Vector2(1907, -766)
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Branch1" parent="Platforms" instance=ExtResource("10_2801u")]
+position = Vector2(-360, -627)
 
 [node name="Branch1Night" parent="Platforms" instance=ExtResource("11_8pjuo")]
+position = Vector2(-30, -648)
 
 [node name="Branch2" parent="Platforms" instance=ExtResource("12_xbkyw")]
+position = Vector2(212, -661)
 
 [node name="Branch2Night" parent="Platforms" instance=ExtResource("13_asyrt")]
+position = Vector2(403, -661)
 
 [node name="Branch3" parent="Platforms" instance=ExtResource("14_tqabc")]
+position = Vector2(585, -670)
 
 [node name="Branch3Night" parent="Platforms" instance=ExtResource("15_22y4l")]
+position = Vector2(788, -682)
 
 [node name="Branch4" parent="Platforms" instance=ExtResource("16_w1ulp")]
+position = Vector2(-428, -470)
 
 [node name="Branch4Night" parent="Platforms" instance=ExtResource("17_8ik1x")]
+position = Vector2(-157, -470)
 
 [node name="SmallBranch" parent="Platforms" instance=ExtResource("18_63bs2")]
+position = Vector2(59, -482)
 
 [node name="SmallBranchNight" parent="Platforms" instance=ExtResource("19_ti7oh")]
+position = Vector2(274, -499)
 
 [node name="Ground1" parent="Platforms" instance=ExtResource("20_dtl22")]
+position = Vector2(483, -510)
 
 [node name="Ground1Night" parent="Platforms" instance=ExtResource("21_k1eef")]
+position = Vector2(657, -513)
 
 [node name="Ground2" parent="Platforms" instance=ExtResource("22_3l48v")]
+position = Vector2(807, -510)
 
 [node name="Ground2Night" parent="Platforms" instance=ExtResource("23_37bxp")]
+position = Vector2(887, -510)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
 [node name="Spike1" parent="Obstacles" instance=ExtResource("24_jfpvd")]
+position = Vector2(-593, -543)
 
 [node name="Spike2" parent="Obstacles" instance=ExtResource("25_6vfo0")]
+position = Vector2(962, -593)
 
 [node name="Player" parent="." instance=ExtResource("26_gjvuy")]
 position = Vector2(4, -792)
@@ -97,3 +123,5 @@ position = Vector2(-140, -790)
 
 [node name="MirrorShadow" parent="." instance=ExtResource("33_ks14y")]
 position = Vector2(164, -790)
+
+[node name="EndFlag" parent="." instance=ExtResource("29_vhhjp")]

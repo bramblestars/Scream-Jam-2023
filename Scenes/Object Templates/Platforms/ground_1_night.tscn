@@ -6,7 +6,6 @@
 size = Vector2(287, 85)
 
 [node name="Ground1Night" type="StaticBody2D"]
-position = Vector2(786, -482)
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite" type="Sprite2D" parent="."]

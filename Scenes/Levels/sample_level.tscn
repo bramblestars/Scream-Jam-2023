@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbeykwfse4bt2"]
+
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_upm6q"]
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_2m44e"]
+[ext_resource type="PackedScene" uid="uid://b8qfue4vm772i" path="res://Scenes/Object Templates/Platforms/ground_2.tscn" id="2_i1c7c"]
+[ext_resource type="PackedScene" uid="uid://cfw6qnf5bihnv" path="res://Scenes/Object Templates/Platforms/ground_1.tscn" id="3_p3d78"]
+[ext_resource type="PackedScene" uid="uid://dedyjchea0vih" path="res://Scenes/Object Templates/Background/trunk_1.tscn" id="4_eos63"]
+[ext_resource type="PackedScene" uid="uid://bsouwlt160kfj" path="res://Scenes/Object Templates/Platforms/branch_1.tscn" id="5_7g7qm"]
+[ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="7_ha7jm"]
+[ext_resource type="PackedScene" uid="uid://cw1vk73drmek3" path="res://Scenes/Object Templates/Platforms/branch_3.tscn" id="8_6stkk"]
+[ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="9_xfp6w"]
+[ext_resource type="PackedScene" uid="uid://cyjldj78whpfg" path="res://Scenes/Object Templates/Background/trunk_2.tscn" id="10_w2qe7"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="11_b4j4c"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="OptionCanvas" parent="." instance=ExtResource("2_2m44e")]
+
+[node name="Player" parent="." instance=ExtResource("1_upm6q")]
+position = Vector2(140, -52)
+floor_stop_on_slope = false
+shadowLevel = true
+
+[node name="Ground2" parent="." instance=ExtResource("2_i1c7c")]
+position = Vector2(446, 148)
+
+[node name="Ground1" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(21, 79)
+
+[node name="Ground3" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(-318, 222)
+
+[node name="Ground4" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(-178, 221)
+
+[node name="Ground5" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(-42, 221)
+
+[node name="Ground6" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(95, 226)
+
+[node name="Ground7" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(-444, 219)
+
+[node name="Ground8" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(-569, 218)
+
+[node name="Ground9" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(-700, 217)
+
+[node name="Ground10" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(-839, 216)
+
+[node name="Ground11" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(217, 228)
+
+[node name="Ground12" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(348, 228)
+
+[node name="Ground1Type" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(301, 79)
+
+[node name="Ground1Type2" parent="." instance=ExtResource("3_p3d78")]
+position = Vector2(162, 77)
+
+[node name="Branch1Day" parent="." instance=ExtResource("5_7g7qm")]
+position = Vector2(-466, 54)
+rotation = -3.11192
+
+[node name="Branch2Day" parent="." instance=ExtResource("7_ha7jm")]
+position = Vector2(-359, -59)
+rotation = -0.568941
+
+[node name="Branch3Day" parent="." instance=ExtResource("8_6stkk")]
+position = Vector2(-146, 55)
+
+[node name="Branch4Day" parent="." instance=ExtResource("9_xfp6w")]
+position = Vector2(-583, -97)
+rotation = 3.54586
+
+[node name="Trunk1Day" parent="." instance=ExtResource("4_eos63")]
+position = Vector2(-185, 18)
+
+[node name="Trunk2Day" parent="." instance=ExtResource("10_w2qe7")]
+position = Vector2(-661, -96)
+
+[node name="EndFlag" parent="." instance=ExtResource("11_b4j4c")]
+position = Vector2(-876, 174)
+nextScene = "res://Scenes/Levels/main_scene.tscn"
