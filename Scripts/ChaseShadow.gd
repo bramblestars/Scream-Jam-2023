@@ -15,27 +15,12 @@ func _physics_process(delta):
 	# Add the gravity.
 	var dir = (player.position - self.position).normalized()
 	
-	if(!onGround):
-		dir.y += gravity
-		
-	if(dir.x > 0):
-		sprite.flip_h = true
-	else:
-		sprite.flip_h = false
-
 	var collision = move_and_collide(dir * moveSpeed * delta)
 	if collision:
 		if collision.get_collider().is_in_group("Player"):
 			collision.get_collider().gameOver()
-		elif collision.get_collider().is_in_group("Platform"):
-			print("onground")
+		else:
 			velocity = velocity.slide(collision.get_normal())
-			onGround = true
-	else:
-		print("not on ground")
-		onGround = false
-	
-	
 	updateAnimation(dir)
 
 func updateAnimation(dir):
