@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://8cxas3x7lkbo" path="res://Sprites/Setting/branch_3_night.png" id="1_s1chy"]
 
 [node name="Branch3Night" type="StaticBody2D"]
-position = Vector2(849, -663)
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite" type="Sprite2D" parent="."]

@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://clv4a1aaq6a0m" path="res://Sprites/Setting/branch_1.png" id="1_3ptpp"]
 
-[node name="Branch1" type="StaticBody2D"]
-position = Vector2(-376, -602)
+[node name="Branch1Day" type="StaticBody2D"]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite" type="Sprite2D" parent="."]

@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://crluxafdqky2u" path="res://Sprites/Setting/small_branch.png" id="1_by4wu"]
 
 [node name="SmallBranch" type="StaticBody2D"]
-position = Vector2(120, -482)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_by4wu")

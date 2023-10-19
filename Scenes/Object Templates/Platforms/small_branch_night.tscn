@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://s4nhl2fcq4ap" path="res://Sprites/Setting/small_branch_night.png" id="1_qghct"]
 
 [node name="SmallBranchNight" type="StaticBody2D"]
-position = Vector2(339, -492)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_qghct")

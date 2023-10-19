@@ -5,8 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iem1i"]
 size = Vector2(287, 81)
 
-[node name="Ground1" type="StaticBody2D"]
-position = Vector2(571, -478)
+[node name="Ground1Day" type="StaticBody2D"]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite" type="Sprite2D" parent="."]
