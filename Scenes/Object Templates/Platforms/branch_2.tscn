@@ -10,3 +10,4 @@ texture = ExtResource("1_sjdrv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(124, -19, 112, 17, 89, 20, 42, 12, -33, 17, -83, 11, -119, -14, -73, -1, -12, -7, 52, -23, 103, -16)
+one_way_collision = true
