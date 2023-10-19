@@ -255,6 +255,7 @@ scale = Vector2(0.53419, 0.611464)
 texture = ExtResource("5_swfnf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Tree branch 1"]
+position = Vector2(-35, 40)
 polygon = PackedVector2Array(-545, 83, -505, 70, -456, 78, -360, 77, -292, 58, -242, 70, -393, 102, -516, 103)
 
 [node name="Tree branch 2" type="StaticBody2D" parent="Platforms" groups=["Platform"]]
