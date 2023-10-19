@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csv8sievi6uvu"
-path="res://.godot/imported/test.png-824168340ed131cdc63d22ceceb3fa89.ctex"
+uid="uid://crluxafdqky2u"
+path="res://.godot/imported/small_branch.png-e3966186701094219331885120af23fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Setting/test.png"
-dest_files=["res://.godot/imported/test.png-824168340ed131cdc63d22ceceb3fa89.ctex"]
+source_file="res://Sprites/Setting/small_branch.png"
+dest_files=["res://.godot/imported/small_branch.png-e3966186701094219331885120af23fe.ctex"]
 
 [params]
 

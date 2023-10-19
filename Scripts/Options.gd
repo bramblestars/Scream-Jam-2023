@@ -1,5 +1,6 @@
 extends CanvasLayer
 @onready var optionMenu : TextureRect = $OptionMenu
+@onready var movingObject = get_tree().get_nodes_in_group("Pause")
 @export_file("*.tscn") var mainMenu
 
 var hidden : bool = false
@@ -12,14 +13,23 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("escape"):
 		if hidden:
+			for chr in movingObject: 
+				chr.setPause(true)
 			optionMenu.show()
 		else:
+			for chr in movingObject:
+				chr.setPause(false)
 			optionMenu.hide()
 		hidden = !hidden
 
 func _on_continue_pressed():
+	for chr in movingObject:
+		chr.setPause(false)
 	optionMenu.hide()
 	hidden = true
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file(mainMenu)
+
+func _on_restart_pressed():
+	get_tree().reload_current_scene()

@@ -7,7 +7,7 @@ specular_color = Color(0.615686, 0.984314, 0.94902, 1)
 
 [node name="OptionCanvas" type="CanvasLayer"]
 script = ExtResource("1_udiqp")
-mainMenu = "res://Scenes/main_menu.tscn"
+mainMenu = "res://Scenes/Levels/main_menu.tscn"
 
 [node name="OptionMenu" type="TextureRect" parent="."]
 modulate = Color(0.254902, 1, 1, 1)
@@ -36,14 +36,15 @@ offset_bottom = 60.3962
 scale = Vector2(0.243272, 0.1897)
 text = "Quit"
 
-[node name="Options" type="Button" parent="OptionMenu"]
+[node name="Restart" type="Button" parent="OptionMenu"]
 layout_mode = 0
 offset_left = 10.6792
 offset_top = 21.9465
 offset_right = 80.6792
 offset_bottom = 52.9465
 scale = Vector2(0.243272, 0.1897)
-text = "Options"
+text = "Restart"
 
 [connection signal="pressed" from="OptionMenu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="OptionMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="OptionMenu/Restart" to="." method="_on_restart_pressed"]

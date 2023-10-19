@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://cul4h7ktwu6ru"]
 
-[ext_resource type="Script" path="res://Scripts/ObstacleTemplate.gd" id="1_036qu"]
-[ext_resource type="Texture2D" uid="uid://mn2pqu6vtinj" path="res://Sprites/Object/test.png" id="2_tayju"]
+[ext_resource type="Script" path="res://Scripts/ObstacleTemplate.gd" id="1_j236k"]
+[ext_resource type="Texture2D" uid="uid://mn2pqu6vtinj" path="res://Sprites/Object/test.png" id="2_d637s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm3mg"]
 size = Vector2(10, 11)
 
 [node name="ObstacleTemplate" type="Area2D"]
-script = ExtResource("1_036qu")
+script = ExtResource("1_j236k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_pm3mg")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_tayju")
+texture = ExtResource("2_d637s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

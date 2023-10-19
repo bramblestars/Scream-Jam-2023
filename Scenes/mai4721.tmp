@@ -1,0 +1,276 @@
+[gd_scene load_steps=19 format=3 uid="uid://bo4b5kx1k2h8f"]
+
+[ext_resource type="Script" path="res://Scripts/ChaseShadow.gd" id="1_ghgyw"]
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/option_canvas.tscn" id="2_onjn4"]
+[ext_resource type="Texture2D" uid="uid://bs0cl8g4n4d1f" path="res://Sprites/Character/shadow_sprites.png" id="2_ws006"]
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/player.tscn" id="3_nu7xf"]
+[ext_resource type="PackedScene" uid="uid://dm0b1l2mxqlg2" path="res://Scenes/collectable_template.tscn" id="4_ggbd0"]
+[ext_resource type="Texture2D" uid="uid://clv4a1aaq6a0m" path="res://Sprites/Setting/branch_1.png" id="5_swfnf"]
+[ext_resource type="Texture2D" uid="uid://c4sxllqqgigyx" path="res://Sprites/Setting/branch_2.png" id="6_864mq"]
+[ext_resource type="Texture2D" uid="uid://on27xmpdovy" path="res://Sprites/Setting/platform_2.png" id="7_qryah"]
+[ext_resource type="Texture2D" uid="uid://bl2fagqkj4kyw" path="res://Sprites/Setting/platform_1.png" id="8_dbcnx"]
+[ext_resource type="Texture2D" uid="uid://b0c7hevl6leq" path="res://Sprites/Setting/gnarled_tree_trunk.png" id="9_d4vfe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u75c1"]
+radius = 14.0
+height = 60.0
+
+[sub_resource type="Animation" id="Animation_dybkp"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_y0fnr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7behg"]
+resource_name = "jump"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_5tohr"]
+resource_name = "move"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qs3y4"]
+_data = {
+"RESET": SubResource("Animation_y0fnr"),
+"idle": SubResource("Animation_dybkp"),
+"jump": SubResource("Animation_7behg"),
+"move": SubResource("Animation_5tohr")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ga6l"]
+size = Vector2(275.806, 82.2581)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vifq1"]
+size = Vector2(81.7778, 81.7778)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ChaseShadow" type="CharacterBody2D" parent="."]
+position = Vector2(167, -5)
+script = ExtResource("1_ghgyw")
+
+[node name="Sprite" type="Sprite2D" parent="ChaseShadow"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ws006")
+hframes = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseShadow"]
+shape = SubResource("CapsuleShape2D_u75c1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ChaseShadow"]
+libraries = {
+"": SubResource("AnimationLibrary_qs3y4")
+}
+
+[node name="OptionCanvas" parent="." instance=ExtResource("2_onjn4")]
+
+[node name="Player" parent="." instance=ExtResource("3_nu7xf")]
+position = Vector2(-36, 0)
+
+[node name="CollectableTemplate" parent="." instance=ExtResource("4_ggbd0")]
+position = Vector2(92, 71)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform 1" type="StaticBody2D" parent="Platforms"]
+position = Vector2(108, 0)
+scale = Vector2(2.28, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform 1"]
+position = Vector2(2.50001, 151.5)
+scale = Vector2(0.62, 0.62)
+shape = SubResource("RectangleShape2D_3ga6l")
+
+[node name="Platform1" type="Sprite2D" parent="Platforms/Platform 1"]
+position = Vector2(2.99998, 154)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("8_dbcnx")
+
+[node name="Platform 2" type="StaticBody2D" parent="Platforms"]
+
+[node name="Platform2" type="Sprite2D" parent="Platforms/Platform 2"]
+position = Vector2(-176, 117)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("7_qryah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform 2"]
+position = Vector2(-177, 115)
+scale = Vector2(0.5625, 0.5625)
+shape = SubResource("RectangleShape2D_vifq1")
+
+[node name="Tree branch 1" type="StaticBody2D" parent="Platforms"]
+
+[node name="Branch1" type="Sprite2D" parent="Platforms/Tree branch 1"]
+z_index = 1
+position = Vector2(-423.625, 138.375)
+scale = Vector2(0.53419, 0.611464)
+texture = ExtResource("5_swfnf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Tree branch 1"]
+polygon = PackedVector2Array(-545, 83, -505, 70, -456, 78, -360, 77, -292, 58, -242, 70, -393, 102, -516, 103)
+
+[node name="Tree branch 2" type="StaticBody2D" parent="Platforms"]
+
+[node name="Branch2" type="Sprite2D" parent="Platforms/Tree branch 2"]
+z_index = 1
+position = Vector2(-667.936, 32.25)
+scale = Vector2(0.780303, 0.780303)
+texture = ExtResource("6_864mq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Tree branch 2"]
+polygon = PackedVector2Array(-577, 17, -629, 17, -709, 34, -756, 27, -702, 48, -588, 48)
+
+[node name="Background objects" type="Node" parent="."]
+
+[node name="GnarledTreeTrunk" type="Sprite2D" parent="Background objects"]
+z_index = -10
+position = Vector2(-429, 111)
+scale = Vector2(0.554878, 0.554878)
+texture = ExtResource("9_d4vfe")
