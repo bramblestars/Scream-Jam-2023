@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8qfue4vm772i"]
+[gd_scene load_steps=3 format=3 uid="uid://nwqp2i8dgv8g"]
 
 [ext_resource type="Texture2D" uid="uid://on27xmpdovy" path="res://Sprites/Setting/platform_2.png" id="1_2ongj"]
 
@@ -14,3 +14,4 @@ texture = ExtResource("1_2ongj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_mp4od")
+one_way_collision = true
