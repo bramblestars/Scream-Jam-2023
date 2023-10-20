@@ -45,7 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="33_ks14y"]
 [ext_resource type="PackedScene" path="res://Scenes/Object Templates/cat.tscn" id="34_r2x1d"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Floor" type="Node2D" parent="."]
 
