@@ -88,12 +88,14 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -131.0
+offset_left = -106.0
 offset_top = 54.0
-offset_right = 271.0
+offset_right = 296.0
 offset_bottom = 434.0
 grow_horizontal = 0
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 icon = ExtResource("2_85la7")
 icon_alignment = 1
 

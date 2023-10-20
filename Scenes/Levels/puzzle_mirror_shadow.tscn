@@ -101,3 +101,5 @@ scale = Vector2(0.2, 0.4)
 [node name="MirrorShadow" parent="." instance=ExtResource("11_uyo4y")]
 z_index = 4
 position = Vector2(145, 88)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

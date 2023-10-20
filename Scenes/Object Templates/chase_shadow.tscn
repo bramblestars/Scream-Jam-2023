@@ -1,11 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://d4lr4m1c6ncr1"]
 
 [ext_resource type="Script" path="res://Scripts/ChaseShadow.gd" id="1_vvx01"]
-[ext_resource type="Texture2D" uid="uid://bs0cl8g4n4d1f" path="res://Sprites/Character/shadow_sprites.png" id="2_1c1cp"]
+[ext_resource type="Texture2D" uid="uid://cghyeyapg7p2n" path="res://Sprites/Character/shadow_sprites.png" id="2_1c1cp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u75c1"]
-radius = 14.0
-height = 36.0
+height = 32.0
 
 [sub_resource type="Animation" id="Animation_y0fnr"]
 length = 0.001
@@ -185,7 +184,7 @@ texture = ExtResource("2_1c1cp")
 hframes = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
+position = Vector2(-1, 12)
 shape = SubResource("CapsuleShape2D_u75c1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
