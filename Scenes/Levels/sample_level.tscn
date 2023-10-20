@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7t38k5if1b14"]
+[gd_scene load_steps=17 format=3 uid="uid://c7t38k5if1b14"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_upm6q"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_2m44e"]
-[ext_resource type="PackedScene" uid="uid://b8qfue4vm772i" path="res://Scenes/Object Templates/Platforms/small_platform.tscn" id="2_i1c7c"]
-[ext_resource type="PackedScene" uid="uid://cfw6qnf5bihnv" path="res://Scenes/Object Templates/Platforms/medium_platform.tscn" id="3_p3d78"]
+[ext_resource type="PackedScene" uid="uid://nwqp2i8dgv8g" path="res://Scenes/Object Templates/Platforms/small_platform.tscn" id="2_i1c7c"]
+[ext_resource type="PackedScene" uid="uid://b23wobrrg5fsv" path="res://Scenes/Object Templates/Platforms/medium_platform.tscn" id="3_p3d78"]
 [ext_resource type="PackedScene" uid="uid://dedyjchea0vih" path="res://Scenes/Object Templates/Background/trunk_1.tscn" id="4_eos63"]
 [ext_resource type="PackedScene" uid="uid://bsouwlt160kfj" path="res://Scenes/Object Templates/Platforms/branch_1.tscn" id="5_7g7qm"]
 [ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="7_ha7jm"]
@@ -11,9 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="9_xfp6w"]
 [ext_resource type="PackedScene" uid="uid://cyjldj78whpfg" path="res://Scenes/Object Templates/Background/trunk_2.tscn" id="10_w2qe7"]
 [ext_resource type="Texture2D" uid="uid://donjatwafa8qs" path="res://Sprites/Setting/ground.png" id="10_xf4p1"]
-[ext_resource type="PackedScene" uid="uid://c8l77jgxixawi" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="11_4eo20"]
-[ext_resource type="PackedScene" path="res://Scenes/Object Templates/end_flag.tscn" id="11_b4j4c"]
+[ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="11_4eo20"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="11_b4j4c"]
 [ext_resource type="PackedScene" uid="uid://fsegp5dnwqlc" path="res://Scenes/Object Templates/Background/cottage_day.tscn" id="12_lxejg"]
+[ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="15_e7i0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8hpl"]
 size = Vector2(2191.67, 320)
@@ -110,3 +111,6 @@ scale = Vector2(0.3, 0.3)
 [node name="Ground2Day" parent="." instance=ExtResource("2_i1c7c")]
 position = Vector2(23, 66)
 scale = Vector2(0.3, 0.3)
+
+[node name="ChaseShadow" parent="." instance=ExtResource("15_e7i0g")]
+position = Vector2(-187, -6)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bgrl3g31su7ae"]
+[gd_scene load_steps=35 format=3 uid="uid://bgrl3g31su7ae"]
 
 [ext_resource type="PackedScene" uid="uid://bqmcbdxren24i" path="res://Scenes/Object Templates/Floor/fog_cloud_1.tscn" id="1_ej6hy"]
 [ext_resource type="PackedScene" uid="uid://vvak38g6m3rh" path="res://Scenes/Object Templates/Floor/fog_cloud_2.tscn" id="2_g5vvh"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="29_vhhjp"]
 [ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="32_7in6y"]
 [ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="33_ks14y"]
+[ext_resource type="PackedScene" uid="uid://dfo57tu8jcrxr" path="res://Scenes/Object Templates/cat.tscn" id="34_r2x1d"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -141,3 +142,6 @@ position = Vector2(-140, -790)
 position = Vector2(164, -790)
 
 [node name="EndFlag" parent="." instance=ExtResource("29_vhhjp")]
+
+[node name="Cat" parent="." instance=ExtResource("34_r2x1d")]
+position = Vector2(-70, -707)
