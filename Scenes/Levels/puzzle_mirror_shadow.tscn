@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://boup7nfym0w3y"]
+
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_rt2pp"]
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="2_lixb3"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="3_2icvj"]
+[ext_resource type="PackedScene" uid="uid://bdkankbwnpm45" path="res://Scenes/Object Templates/Background/trunk_1_night.tscn" id="4_28ppv"]
+[ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="5_t5ig1"]
+[ext_resource type="Texture2D" uid="uid://donjatwafa8qs" path="res://Sprites/Setting/ground.png" id="6_urs80"]
+[ext_resource type="PackedScene" uid="uid://c8l77jgxixawi" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="7_luq8e"]
+[ext_resource type="PackedScene" uid="uid://mhdbpt3fjhse" path="res://Scenes/Object Templates/Background/cottage_night.tscn" id="8_5q2fu"]
+[ext_resource type="PackedScene" uid="uid://cstmd762jppsq" path="res://Scenes/Object Templates/Platforms/medium_platform_night.tscn" id="9_1rvsd"]
+[ext_resource type="PackedScene" uid="uid://c2ctlu8lw02mh" path="res://Scenes/Object Templates/Platforms/long_platform_night.tscn" id="10_qxjhn"]
+[ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="11_uyo4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8hpl"]
+size = Vector2(2191.67, 320)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="OptionCanvas" parent="." instance=ExtResource("1_rt2pp")]
+
+[node name="Player" parent="." instance=ExtResource("2_lixb3")]
+z_index = 5
+position = Vector2(-622, 89)
+floor_stop_on_slope = false
+shadowLevel = true
+
+[node name="EndFlag" parent="." instance=ExtResource("3_2icvj")]
+position = Vector2(222, 169)
+nextScene = "res://Scenes/Levels/main_menu.tscn"
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Trunk1Night" parent="Trees" instance=ExtResource("4_28ppv")]
+position = Vector2(-404, 7)
+
+[node name="Trunk2Night" parent="Trees" instance=ExtResource("5_t5ig1")]
+position = Vector2(-297, -18)
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2(-498, 263)
+
+[node name="Dirt" type="StaticBody2D" parent="Ground"]
+position = Vector2(208, 11)
+scale = Vector2(0.36, 0.6)
+
+[node name="Sprite" type="Sprite2D" parent="Ground/Dirt"]
+scale = Vector2(-1.8885, 0.68536)
+texture = ExtResource("6_urs80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Dirt"]
+z_index = 1
+position = Vector2(18.0555, 9.99999)
+shape = SubResource("RectangleShape2D_n8hpl")
+
+[node name="Dirt2" type="StaticBody2D" parent="Ground"]
+position = Vector2(693, 10)
+scale = Vector2(0.243148, 0.632197)
+
+[node name="Sprite" type="Sprite2D" parent="Ground/Dirt2"]
+scale = Vector2(-1.8885, 0.68536)
+texture = ExtResource("6_urs80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Dirt2"]
+position = Vector2(297.397, 9.99999)
+shape = SubResource("RectangleShape2D_n8hpl")
+
+[node name="GroundGrass3" parent="Ground" instance=ExtResource("7_luq8e")]
+position = Vector2(911, 4)
+
+[node name="GroundGrass2" parent="Ground" instance=ExtResource("7_luq8e")]
+position = Vector2(630, 5)
+
+[node name="GroundGrass" parent="Ground" instance=ExtResource("7_luq8e")]
+position = Vector2(211, 1)
+
+[node name="CottageNight" parent="." instance=ExtResource("8_5q2fu")]
+position = Vector2(265, 54)
+
+[node name="Ground1Night" parent="." instance=ExtResource("9_1rvsd")]
+position = Vector2(-598, 156)
+
+[node name="Ground1Night3" parent="." instance=ExtResource("9_1rvsd")]
+position = Vector2(122, 143)
+
+[node name="Ground1Night6" parent="." instance=ExtResource("9_1rvsd")]
+position = Vector2(-438, 79)
+
+[node name="HalfSizeGround1Night3" parent="." instance=ExtResource("9_1rvsd")]
+position = Vector2(-95, 40)
+scale = Vector2(0.25, 0.5)
+
+[node name="HalfSizeGround1Night4" parent="." instance=ExtResource("9_1rvsd")]
+position = Vector2(-1, 80)
+scale = Vector2(0.25, 0.5)
+
+[node name="long_platform_night2" parent="." instance=ExtResource("10_qxjhn")]
+position = Vector2(-250, -1)
+scale = Vector2(0.2, 0.4)
+
+[node name="MirrorShadow" parent="." instance=ExtResource("11_uyo4y")]
+z_index = 4
+position = Vector2(145, 88)

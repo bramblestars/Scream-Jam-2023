@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var moveSpeed : float = 100.0
 var jumpForce : float = 300.0
-var gravity : float = 500.0
+var gravity : float = 600.0
 var paused : bool = false
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer

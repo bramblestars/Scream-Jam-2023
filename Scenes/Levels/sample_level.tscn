@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cyjldj78whpfg" path="res://Scenes/Object Templates/Background/trunk_2.tscn" id="10_w2qe7"]
 [ext_resource type="Texture2D" uid="uid://donjatwafa8qs" path="res://Sprites/Setting/ground.png" id="10_xf4p1"]
 [ext_resource type="PackedScene" uid="uid://c8l77jgxixawi" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="11_4eo20"]
-[ext_resource type="PackedScene" path="res://Scenes/Object Templates/end_flag.tscn" id="11_b4j4c"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="11_b4j4c"]
 [ext_resource type="PackedScene" uid="uid://fsegp5dnwqlc" path="res://Scenes/Object Templates/Background/cottage_day.tscn" id="12_lxejg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8hpl"]
@@ -29,7 +29,7 @@ shadowLevel = true
 
 [node name="EndFlag" parent="." instance=ExtResource("11_b4j4c")]
 position = Vector2(-876, 174)
-nextScene = "res://Scenes/Levels/main_scene.tscn"
+nextScene = "res://Scenes/Levels/puzzle_mirror_shadow.tscn"
 
 [node name="Trees" type="Node2D" parent="."]
 
@@ -40,7 +40,6 @@ rotation = -3.11192
 [node name="Branch2Day" parent="Trees" instance=ExtResource("7_ha7jm")]
 position = Vector2(-359, -59)
 rotation = -0.568941
-scale = Vector2(0.5, 0.5)
 
 [node name="Branch3Day" parent="Trees" instance=ExtResource("8_6stkk")]
 position = Vector2(-146, 55)
@@ -69,7 +68,6 @@ texture = ExtResource("10_xf4p1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Dirt"]
 position = Vector2(-6.9444, 9.99999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n8hpl")
 
 [node name="Dirt2" type="StaticBody2D" parent="Ground"]
@@ -82,7 +80,6 @@ texture = ExtResource("10_xf4p1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Dirt2"]
 position = Vector2(-6.9444, 9.99999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n8hpl")
 
 [node name="GroundGrass3" parent="Ground" instance=ExtResource("11_4eo20")]
