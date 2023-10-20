@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5oeam2nb6g1u"]
+[gd_scene load_steps=13 format=3 uid="uid://8d5q43mnukgx"]
 
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_rt2pp"]
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="2_lixb3"]
-[ext_resource type="PackedScene" path="res://Scenes/Object Templates/end_flag.tscn" id="3_2icvj"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="3_2icvj"]
 [ext_resource type="PackedScene" uid="uid://bdkankbwnpm45" path="res://Scenes/Object Templates/Background/trunk_1_night.tscn" id="4_28ppv"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="5_t5ig1"]
 [ext_resource type="Texture2D" uid="uid://donjatwafa8qs" path="res://Sprites/Setting/ground.png" id="6_urs80"]

@@ -64,3 +64,9 @@ func _on_restart_pressed():
 func _on_audio_drag_ended(value_changed):
 	pass # Replace with function body.
 
+func _on_button_pressed():
+	if hidden: 
+		hidden = false
+		setPauseValue(true)
+		optionMenu.show()
+		

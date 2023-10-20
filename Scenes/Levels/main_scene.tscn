@@ -1,8 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo4b5kx1k2h8f"]
+[gd_scene load_steps=13 format=3 uid="uid://bo4b5kx1k2h8f"]
 
-[ext_resource type="Script" path="res://Scripts/ChaseShadow.gd" id="1_ghgyw"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_onjn4"]
-[ext_resource type="Texture2D" uid="uid://cghyeyapg7p2n" path="res://Sprites/Character/shadow_sprites.png" id="2_ws006"]
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="3_nu7xf"]
 [ext_resource type="PackedScene" uid="uid://dm0b1l2mxqlg2" path="res://Scenes/Object Templates/collectable_template.tscn" id="4_ggbd0"]
 [ext_resource type="Texture2D" uid="uid://clv4a1aaq6a0m" path="res://Sprites/Setting/branch_1.png" id="5_swfnf"]
@@ -10,179 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://on27xmpdovy" path="res://Sprites/Setting/platform_2.png" id="7_qryah"]
 [ext_resource type="Texture2D" uid="uid://bl2fagqkj4kyw" path="res://Sprites/Setting/platform_1.png" id="8_dbcnx"]
 [ext_resource type="Texture2D" uid="uid://b0c7hevl6leq" path="res://Sprites/Setting/gnarled_tree_trunk.png" id="9_d4vfe"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u75c1"]
-radius = 14.0
-height = 56.0
-
-[sub_resource type="Animation" id="Animation_y0fnr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [11]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_dybkp"]
-resource_name = "idle"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [11]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_7behg"]
-resource_name = "jump"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [11]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [4, 5, 6]
-}
-
-[sub_resource type="Animation" id="Animation_5tohr"]
-resource_name = "move"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [11]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [7, 8, 9, 10]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qs3y4"]
-_data = {
-"RESET": SubResource("Animation_y0fnr"),
-"idle": SubResource("Animation_dybkp"),
-"jump": SubResource("Animation_7behg"),
-"move": SubResource("Animation_5tohr")
-}
+[ext_resource type="PackedScene" uid="uid://dv5ppksvapw64" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="9_suuvj"]
+[ext_resource type="PackedScene" uid="uid://dfo57tu8jcrxr" path="res://Scenes/Object Templates/cat.tscn" id="10_e6drh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ga6l"]
 size = Vector2(275.806, 82.2581)
@@ -193,23 +20,6 @@ size = Vector2(81.7778, 81.7778)
 [node name="Node2D2" type="Node2D"]
 
 [node name="OptionCanvas" parent="." instance=ExtResource("2_onjn4")]
-
-[node name="ChaseShadow" type="CharacterBody2D" parent="." groups=["Pause"]]
-position = Vector2(299, -19)
-script = ExtResource("1_ghgyw")
-
-[node name="Sprite" type="Sprite2D" parent="ChaseShadow"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_ws006")
-hframes = 11
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseShadow"]
-shape = SubResource("CapsuleShape2D_u75c1")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ChaseShadow"]
-libraries = {
-"": SubResource("AnimationLibrary_qs3y4")
-}
 
 [node name="Player" parent="." instance=ExtResource("3_nu7xf")]
 position = Vector2(-36, 0)
@@ -277,3 +87,9 @@ z_index = -10
 position = Vector2(-429, 111)
 scale = Vector2(0.554878, 0.554878)
 texture = ExtResource("9_d4vfe")
+
+[node name="Bird" parent="." instance=ExtResource("9_suuvj")]
+position = Vector2(271, 28)
+
+[node name="Cat" parent="." instance=ExtResource("10_e6drh")]
+position = Vector2(-57, 83)

@@ -6,6 +6,7 @@ var gravity : float = 600.0
 var paused : bool = false
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer
+@onready var canvas : CanvasLayer = get_parent().get_node("OptionCanvas")
 @export var shadowLevel : bool = false
 
 var inventory = {}
@@ -52,5 +53,9 @@ func addObject(item):
 	
 func setPause(isPaused):
 	paused = isPaused
+	
+func jumpScare():
+	#canvas.texture = load("res://Sprites/Object/spooky.png")
+	gameOver()
 	
 	

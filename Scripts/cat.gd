@@ -32,3 +32,6 @@ func updateAnimation():
 		else:
 			sprite.texture = catRun
 			ap.play("run")
+			
+func setPause(isPaused):
+	paused = isPaused
