@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d4lr4m1c6ncr1"]
 
 [ext_resource type="Script" path="res://Scripts/ChaseShadow.gd" id="1_vvx01"]
-[ext_resource type="Texture2D" uid="uid://cghyeyapg7p2n" path="res://Sprites/Character/shadow_sprites.png" id="2_1c1cp"]
+[ext_resource type="Texture2D" uid="uid://bs0cl8g4n4d1f" path="res://Sprites/Character/shadow_sprites.png" id="2_1c1cp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u75c1"]
 height = 32.0

@@ -30,4 +30,8 @@ func _physics_process(delta):
 				targetPos = startPos
 				
 func setPause(isPaused):
+	if(isPaused):
+		sprite.stop()
+	else:
+		sprite.play("default")
 	paused = isPaused

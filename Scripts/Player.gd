@@ -6,12 +6,16 @@ var gravity : float = 600.0
 var paused : bool = false
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer
+@onready var jumpScareAnim : AnimatedSprite2D = $JumpscareAnimation
 @onready var canvas : CanvasLayer = get_parent().get_node("OptionCanvas")
 @export var shadowLevel : bool = false
 
 var inventory = {}
 
 var score : int = 0
+
+func _ready():
+	jumpScareAnim.hide()
 	
 func _physics_process(delta):
 	if not paused:
@@ -32,7 +36,7 @@ func _physics_process(delta):
 			
 		move_and_slide()
 		updateAnimation()
-	
+		
 func updateAnimation():
 	if is_on_floor():
 		if velocity.x == 0:
@@ -52,10 +56,15 @@ func addObject(item):
 	inventory[item] = inventory[item] + 1
 	
 func setPause(isPaused):
+	ap.stop(isPaused)
 	paused = isPaused
 	
 func jumpScare():
-	#canvas.texture = load("res://Sprites/Object/spooky.png")
+	canvas.hide()
+	jumpScareAnim.show()
+	jumpScareAnim.speed_scale = 2
+	jumpScareAnim.play("default")
+	paused = true
+	
+func _on_jumpscare_animation_animation_finished():
 	gameOver()
-	
-	

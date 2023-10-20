@@ -175,6 +175,7 @@ position = Vector2(962, -593)
 
 [node name="Player" parent="." instance=ExtResource("26_gjvuy")]
 position = Vector2(13, -861)
+shadowLevel = false
 
 [node name="ChaseShadow" parent="." instance=ExtResource("32_7in6y")]
 position = Vector2(121, -904)
@@ -185,6 +186,6 @@ position = Vector2(173, -1007)
 [node name="EndFlag" parent="." instance=ExtResource("29_vhhjp")]
 
 [node name="Cat" parent="." instance=ExtResource("34_r2x1d")]
-position = Vector2(-174, -811)
+position = Vector2(544, -811)
 
 [node name="OptionCanvas" parent="." instance=ExtResource("46_fv5ig")]

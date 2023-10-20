@@ -15,6 +15,7 @@ func _physics_process(delta):
 		global_position = global_position.move_toward(player.position, moveSpeed * delta)
 
 func setPause(isPaused):
+	ap.stop(isPaused)
 	paused = isPaused
 
 func _on_body_entered(body):
