@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dunrnh61jc7rw"]
+
+[ext_resource type="Texture2D" uid="uid://b5ukirkfo515h" path="res://Sprites/Setting/gnarled_tree_trunk_3.png" id="1_uqiqn"]
+
+[node name="Trunk3" type="Area2D"]
+position = Vector2(3073, -292)
+
+[node name="Trunk3" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_uqiqn")
