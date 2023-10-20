@@ -16,8 +16,10 @@ func _physics_process(delta):
 		var dir = floatVersion(delta)
 		if dir.x > 0:
 			velocity.x += moveSpeed * delta
+			sprite.flip_h = true
 		else:
-			velocity.x -= moveSpeed * delta 
+			velocity.x -= moveSpeed * delta
+			sprite.flip_h = false 
 		updateAnimation(dir)
 		
 func floatVersion(delta):

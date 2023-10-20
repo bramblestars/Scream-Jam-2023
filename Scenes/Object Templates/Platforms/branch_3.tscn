@@ -10,3 +10,4 @@ texture = ExtResource("1_3ganu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(174, -80, 125, -56, 106, -33, 21, -31, -66, -35, -51, -12, -64, 23, -60, 41, -90, 57, -79, 83, -115, 47, -94, 43, -75, 0, -94, -24, -128, -16, -170, 71, -199, 18, -144, -46, -73, -58, -30, -52, -7, -60, 90, -51, 134, -82)
+one_way_collision = true
