@@ -8,7 +8,7 @@ extends CanvasLayer
 var hidden : bool = false
 var dialogue : bool = false
 var dialogueIndex : int = 0
-var textValues : Array = ["Hi", "Bye", "See"]
+@export var textValues : Array = ["Hi", "Bye", "See"]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	optionMenu.hide()

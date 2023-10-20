@@ -173,6 +173,8 @@ texture = ExtResource("2_pklbu")
 hframes = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+scale = Vector2(1, 0.6)
 shape = SubResource("CapsuleShape2D_kr033")
 
 [node name="Camera2D" type="Camera2D" parent="."]
