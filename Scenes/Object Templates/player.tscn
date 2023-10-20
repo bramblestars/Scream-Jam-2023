@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvqx4vbkv6cmv"]
+[gd_scene load_steps=18 format=3 uid="uid://cvqx4vbkv6cmv"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_am05y"]
 [ext_resource type="Texture2D" uid="uid://ced8rmg5ovti8" path="res://Sprites/Character/witch_sprites.png" id="2_pklbu"]
+[ext_resource type="Texture2D" uid="uid://dunvg7enr40ak" path="res://Sprites/Object/spooky.png" id="3_108ps"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr033"]
 radius = 9.0
@@ -164,6 +165,63 @@ _data = {
 "move": SubResource("Animation_vprls")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi2ok"]
+atlas = ExtResource("3_108ps")
+region = Rect2(0, 0, 1800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e3jn"]
+atlas = ExtResource("3_108ps")
+region = Rect2(1800, 0, 1800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7a7h"]
+atlas = ExtResource("3_108ps")
+region = Rect2(3600, 0, 1800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17ovj"]
+atlas = ExtResource("3_108ps")
+region = Rect2(5400, 0, 1800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_321d3"]
+atlas = ExtResource("3_108ps")
+region = Rect2(7200, 0, 1800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4egx"]
+atlas = ExtResource("3_108ps")
+region = Rect2(9000, 0, 1800, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slo6u"]
+atlas = ExtResource("3_108ps")
+region = Rect2(10800, 0, 1800, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esdjl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi2ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e3jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7a7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17ovj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_321d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4egx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slo6u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="Player" type="CharacterBody2D" groups=["Pause", "Player"]]
 script = ExtResource("1_am05y")
 
@@ -183,3 +241,10 @@ zoom = Vector2(2.5, 2.5)
 libraries = {
 "": SubResource("AnimationLibrary_6k8ty")
 }
+
+[node name="JumpscareAnimation" type="AnimatedSprite2D" parent="."]
+z_index = 10
+scale = Vector2(0.3, 0.28)
+sprite_frames = SubResource("SpriteFrames_esdjl")
+
+[connection signal="animation_finished" from="JumpscareAnimation" to="." method="_on_jumpscare_animation_animation_finished"]

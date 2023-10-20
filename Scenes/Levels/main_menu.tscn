@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://rrx4v40ylfty"]
+[gd_scene load_steps=3 format=3 uid="uid://rrx4v40ylfty"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_emfa6"]
+[ext_resource type="Texture2D" uid="uid://drj3jq87qygpl" path="res://Sprites/scream jam transp.png" id="2_ncn7p"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,6 +10,15 @@ script = ExtResource("1_emfa6")
 startScene = "res://Scenes/Levels/sample_level.tscn"
 creditsText = NodePath("Control/credits text")
 menuButtons = NodePath("Control/buttons")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ncn7p")
+expand_mode = 1
 
 [node name="Control" type="Control" parent="MainMenu"]
 layout_mode = 3

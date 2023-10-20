@@ -34,4 +34,5 @@ func updateAnimation():
 			ap.play("run")
 			
 func setPause(isPaused):
+	ap.stop(isPaused)
 	paused = isPaused

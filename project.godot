@@ -57,4 +57,4 @@ interact={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.12549, 0.517647, 0.835294, 0.752941)
+environment/defaults/default_clear_color=Color(0, 0, 0, 0.752941)
