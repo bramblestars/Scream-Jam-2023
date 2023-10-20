@@ -4,9 +4,11 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="MainMenu" type="CanvasLayer" parent="."]
+[node name="MainMenu" type="CanvasLayer" parent="." node_paths=PackedStringArray("creditsText", "menuButtons")]
 script = ExtResource("1_emfa6")
-startScene = "res://Scenes/Levels/main_scene.tscn"
+startScene = "res://Scenes/Levels/sample_level.tscn"
+creditsText = NodePath("Control/credits text")
+menuButtons = NodePath("Control/buttons")
 
 [node name="Control" type="Control" parent="MainMenu"]
 layout_mode = 3
@@ -16,11 +18,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MainMenu/Control"]
+[node name="buttons" type="MarginContainer" parent="MainMenu/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 250
@@ -28,25 +31,67 @@ theme_override_constants/margin_top = 250
 theme_override_constants/margin_right = 250
 theme_override_constants/margin_bottom = 250
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control/buttons"]
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Play" type="Button" parent="MainMenu/Control/MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="MainMenu/Control/buttons/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Play"
 
-[node name="Quit" type="Button" parent="MainMenu/Control/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MainMenu/Control/buttons/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Quit"
 
-[node name="Button" type="Button" parent="MainMenu/Control/MarginContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="MainMenu/Control/buttons/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Credits"
 
-[connection signal="pressed" from="MainMenu/Control/MarginContainer/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/Control/MarginContainer/VBoxContainer/Play" to="MainMenu" method="_on_button_pressed"]
-[connection signal="pressed" from="MainMenu/Control/MarginContainer/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
+[node name="credits text" type="MarginContainer" parent="MainMenu/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control/credits text"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="CreditsText" type="RichTextLabel" parent="MainMenu/Control/credits text/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/shadow_outline_size = 18
+theme_override_constants/line_separation = 8
+theme_override_constants/text_highlight_h_padding = 8
+theme_override_constants/text_highlight_v_padding = 8
+theme_override_font_sizes/normal_font_size = 50
+text = "Credits
+Coding
+Art
+Story
+Music"
+fit_content = true
+
+[node name="Close" type="Button" parent="MainMenu/Control/credits text/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Credits" to="MainMenu" method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/Control/credits text/VBoxContainer/Close" to="MainMenu" method="_on_close_credits_pressed"]
