@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://degh3pmingr3y"]
+
+[ext_resource type="Texture2D" uid="uid://xou20s535ply" path="res://Sprites/Setting/branch_4.png" id="1_40n65"]
+
+[node name="Branch4Rotated" type="StaticBody2D"]
+position = Vector2(-407, -554)
+
+[node name="Branch4" type="Sprite2D" parent="."]
+scale = Vector2(-0.5, -0.5)
+texture = ExtResource("1_40n65")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-109, -18, -41, -5, -17, -13, 5, -14, 30, 16, 55, 27, 82, 22, 86, -23, 89, 28, 42, 34, 8, 12, -47, 12, -90, 24)
+one_way_collision = true

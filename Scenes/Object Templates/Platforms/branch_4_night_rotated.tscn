@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://e6dawoer1k2i"]
+
+[ext_resource type="Texture2D" uid="uid://8ge04m41kgs1" path="res://Sprites/Setting/branch_4_night.png" id="1_mq1sl"]
+
+[node name="Branch4NightRotated" type="StaticBody2D"]
+position = Vector2(-148, -560)
+
+[node name="Branch4Night" type="Sprite2D" parent="."]
+scale = Vector2(-0.5, -0.5)
+texture = ExtResource("1_mq1sl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-110, -21, -44, -8, 4, -15, 28, 9, 48, 22, 62, 25, 80, 19, 86, -25, 88, 26, 50, 32, 9, 15, -48, 12, -91, 23)
+one_way_collision = true

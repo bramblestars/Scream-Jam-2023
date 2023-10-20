@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpjmg8nwh3pms"]
+
+[ext_resource type="Texture2D" uid="uid://crluxafdqky2u" path="res://Sprites/Setting/small_branch.png" id="1_471y6"]
+
+[node name="SmallBranchRotated" type="StaticBody2D"]
+position = Vector2(63, -566)
+
+[node name="SmallBranch" type="Sprite2D" parent="."]
+scale = Vector2(-1, -1)
+texture = ExtResource("1_471y6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-86, 19, -54, 15, -20, 2, 34, 1, 58, -39, 71, -9, 54, 14, -24, 16, -61, 27)
+one_way_collision = true
