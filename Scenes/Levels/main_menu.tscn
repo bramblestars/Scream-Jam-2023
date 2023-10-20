@@ -51,7 +51,6 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Credits"
 
-<<<<<<< HEAD
 [node name="credits text" type="MarginContainer" parent="MainMenu/Control"]
 visible = false
 layout_mode = 1

@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bdkankbwnpm45" path="res://Scenes/Object Templates/Background/trunk_1_night.tscn" id="4_28ppv"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="5_t5ig1"]
 [ext_resource type="Texture2D" uid="uid://donjatwafa8qs" path="res://Sprites/Setting/ground.png" id="6_urs80"]
-[ext_resource type="PackedScene" uid="uid://c8l77jgxixawi" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="7_luq8e"]
+[ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="7_luq8e"]
 [ext_resource type="PackedScene" uid="uid://mhdbpt3fjhse" path="res://Scenes/Object Templates/Background/cottage_night.tscn" id="8_5q2fu"]
-[ext_resource type="PackedScene" uid="uid://cstmd762jppsq" path="res://Scenes/Object Templates/Platforms/medium_platform_night.tscn" id="9_1rvsd"]
-[ext_resource type="PackedScene" uid="uid://c2ctlu8lw02mh" path="res://Scenes/Object Templates/Platforms/long_platform_night.tscn" id="10_qxjhn"]
+[ext_resource type="PackedScene" uid="uid://cq4o1u1ohla18" path="res://Scenes/Object Templates/Platforms/medium_platform_night.tscn" id="9_1rvsd"]
+[ext_resource type="PackedScene" uid="uid://d0ho02cf6nphd" path="res://Scenes/Object Templates/Platforms/long_platform_night.tscn" id="10_qxjhn"]
 [ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="11_uyo4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8hpl"]
