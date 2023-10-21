@@ -62,7 +62,7 @@ func setPause(isPaused):
 func jumpScare():
 	canvas.hide()
 	jumpScareAnim.show()
-	jumpScareAnim.speed_scale = 2
+	jumpScareAnim.speed_scale = 1.5
 	jumpScareAnim.play("default")
 	paused = true
 	
