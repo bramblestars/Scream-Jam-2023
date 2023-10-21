@@ -39,6 +39,7 @@ horizontal_alignment = 1
 layout_mode = 2
 max_value = 1.0
 step = 0.1
+value = 1.0
 
 [node name="Continue" type="Button" parent="OptionMenu/VBoxContainer"]
 layout_mode = 2
@@ -100,6 +101,7 @@ icon = ExtResource("2_85la7")
 icon_alignment = 1
 
 [connection signal="drag_ended" from="OptionMenu/VBoxContainer/Audio" to="." method="_on_audio_drag_ended"]
+[connection signal="value_changed" from="OptionMenu/VBoxContainer/Audio" to="." method="_on_audio_value_changed"]
 [connection signal="pressed" from="OptionMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="OptionMenu/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="OptionMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

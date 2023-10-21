@@ -1,8 +1,11 @@
 extends CanvasLayer
 @onready var optionMenu : CenterContainer = $OptionMenu
 @onready var dialogueMenu : Control = $DialogueMenu
+@onready var volumeSlider = $OptionMenu/VBoxContainer/Audio
 @onready var movingObject = get_tree().get_nodes_in_group("Pause")
 @onready var textLabel = get_node("DialogueMenu/Panel/Label")
+
+@onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @export_file("*.tscn") var mainMenu
 
 var hidden : bool = false
@@ -13,6 +16,7 @@ var dialogueIndex : int = 0
 func _ready():
 	optionMenu.hide()
 	dialogueMenu.hide()
+	volumeSlider.value = Global.volume
 	hidden = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -70,3 +74,6 @@ func _on_button_pressed():
 		setPauseValue(true)
 		optionMenu.show()
 		
+func _on_audio_value_changed(value):
+	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
+	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < 0.05)
