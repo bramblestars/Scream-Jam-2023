@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfo57tu8jcrxr"]
+[gd_scene load_steps=8 format=3 uid="uid://cnoslhxax0v8h"]
 
-[ext_resource type="Texture2D" uid="uid://bde6aue616kuq" path="res://Sprites/Character/cat_sitting.png" id="1_0re5l"]
+[ext_resource type="Texture2D" uid="uid://caxq2pl7cpxpf" path="res://Sprites/Character/cat_sitting.png" id="1_0re5l"]
 [ext_resource type="Script" path="res://Scripts/cat.gd" id="1_roaoy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osmyh"]
@@ -135,7 +135,9 @@ _data = {
 }
 
 [node name="Cat" type="CharacterBody2D" groups=["Pause"]]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(-0.1, 0.1)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_roaoy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

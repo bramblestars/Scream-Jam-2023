@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var ap : AnimationPlayer = $AnimationPlayer
 
 var gravity : float = 500
-var moveSpeed : float = 100
+var moveSpeed : float = -200
 var paused : bool = false
 func _ready():
 	catSit = load("res://Sprites/Character/cat_sitting.png")

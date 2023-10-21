@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://mkuyoubtusqr" path="res://Scenes/Object Templates/Platforms/small_branch_night_rotated.tscn" id="31_45e1h"]
 [ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="32_7in6y"]
 [ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="33_ks14y"]
-[ext_resource type="PackedScene" path="res://Scenes/Object Templates/cat.tscn" id="34_r2x1d"]
+[ext_resource type="PackedScene" uid="uid://cnoslhxax0v8h" path="res://Scenes/Object Templates/cat.tscn" id="34_r2x1d"]
 [ext_resource type="PackedScene" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="38_0j522"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="46_fv5ig"]
 

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var moveSpeed : float = 100.0
+var moveSpeed : float = 150.0
 var jumpForce : float = 400.0
 var gravity : float = 600.0
 var paused : bool = false
