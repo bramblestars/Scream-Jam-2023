@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://8ge04m41kgs1" path="res://Sprites/Setting/branch_4_night.png" id="1_15jur"]
 
-[node name="Branch4Night" type="StaticBody2D"]
+[node name="Branch4Night" type="StaticBody2D" groups=["Platform"]]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -10,4 +10,3 @@ texture = ExtResource("1_15jur")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(186, -53, 207, 19, 227, 54, 189, 35, 100, 18, 36, 30, 9, 25, -7, 36, -62, -21, -110, -47, -171, -33, -172, -14, -158, -7, -175, 12, -166, 52, -192, 17, -178, -2, -226, -7, -183, -19, -175, -46, -197, -60, -161, -58, -86, -70, -45, -53, -19, -34, 2, -31, 16, -26, 86, -34, 94, -25, 173, -59)
-one_way_collision = true

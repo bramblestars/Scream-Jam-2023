@@ -15,11 +15,11 @@ func _physics_process(delta):
 			
 		velocity.x = 0
 		if Input.is_action_pressed("moveLeft"):
-			velocity.x += moveSpeed
-			sprite.flip_h = false
-		if Input.is_action_pressed("moveRight"):
 			velocity.x -= moveSpeed
 			sprite.flip_h = true
+		if Input.is_action_pressed("moveRight"):
+			velocity.x += moveSpeed
+			sprite.flip_h = false
 		if Input.is_action_pressed("jump") and grounded:
 			velocity.y += jumpForce
 			
@@ -33,7 +33,7 @@ func _physics_process(delta):
 		updateAnimation()
 	
 func updateAnimation():
-	if is_on_floor():
+	if grounded:
 		if velocity.x == 0:
 			ap.play("idle")
 		else:

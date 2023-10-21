@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3jwnm47cdgei"]
+[gd_scene load_steps=2 format=3 uid="uid://oir23i1kaj3q"]
 
 [ext_resource type="Texture2D" uid="uid://8cxas3x7lkbo" path="res://Sprites/Setting/branch_3_night.png" id="1_c3b8h"]
 
-[node name="Branch3NightRotated" type="StaticBody2D"]
+[node name="Branch3NightRotated" type="StaticBody2D" groups=["Platform"]]
 position = Vector2(780, -787)
 
 [node name="Branch3Night" type="Sprite2D" parent="."]
@@ -11,4 +11,3 @@ texture = ExtResource("1_c3b8h")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-89, 40, -68, 30, -60, 22, -11, 17, 28, 18, 22, 4, 26, -9, 28, -19, 41, -28, 38, -39, 47, -26, 34, -10, 33, 3, 41, 15, 58, 10, 78, -27, 91, -10, 65, 23, 17, 26, -2, 28, -32, 25, -50, 25, -70, 37)
-one_way_collision = true

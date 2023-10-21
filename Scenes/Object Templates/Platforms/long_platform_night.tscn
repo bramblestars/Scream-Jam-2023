@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jp2f7"]
 size = Vector2(966, 82)
 
-[node name="LongPlatformNight" type="StaticBody2D"]
+[node name="LongPlatformNight" type="StaticBody2D" groups=["Platform"]]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -14,4 +14,3 @@ texture = ExtResource("1_u77oa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10, 3)
 shape = SubResource("RectangleShape2D_jp2f7")
-one_way_collision = true
