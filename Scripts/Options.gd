@@ -77,3 +77,4 @@ func _on_button_pressed():
 func _on_audio_value_changed(value):
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < 0.05)
+	Global.volume = value
