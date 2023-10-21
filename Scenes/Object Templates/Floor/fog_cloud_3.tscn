@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/FogCloud3.gd" id="1_8ifn7"]
 [ext_resource type="Texture2D" uid="uid://bwljjni88wuod" path="res://Sprites/Setting/fog_cloud_3.png" id="2_d47p0"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1u8b6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vro8q"]
+size = Vector2(20, 8.33237)
 
 [node name="FogCloud3" type="Area2D"]
 scale = Vector2(0.5, 0.5)
@@ -13,8 +14,9 @@ script = ExtResource("1_8ifn7")
 texture = ExtResource("2_d47p0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 167)
-scale = Vector2(-50.2536, 17.3899)
-shape = SubResource("CapsuleShape2D_1u8b6")
+position = Vector2(1.90425e-12, 188)
+rotation = 3.14159
+scale = Vector2(50.2536, -17.3899)
+shape = SubResource("RectangleShape2D_vro8q")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
