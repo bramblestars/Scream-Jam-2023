@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< Updated upstream
 uid="uid://cnorn0tcqbf75"
+=======
+uid="uid://6kc5m2aga3uw"
+>>>>>>> Stashed changes
 path="res://.godot/imported/scary_static.wav-b883cb3454fc25bb745d9950bbbd8594.sample"
 
 [deps]
