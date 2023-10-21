@@ -246,5 +246,6 @@ libraries = {
 z_index = 10
 scale = Vector2(0.3, 0.28)
 sprite_frames = SubResource("SpriteFrames_esdjl")
+speed_scale = 0.8
 
 [connection signal="animation_finished" from="JumpscareAnimation" to="." method="_on_jumpscare_animation_animation_finished"]

@@ -48,6 +48,7 @@ func updateAnimation():
 	
 
 func gameOver():
+	Global.music_progress = Music.get_playback_position()
 	get_tree().reload_current_scene()
 	
 func addObject(item):

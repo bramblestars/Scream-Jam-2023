@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://on27xmpdovy" path="res://Sprites/Setting/platform_2.png" id="7_qryah"]
 [ext_resource type="Texture2D" uid="uid://bl2fagqkj4kyw" path="res://Sprites/Setting/platform_1.png" id="8_dbcnx"]
 [ext_resource type="Texture2D" uid="uid://b0c7hevl6leq" path="res://Sprites/Setting/gnarled_tree_trunk.png" id="9_d4vfe"]
-[ext_resource type="PackedScene" uid="uid://dv5ppksvapw64" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="9_suuvj"]
-[ext_resource type="PackedScene" uid="uid://dfo57tu8jcrxr" path="res://Scenes/Object Templates/cat.tscn" id="10_e6drh"]
+[ext_resource type="PackedScene" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="9_suuvj"]
+[ext_resource type="PackedScene" path="res://Scenes/Object Templates/cat.tscn" id="10_e6drh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ga6l"]
 size = Vector2(275.806, 82.2581)

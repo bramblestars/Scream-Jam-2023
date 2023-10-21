@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwkt75kp6wq3t"]
+
+[ext_resource type="AudioStream" uid="uid://bxxbfs4oqkxa7" path="res://Sprites/Audio/Music/Illusory-Realm (daytime).mp3" id="1_frjbc"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_frjbc")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"

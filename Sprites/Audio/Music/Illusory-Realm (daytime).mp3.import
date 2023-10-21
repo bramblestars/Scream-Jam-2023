@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxxbfs4oqkxa7"
+path="res://.godot/imported/Illusory-Realm (daytime).mp3-496c50df3929345c6cac2e5ef882c3c2.mp3str"
+
+[deps]
+
+source_file="res://Sprites/Audio/Music/Illusory-Realm (daytime).mp3"
+dest_files=["res://.godot/imported/Illusory-Realm (daytime).mp3-496c50df3929345c6cac2e5ef882c3c2.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
