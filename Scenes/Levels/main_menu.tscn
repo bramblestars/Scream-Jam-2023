@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://rrx4v40ylfty"]
+[gd_scene load_steps=6 format=3 uid="uid://rrx4v40ylfty"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_emfa6"]
 [ext_resource type="Texture2D" uid="uid://drj3jq87qygpl" path="res://Sprites/scream jam transp.png" id="2_ncn7p"]
 [ext_resource type="Texture2D" uid="uid://c4e1purr3ro4b" path="res://Sprites/title.png" id="3_81mki"]
 [ext_resource type="Theme" uid="uid://begoq4afaqmfm" path="res://ui_theme.tres" id="4_yx5lv"]
+[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="5_60dca"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,8 +17,8 @@ menuButtons = NodePath("Control/buttons")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 66.0
-offset_bottom = 66.0
+offset_top = 91.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.88)
@@ -115,6 +116,12 @@ fit_content = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Close"
+
+[node name="BgNight" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0.486275, 0.627451, 1)
+position = Vector2(1085, 277)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_60dca")
 
 [connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_button_pressed"]
