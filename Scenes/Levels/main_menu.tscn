@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://rrx4v40ylfty"]
+[gd_scene load_steps=5 format=3 uid="uid://rrx4v40ylfty"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_emfa6"]
 [ext_resource type="Texture2D" uid="uid://drj3jq87qygpl" path="res://Sprites/scream jam transp.png" id="2_ncn7p"]
+[ext_resource type="Texture2D" uid="uid://c4e1purr3ro4b" path="res://Sprites/title.png" id="3_81mki"]
+[ext_resource type="Theme" uid="uid://begoq4afaqmfm" path="res://ui_theme.tres" id="4_yx5lv"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,10 +16,18 @@ menuButtons = NodePath("Control/buttons")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 66.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.88)
 texture = ExtResource("2_ncn7p")
 expand_mode = 1
+stretch_mode = 4
+
+[node name="Title" type="Sprite2D" parent="MainMenu"]
+position = Vector2(591, 191)
+texture = ExtResource("3_81mki")
 
 [node name="Control" type="Control" parent="MainMenu"]
 layout_mode = 3
@@ -32,7 +42,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 102.0
+offset_left = 239.0
+offset_top = 79.0
+offset_right = 239.0
+offset_bottom = 238.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 250
@@ -42,23 +55,27 @@ theme_override_constants/margin_bottom = 250
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control/buttons"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme = ExtResource("4_yx5lv")
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Play" type="Button" parent="MainMenu/Control/buttons/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-text = "Play"
+theme_override_font_sizes/font_size = 70
+text = "PLAY"
 
 [node name="Quit" type="Button" parent="MainMenu/Control/buttons/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-text = "Quit"
+theme_override_font_sizes/font_size = 70
+text = "QUIT"
 
 [node name="Credits" type="Button" parent="MainMenu/Control/buttons/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-text = "Credits"
+theme_override_font_sizes/font_size = 70
+text = "CREDITS"
 
 [node name="credits text" type="MarginContainer" parent="MainMenu/Control"]
 visible = false
