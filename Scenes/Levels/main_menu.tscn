@@ -7,7 +7,6 @@
 
 [node name="MainMenu" type="CanvasLayer" parent="." node_paths=PackedStringArray("creditsText", "menuButtons")]
 script = ExtResource("1_emfa6")
-startScene = "res://Scenes/Levels/sample_level.tscn"
 creditsText = NodePath("Control/credits text")
 menuButtons = NodePath("Control/buttons")
 
