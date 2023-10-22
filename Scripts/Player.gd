@@ -3,13 +3,17 @@ extends CharacterBody2D
 var moveSpeed : float = 150.0
 var jumpForce : float = 400.0
 var gravity : float = 600.0
-var respawnPoint = position
+var hitSpikes : bool = false
 var paused : bool = false
-@onready var floorHeight = 428
+var timerStopped : bool = true
+
+@onready var respawnX = position.x
+@onready var respawnY = position.y
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer
 @onready var jumpScareAnim : AnimatedSprite2D = $JumpscareAnimation
 @onready var canvas : CanvasLayer = get_parent().get_node("OptionCanvas")
+@onready var respawnTimer : Timer = $Timer
 @export var shadowLevel : bool = false
 
 var inventory = {}
@@ -20,7 +24,7 @@ func _ready():
 	jumpScareAnim.hide()
 	
 func _physics_process(delta):
-	if not paused:
+	if not paused and timerStopped:
 		if shadowLevel and global_position.y > 300:
 			gameOver()
 		if not is_on_floor():
@@ -50,7 +54,10 @@ func updateAnimation():
 	
 
 func respawn():
-	position = respawnPoint
+	position.x = respawnX
+	position.y = 502
+	respawnTimer.start()
+	timerStopped = false
 
 func gameOver():
 	Global.music_progress = Music.get_playback_position()
@@ -66,11 +73,21 @@ func setPause(isPaused):
 	paused = isPaused
 	
 func jumpScare():
-	canvas.hide()
+	if canvas:
+		canvas.hide()
 	jumpScareAnim.show()
 	jumpScareAnim.speed_scale = 1.5
 	jumpScareAnim.play("default")
 	paused = true
 	
 func _on_jumpscare_animation_animation_finished():
-	gameOver()
+	if hitSpikes:
+		hitSpikes = false
+		paused = false
+		respawn()
+		jumpScareAnim.hide()
+	else:
+		gameOver()
+
+func _on_timer_timeout():
+	timerStopped = true
