@@ -17,7 +17,7 @@ var dialogueIndex : int = 0
 func _ready():
 	optionMenu.hide()
 	backPanel.hide()
-	dialogueMenu.hide()
+	#dialogueMenu.hide()
 	volumeSlider.value = Global.volume
 	hidden = true
 
@@ -51,7 +51,6 @@ func setPauseValue(pause):
 		
 func dialogueMode(dialogueOn):
 	dialogue = dialogueOn
-	setPauseValue(dialogueOn)
 	if(dialogueOn):
 		dialogueMenu.show()	
 	else:

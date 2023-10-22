@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://bo7ion2s0brn4"]
+[gd_scene load_steps=35 format=3 uid="uid://bo7ion2s0brn4"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_o8kws"]
 [ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_vtuc0"]
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_3ntt0"]
 [ext_resource type="Texture2D" uid="uid://dl3piweeqbjbf" path="res://Sprites/Setting/bg_day.png" id="2_wf6j1"]
 [ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="3_lmtun"]
 [ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="4_8w2h4"]
@@ -23,14 +24,33 @@
 [ext_resource type="PackedScene" uid="uid://cs3tlqkso7g41" path="res://Scenes/Object Templates/Platforms/branch_2_rotated.tscn" id="20_g3kqg"]
 [ext_resource type="Script" path="res://Scripts/CatStopper.gd" id="21_cgql3"]
 [ext_resource type="PackedScene" uid="uid://chbbxyu4h8jc6" path="res://Scenes/Object Templates/respawn_point.tscn" id="23_jwwra"]
+[ext_resource type="Script" path="res://Scripts/Instructions/MoveInstructionsArea.gd" id="25_csxcu"]
+[ext_resource type="Texture2D" uid="uid://c6y647m18cimy" path="res://Sprites/UI/move_instructions.png" id="26_b8888"]
+[ext_resource type="Script" path="res://Scenes/Levels/JumpInstructions.gd" id="26_cxpba"]
+[ext_resource type="Script" path="res://Scenes/Levels/CrowInstructions.gd" id="27_87inh"]
+[ext_resource type="Texture2D" uid="uid://bpfgn1cqqd4dh" path="res://Sprites/UI/jump_instructions.png" id="27_prc7f"]
+[ext_resource type="Texture2D" uid="uid://chuohccolqsjo" path="res://Sprites/UI/crow_instructions.png" id="29_nhjqp"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_01doq"]
 a = Vector2(-1, -76)
 b = Vector2(1, 83)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf7hw"]
+size = Vector2(339.75, 319)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyust"]
+size = Vector2(332, 310)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2xuw"]
+size = Vector2(280, 249)
+
 [node name="level_1_light" type="Node2D"]
 position = Vector2(46, -10)
 script = ExtResource("1_vtuc0")
+
+[node name="OptionCanvas" parent="." instance=ExtResource("2_3ntt0")]
+visible = false
+textValues = ["", "Oh no, I have to find her!"]
 
 [node name="Player" parent="." instance=ExtResource("1_o8kws")]
 z_index = 1
@@ -299,7 +319,7 @@ position = Vector2(1679, -2)
 position = Vector2(364, -15)
 
 [node name="RespawnPoint2" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
-position = Vector2(-46, 1)
+position = Vector2(-46, 305)
 
 [node name="RespawnPoint3" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
 position = Vector2(-661, 6)
@@ -309,3 +329,53 @@ position = Vector2(-1039, 6)
 
 [node name="RespawnPoint5" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
 position = Vector2(-1535, 6)
+
+[node name="Instructions" type="Node2D" parent="."]
+
+[node name="MoveInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("moveInstructions")]
+position = Vector2(1204, 400)
+script = ExtResource("25_csxcu")
+moveInstructions = NodePath("../Instructions/MoveInstructions")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/MoveInstructionsArea"]
+position = Vector2(129.25, 45.5)
+shape = SubResource("RectangleShape2D_pf7hw")
+
+[node name="JumpInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("jumpInstructions")]
+position = Vector2(1204, 400)
+script = ExtResource("26_cxpba")
+jumpInstructions = NodePath("../Instructions/JumpInstructions")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/JumpInstructionsArea"]
+position = Vector2(-229, 42)
+shape = SubResource("RectangleShape2D_dyust")
+
+[node name="CrowInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("crowInstructions")]
+script = ExtResource("27_87inh")
+crowInstructions = NodePath("../Instructions/CrowInstructions")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/CrowInstructionsArea"]
+position = Vector2(130, 210.5)
+shape = SubResource("RectangleShape2D_o2xuw")
+
+[node name="Instructions" type="CanvasLayer" parent="Instructions"]
+
+[node name="MoveInstructions" type="Sprite2D" parent="Instructions/Instructions"]
+position = Vector2(322, 127)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("26_b8888")
+
+[node name="JumpInstructions" type="Sprite2D" parent="Instructions/Instructions"]
+position = Vector2(306, 135)
+texture = ExtResource("27_prc7f")
+
+[node name="CrowInstructions" type="Sprite2D" parent="Instructions/Instructions"]
+position = Vector2(340, 150)
+texture = ExtResource("29_nhjqp")
+
+[connection signal="body_entered" from="Instructions/MoveInstructionsArea" to="Instructions/MoveInstructionsArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Instructions/MoveInstructionsArea" to="Instructions/MoveInstructionsArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Instructions/JumpInstructionsArea" to="Instructions/JumpInstructionsArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Instructions/JumpInstructionsArea" to="Instructions/JumpInstructionsArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Instructions/CrowInstructionsArea" to="Instructions/CrowInstructionsArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Instructions/CrowInstructionsArea" to="Instructions/CrowInstructionsArea" method="_on_body_exited"]

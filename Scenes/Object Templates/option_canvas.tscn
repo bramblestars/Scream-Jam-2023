@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://woq60hl2l3mm"]
+[gd_scene load_steps=9 format=3 uid="uid://woq60hl2l3mm"]
 
 [ext_resource type="Script" path="res://Scripts/Options.gd" id="1_udiqp"]
 [ext_resource type="Theme" uid="uid://begoq4afaqmfm" path="res://ui_theme.tres" id="2_1g1q5"]
 [ext_resource type="Texture2D" uid="uid://lc3n3atqjnjt" path="res://Sprites/UI/pause_btn.png" id="2_85la7"]
 [ext_resource type="FontFile" uid="uid://dwwkdwxfh22bb" path="res://Sprites/UI/WastedHalloween-BWy5B.ttf" id="3_1bn74"]
+[ext_resource type="FontFile" uid="uid://bnt147iqfegws" path="res://Sprites/UI/YellowPumpkin-Eaew9.otf" id="4_wqicn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hftax"]
 
@@ -17,6 +18,7 @@ font_size = 24
 [node name="OptionCanvas" type="CanvasLayer"]
 script = ExtResource("1_udiqp")
 mainMenu = "res://Scenes/Levels/main_menu.tscn"
+textValues = ["Oh no, I have to find her!", "Bye", "See"]
 
 [node name="BackPanel" type="Panel" parent="."]
 modulate = Color(0.129412, 0.0156863, 0.219608, 0.729412)
@@ -100,7 +102,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Sup my name is blah"
+theme_override_fonts/font = ExtResource("4_wqicn")
+theme_override_font_sizes/font_size = 31
+text = "Wait, come back!"
 label_settings = SubResource("LabelSettings_3tx1p")
 horizontal_alignment = 1
 vertical_alignment = 1
