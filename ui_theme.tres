@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://begoq4afaqmfm"]
+
+[ext_resource type="FontFile" uid="uid://dwwkdwxfh22bb" path="res://Sprites/UI/WastedHalloween-BWy5B.ttf" id="1_co30f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xx0j7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo7wd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ywri4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3slfv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2iuiu"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0.67451, 0.756863, 0.980392, 1)
+Button/colors/font_hover_pressed_color = Color(0.505882, 0.811765, 1, 1)
+Button/colors/icon_focus_color = Color(0, 0.909804, 0.913725, 1)
+Button/colors/icon_hover_color = Color(0.666667, 0.643137, 0.909804, 1)
+Button/fonts/font = ExtResource("1_co30f")
+Button/styles/disabled = SubResource("StyleBoxEmpty_xx0j7")
+Button/styles/focus = SubResource("StyleBoxEmpty_oo7wd")
+Button/styles/hover = SubResource("StyleBoxEmpty_ywri4")
+Button/styles/normal = SubResource("StyleBoxEmpty_3slfv")
+Button/styles/pressed = SubResource("StyleBoxEmpty_2iuiu")
+Label/font_sizes/font_size = 80

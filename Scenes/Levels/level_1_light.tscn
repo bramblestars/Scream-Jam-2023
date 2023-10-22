@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_o8kws"]
 [ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_vtuc0"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_48tab"]
-[ext_resource type="Texture2D" path="res://Sprites/Setting/bg_day.png" id="2_wf6j1"]
+[ext_resource type="Texture2D" uid="uid://dl3piweeqbjbf" path="res://Sprites/Setting/bg_day.png" id="2_wf6j1"]
 [ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="3_lmtun"]
 [ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="4_8w2h4"]
 [ext_resource type="PackedScene" uid="uid://fsegp5dnwqlc" path="res://Scenes/Object Templates/Background/cottage_day.tscn" id="5_0cjyp"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bsouwlt160kfj" path="res://Scenes/Object Templates/Platforms/branch_1.tscn" id="12_tb0xv"]
 [ext_resource type="PackedScene" uid="uid://nwqp2i8dgv8g" path="res://Scenes/Object Templates/Platforms/small_platform.tscn" id="14_qthfj"]
 [ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="15_3lnwr"]
-[ext_resource type="PackedScene" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="16_14fog"]
+[ext_resource type="PackedScene" uid="uid://dv5ppksvapw64" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="16_14fog"]
 [ext_resource type="PackedScene" uid="uid://cw1vk73drmek3" path="res://Scenes/Object Templates/Platforms/branch_3.tscn" id="16_kgrua"]
 [ext_resource type="PackedScene" uid="uid://b23wobrrg5fsv" path="res://Scenes/Object Templates/Platforms/medium_platform.tscn" id="18_h1msg"]
 [ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="19_pcqiu"]
@@ -74,10 +74,10 @@ position = Vector2(699, 334)
 position = Vector2(-72, 338)
 
 [node name="Ground5" parent="Background/Ground" instance=ExtResource("3_lmtun")]
-position = Vector2(-848, 334)
+position = Vector2(-849, 346)
 
 [node name="Ground6" parent="Background/Ground" instance=ExtResource("3_lmtun")]
-position = Vector2(-1619, 337)
+position = Vector2(-1629, 345)
 
 [node name="GroundGrass" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
 z_index = 3
@@ -128,12 +128,12 @@ scale = Vector2(1, 0.8)
 
 [node name="GroundGrass10" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
 z_index = 3
-position = Vector2(-1824, 597)
+position = Vector2(-1824, 604)
 scale = Vector2(1, 0.8)
 
 [node name="GroundGrass11" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
 z_index = 3
-position = Vector2(-2219, 594)
+position = Vector2(-2219, 601)
 scale = Vector2(1, 0.8)
 
 [node name="CottageDay" parent="Background" instance=ExtResource("5_0cjyp")]
@@ -185,31 +185,31 @@ position = Vector2(1913, 502)
 
 [node name="LeftSpike8" parent="Spikes" instance=ExtResource("6_g3bv6")]
 z_index = -1
-position = Vector2(-2235, 504)
+position = Vector2(-2209, 515)
 
 [node name="LeftSpike9" parent="Spikes" instance=ExtResource("6_g3bv6")]
 z_index = -1
-position = Vector2(-2001, 504)
+position = Vector2(-1975, 515)
 
 [node name="LeftSpike10" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
-position = Vector2(-1767, 503)
+position = Vector2(-1741, 514)
 
 [node name="LeftSpike11" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
-position = Vector2(-1661, 506)
+position = Vector2(-1635, 517)
 
 [node name="LeftSpike12" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
-position = Vector2(-1661, 506)
+position = Vector2(-1635, 517)
 
 [node name="LeftSpike13" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
-position = Vector2(-1878, 503)
+position = Vector2(-1852, 514)
 
 [node name="LeftSpike14" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
-position = Vector2(-2122, 501)
+position = Vector2(-2096, 512)
 
 [node name="MiddleSpike1" parent="Spikes" instance=ExtResource("6_g3bv6")]
 z_index = -1
@@ -272,7 +272,7 @@ position = Vector2(-112, 69)
 position = Vector2(61, 20)
 
 [node name="CatStopper" type="StaticBody2D" parent="."]
-position = Vector2(-3849, 376)
+position = Vector2(-4055, 364)
 collision_layer = 2
 collision_mask = 2
 

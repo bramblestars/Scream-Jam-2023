@@ -1,5 +1,6 @@
 extends CanvasLayer
 @onready var optionMenu : CenterContainer = $OptionMenu
+@onready var backPanel : Panel = $BackPanel
 @onready var dialogueMenu : Control = $DialogueMenu
 @onready var volumeSlider = $OptionMenu/VBoxContainer/Audio
 @onready var movingObject = get_tree().get_nodes_in_group("Pause")
@@ -15,6 +16,7 @@ var dialogueIndex : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	optionMenu.hide()
+	backPanel.hide()
 	dialogueMenu.hide()
 	volumeSlider.value = Global.volume
 	hidden = true
@@ -24,9 +26,11 @@ func _process(delta):
 	if Input.is_action_just_released("escape"):
 		if hidden:
 			setPauseValue(true)
+			backPanel.show()
 			optionMenu.show()
 		else:
 			setPauseValue(false)
+			backPanel.hide()
 			optionMenu.hide()
 		hidden = !hidden
 	if hidden:
@@ -57,6 +61,7 @@ func _on_continue_pressed():
 	for chr in movingObject:
 		chr.setPause(false)
 	optionMenu.hide()
+	backPanel.hide()
 	hidden = true
 
 func _on_quit_pressed():
@@ -73,6 +78,8 @@ func _on_button_pressed():
 		hidden = false
 		setPauseValue(true)
 		optionMenu.show()
+		backPanel.show()
+		
 		
 func _on_audio_value_changed(value):
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))

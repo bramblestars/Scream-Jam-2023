@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://woq60hl2l3mm"]
+[gd_scene load_steps=8 format=3 uid="uid://woq60hl2l3mm"]
 
 [ext_resource type="Script" path="res://Scripts/Options.gd" id="1_udiqp"]
+[ext_resource type="Theme" uid="uid://begoq4afaqmfm" path="res://ui_theme.tres" id="2_1g1q5"]
 [ext_resource type="Texture2D" uid="uid://lc3n3atqjnjt" path="res://Sprites/UI/pause_btn.png" id="2_85la7"]
+[ext_resource type="FontFile" uid="uid://dwwkdwxfh22bb" path="res://Sprites/UI/WastedHalloween-BWy5B.ttf" id="3_1bn74"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hftax"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4q2at"]
+font_size = 60
+font_color = Color(0.72549, 0.729412, 0.858824, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3tx1p"]
 font_size = 24
@@ -11,6 +17,14 @@ font_size = 24
 [node name="OptionCanvas" type="CanvasLayer"]
 script = ExtResource("1_udiqp")
 mainMenu = "res://Scenes/Levels/main_menu.tscn"
+
+[node name="BackPanel" type="Panel" parent="."]
+modulate = Color(0.129412, 0.0156863, 0.219608, 0.729412)
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.88, 16.2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_hftax")
 
 [node name="OptionMenu" type="CenterContainer" parent="."]
 anchors_preset = 8
@@ -24,6 +38,7 @@ offset_right = 124.5
 offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_1g1q5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionMenu"]
 layout_mode = 2
@@ -31,7 +46,9 @@ alignment = 1
 
 [node name="VolumeLabel" type="Label" parent="OptionMenu/VBoxContainer"]
 layout_mode = 2
-text = "Volume"
+theme_override_fonts/font = ExtResource("3_1bn74")
+theme_override_font_sizes/font_size = 81
+text = "VOLUME"
 label_settings = SubResource("LabelSettings_4q2at")
 horizontal_alignment = 1
 
@@ -43,15 +60,18 @@ value = 1.0
 
 [node name="Continue" type="Button" parent="OptionMenu/VBoxContainer"]
 layout_mode = 2
-text = "Continue"
+theme_override_font_sizes/font_size = 80
+text = "CONTINUE"
 
 [node name="Restart" type="Button" parent="OptionMenu/VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+theme_override_font_sizes/font_size = 80
+text = "RESTART"
 
 [node name="Quit" type="Button" parent="OptionMenu/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+theme_override_font_sizes/font_size = 80
+text = "QUIT"
 
 [node name="DialogueMenu" type="Control" parent="."]
 layout_mode = 3
@@ -95,8 +115,7 @@ offset_right = 296.0
 offset_bottom = 434.0
 grow_horizontal = 0
 scale = Vector2(0.1, 0.1)
-theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_1g1q5")
 icon = ExtResource("2_85la7")
 icon_alignment = 1
 
