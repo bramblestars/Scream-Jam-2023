@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://chbbxyu4h8jc6"]
+
+[ext_resource type="Script" path="res://Scripts/SpikeRespawn.gd" id="1_ownw4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pq62"]
+size = Vector2(5, 566)
+
+[node name="RespawnPoint" type="Area2D"]
+position = Vector2(350, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 274)
+shape = SubResource("RectangleShape2D_6pq62")
+script = ExtResource("1_ownw4")
+
+[connection signal="body_entered" from="." to="CollisionShape2D" method="_on_respawn_point_body_entered"]

@@ -3,7 +3,9 @@ extends CharacterBody2D
 var moveSpeed : float = 150.0
 var jumpForce : float = 400.0
 var gravity : float = 600.0
+var respawnPoint = position
 var paused : bool = false
+@onready var floorHeight = 428
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer
 @onready var jumpScareAnim : AnimatedSprite2D = $JumpscareAnimation
@@ -46,6 +48,9 @@ func updateAnimation():
 	else:
 		ap.play("jump")
 	
+
+func respawn():
+	position = respawnPoint
 
 func gameOver():
 	Global.music_progress = Music.get_playback_position()
