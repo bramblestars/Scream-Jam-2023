@@ -50,7 +50,7 @@ script = ExtResource("1_vtuc0")
 
 [node name="OptionCanvas" parent="." instance=ExtResource("2_3ntt0")]
 visible = false
-textValues = ["", "Oh no, I have to find her!"]
+textValues = ["", "The forest is dangerous. I gotta go find her!"]
 
 [node name="Player" parent="." instance=ExtResource("1_o8kws")]
 z_index = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://woq60hl2l3mm"]
+[gd_scene load_steps=8 format=3 uid="uid://woq60hl2l3mm"]
 
 [ext_resource type="Script" path="res://Scripts/Options.gd" id="1_udiqp"]
 [ext_resource type="Theme" uid="uid://begoq4afaqmfm" path="res://ui_theme.tres" id="2_1g1q5"]
@@ -11,9 +11,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_4q2at"]
 font_size = 60
 font_color = Color(0.72549, 0.729412, 0.858824, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_3tx1p"]
-font_size = 24
 
 [node name="OptionCanvas" type="CanvasLayer"]
 script = ExtResource("1_udiqp")
@@ -95,19 +92,30 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="DialogueMenu/Panel"]
+[node name="Label" type="RichTextLabel" parent="DialogueMenu/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 19.0
+offset_right = -24.0
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_wqicn")
-theme_override_font_sizes/font_size = 31
+theme_override_fonts/normal_font = ExtResource("4_wqicn")
+theme_override_font_sizes/normal_font_size = 36
 text = "Wait, come back!"
-label_settings = SubResource("LabelSettings_3tx1p")
-horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueMenu/Panel"]
+layout_mode = 0
+offset_left = 1026.0
+offset_top = 57.0
+offset_right = 1158.0
+offset_bottom = 111.0
+theme_override_font_sizes/normal_font_size = 20
+text = "Press Enter
+"
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 1
