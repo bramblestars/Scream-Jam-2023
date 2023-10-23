@@ -4,6 +4,7 @@ var moveSpeed : float = 150.0
 var jumpForce : float = 400.0
 var gravity : float = 600.0
 var hitSpikes : bool = false
+var nextLevel : bool = false
 var paused : bool = false
 var timerStopped : bool = true
 
@@ -86,6 +87,9 @@ func _on_jumpscare_animation_animation_finished():
 		paused = false
 		respawn()
 		jumpScareAnim.hide()
+	elif nextLevel:
+		nextLevel = false
+		paused = false
 	else:
 		gameOver()
 

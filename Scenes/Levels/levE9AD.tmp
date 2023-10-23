@@ -55,6 +55,7 @@ optionCanvas = NodePath("OptionCanvas")
 
 [node name="OptionCanvas" parent="." instance=ExtResource("2_3ntt0")]
 textValues = ["[center]Oh no, come back![/center]", "[center]I need to find her![/center]", "[center]There you are! Let's go home.[/center]", "[center]Oh no! What's happening?[/center]"]
+dialogueStopValues = null
 
 [node name="Player" parent="." instance=ExtResource("1_o8kws")]
 z_index = 1
