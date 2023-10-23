@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bk0f1xn73o6ox"]
 
 [ext_resource type="Script" path="res://Scripts/MirrorShadow.gd" id="1_6lamv"]
-[ext_resource type="Texture2D" uid="uid://bs0cl8g4n4d1f" path="res://Sprites/Character/shadow_sprites.png" id="2_6etce"]
+[ext_resource type="Texture2D" uid="uid://cghyeyapg7p2n" path="res://Sprites/Character/shadow_sprites.png" id="2_6etce"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lg7ao"]
-radius = 8.0
-height = 34.0
+radius = 24.0
+height = 66.0
 
 [sub_resource type="Animation" id="Animation_vsv4h"]
 length = 0.001
@@ -184,7 +184,7 @@ texture = ExtResource("2_6etce")
 hframes = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
+position = Vector2(2, -1)
 shape = SubResource("CapsuleShape2D_lg7ao")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

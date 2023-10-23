@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://skf0p0snfbfh"]
+
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_npb5q"]
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="2_xb6kp"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="3_sh8ed"]
+[ext_resource type="PackedScene" uid="uid://bdkankbwnpm45" path="res://Scenes/Object Templates/Background/trunk_1_night.tscn" id="4_b3qec"]
+[ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="5_km61q"]
+[ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="6_pvwwe"]
+[ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="7_31mo6"]
+[ext_resource type="PackedScene" uid="uid://mhdbpt3fjhse" path="res://Scenes/Object Templates/Background/cottage_night.tscn" id="8_q6del"]
+[ext_resource type="PackedScene" uid="uid://cq4o1u1ohla18" path="res://Scenes/Object Templates/Platforms/medium_platform_night.tscn" id="9_4yxo3"]
+[ext_resource type="PackedScene" uid="uid://d0ho02cf6nphd" path="res://Scenes/Object Templates/Platforms/long_platform_night.tscn" id="10_0ucog"]
+[ext_resource type="PackedScene" uid="uid://bk0f1xn73o6ox" path="res://Scenes/Object Templates/mirror_shadow.tscn" id="11_ljah5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="OptionCanvas" parent="." instance=ExtResource("1_npb5q")]
+
+[node name="Player" parent="." instance=ExtResource("2_xb6kp")]
+z_index = 5
+position = Vector2(-926, -97)
+floor_stop_on_slope = false
+shadowLevel = true
+
+[node name="MirrorShadow" parent="." instance=ExtResource("11_ljah5")]
+z_index = 4
+position = Vector2(-931, 52)
+rotation = 3.14159
+floor_stop_on_slope = false
+
+[node name="EndFlag" parent="." instance=ExtResource("3_sh8ed")]
+position = Vector2(222, 218)
+nextScene = "res://Scenes/Levels/main_menu.tscn"
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Trunk1Night" parent="Trees" instance=ExtResource("4_b3qec")]
+position = Vector2(-404, 141)
+
+[node name="Trunk2Night" parent="Trees" instance=ExtResource("5_km61q")]
+position = Vector2(-297, 80)
+
+[node name="GroundSurface" type="Node" parent="."]
+
+[node name="Ground" parent="GroundSurface" instance=ExtResource("6_pvwwe")]
+position = Vector2(353, 45)
+scale = Vector2(1.5, 1)
+
+[node name="GroundGrass" parent="GroundSurface" instance=ExtResource("7_31mo6")]
+position = Vector2(-635, 319)
+
+[node name="GroundGrass2" parent="GroundSurface" instance=ExtResource("7_31mo6")]
+position = Vector2(-199, 323)
+
+[node name="GroundGrass3" parent="GroundSurface" instance=ExtResource("7_31mo6")]
+position = Vector2(94, 324)
+
+[node name="GroundSurface2" type="Node" parent="."]
+
+[node name="Ground" parent="GroundSurface2" instance=ExtResource("6_pvwwe")]
+position = Vector2(972, 52)
+scale = Vector2(1.5, 1)
+
+[node name="GroundGrass" parent="GroundSurface2" instance=ExtResource("7_31mo6")]
+position = Vector2(-16, 326)
+
+[node name="GroundGrass2" parent="GroundSurface2" instance=ExtResource("7_31mo6")]
+position = Vector2(420, 330)
+
+[node name="GroundGrass3" parent="GroundSurface2" instance=ExtResource("7_31mo6")]
+position = Vector2(713, 331)
+
+[node name="CottageNight" parent="." instance=ExtResource("8_q6del")]
+position = Vector2(265, 87)
+
+[node name="Ground1Night" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-930, -25)
+
+[node name="Ground1Night6" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-732, -103)
+
+[node name="Ground1Night7" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-543, -165)
+
+[node name="Ground1Night10" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(82, -16)
+
+[node name="Ground1Night8" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-147, -127)
+
+[node name="Ground1Night11" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-147, -127)
+
+[node name="Ground1Night9" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(32, -220)
+
+[node name="HalfSizeGround1Night5" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-102, -331)
+scale = Vector2(0.25, 0.5)
+
+[node name="HalfSizeGround1Night7" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-6, -97)
+scale = Vector2(0.25, 0.5)
+
+[node name="HalfSizeGround1Night6" parent="." instance=ExtResource("9_4yxo3")]
+position = Vector2(-211, -388)
+scale = Vector2(0.25, 0.5)
+
+[node name="long_platform_night2" parent="." instance=ExtResource("10_0ucog")]
+position = Vector2(-365, -40)
+scale = Vector2(0.2, 0.4)
+
+[node name="long_platform_night4" parent="." instance=ExtResource("10_0ucog")]
+position = Vector2(-112, 42)
+scale = Vector2(0.2, 0.4)
+
+[node name="long_platform_night3" parent="." instance=ExtResource("10_0ucog")]
+position = Vector2(-367, -457)
+scale = Vector2(0.2, 0.4)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

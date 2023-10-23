@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
-var moveSpeed : float = 100.0
+var moveSpeed : float = 150.0
 var jumpForce : float = 400.0
 var gravity : float = 600.0
 var grounded : float = true
 var paused : bool = false
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer
+
+func gameOver():
+	Global.music_progress = Music.get_playback_position()
+	get_tree().reload_current_scene()
 	
 func _physics_process(delta):
 	if not paused:
@@ -29,6 +33,8 @@ func _physics_process(delta):
 			var collision = get_slide_collision(i)
 			if collision.get_collider().is_in_group("Platform"):
 				grounded = true
+			if collision.get_collider().is_in_group("Player"):
+				gameOver()
 		
 		updateAnimation()
 	
@@ -44,5 +50,4 @@ func updateAnimation():
 func setPause(isPaused):
 	ap.stop(isPaused)
 	paused = isPaused
-	
 	
