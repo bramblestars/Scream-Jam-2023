@@ -57,6 +57,7 @@ func updateAnimation():
 func respawn():
 	position.x = respawnX
 	position.y = 502
+	velocity.y = 0
 	respawnTimer.start()
 	timerStopped = false
 
