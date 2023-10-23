@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dprs3xj4ko2sf" path="res://Scenes/Object Templates/Floor/fog_cloud_3.tscn" id="4_d57q6"]
 [ext_resource type="PackedScene" uid="uid://ccbfx4qidqsrm" path="res://Scenes/Object Templates/Background/trunk_3_night.tscn" id="5_6cbc3"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="6_4xyi3"]
-[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Scenes/Levels/bg_night.png" id="8_ntw3c"]
+[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="8_ntw3c"]
 [ext_resource type="PackedScene" uid="uid://cedhxnkrmjvbf" path="res://Scenes/Object Templates/Platforms/branch_2_night.tscn" id="14_xvqm8"]
 [ext_resource type="PackedScene" uid="uid://ck1un67nyp7ug" path="res://Scenes/Object Templates/Platforms/branch_1_night_rotated.tscn" id="15_0i05g"]
 [ext_resource type="PackedScene" uid="uid://d0ho02cf6nphd" path="res://Scenes/Object Templates/Platforms/long_platform_night.tscn" id="15_1pl8i"]
@@ -62,8 +62,8 @@ scale = Vector2(2, 2)
 
 [node name="Background1" type="Sprite2D" parent="Background"]
 z_index = -6
-position = Vector2(-255, 1341)
-scale = Vector2(0.658056, 0.701797)
+position = Vector2(226, -637)
+scale = Vector2(0.663457, 0.739399)
 texture = ExtResource("8_ntw3c")
 
 [node name="Platforms" type="Node2D" parent="."]
