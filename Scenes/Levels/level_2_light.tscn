@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dv3kwn43vg33p"]
+[gd_scene load_steps=25 format=3 uid="uid://dv3kwn43vg33p"]
 
 [ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="1_1xhhg"]
 [ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_56coq"]
@@ -21,18 +21,25 @@
 [ext_resource type="PackedScene" uid="uid://cw1vk73drmek3" path="res://Scenes/Object Templates/Platforms/branch_3.tscn" id="18_6o71q"]
 [ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="19_pf1c8"]
 [ext_resource type="Script" path="res://Scripts/CatStopper.gd" id="20_or4gy"]
+[ext_resource type="Script" path="res://Scripts/LevelEnd.gd" id="22_82b3q"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_63qta"]
 a = Vector2(-1, -76)
 b = Vector2(1, 83)
 
-[node name="level_2_light" type="Node2D"]
-script = ExtResource("1_56coq")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aihw4"]
+size = Vector2(255, 281)
 
-[node name="OptionCanvas" parent="." instance=ExtResource("1_x4fh4")]
-textValues = ["That was weird.", "Where am I?", "Skia! Is it really you this time?"]
+[node name="level_2_light" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
+script = ExtResource("1_56coq")
+optionCanvas = NodePath("OptionCanvas")
+
+[node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_x4fh4")]
+player = NodePath("../Player")
+textValues = ["[center]That was weird.[/center]", "[center]Where am I?[/center]", "[center]Skia![/center]"]
 
 [node name="Player" parent="." instance=ExtResource("2_lbdpd")]
+z_index = 2
 position = Vector2(1668, 508)
 
 [node name="Background" type="Node2D" parent="."]
@@ -316,6 +323,7 @@ position = Vector2(1508, 446)
 position = Vector2(1115, 296)
 
 [node name="Bird" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
 position = Vector2(1340, 382)
 
 [node name="SmallPlayformDay2" parent="Platforms" instance=ExtResource("13_8b7ax")]
@@ -331,12 +339,15 @@ position = Vector2(641, 320)
 position = Vector2(791, 439)
 
 [node name="Bird2" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
 position = Vector2(-747, 283)
 
 [node name="Bird3" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
 position = Vector2(-962, 345)
 
 [node name="Bird4" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
 position = Vector2(-635, 346)
 
 [node name="Branch4Day" parent="Platforms" instance=ExtResource("19_pf1c8")]
@@ -369,3 +380,14 @@ collision_mask = 2
 position = Vector2(2517, 107)
 shape = SubResource("SegmentShape2D_63qta")
 script = ExtResource("20_or4gy")
+
+[node name="LevelEnd" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas")]
+position = Vector2(-1726, 490)
+script = ExtResource("22_82b3q")
+optionCanvas = NodePath("../OptionCanvas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(85.5, -54.5)
+shape = SubResource("RectangleShape2D_aihw4")
+
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
