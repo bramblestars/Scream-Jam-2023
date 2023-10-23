@@ -51,15 +51,17 @@ size = Vector2(255, 281)
 position = Vector2(46, -10)
 script = ExtResource("1_vtuc0")
 optionCanvas = NodePath("OptionCanvas")
+nextLevelFilePath = "res://Scenes/Levels/level_1_dark.tscn"
 
 [node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_3ntt0")]
 player = NodePath("../Player")
 textValues = ["[center]Oh no, come back![/center]", "[center]I need to find her![/center]", "[center]There you are! Let's go home.[/center]", "[center]Oh no! What's happening?[/center]"]
 
-[node name="Player" parent="." instance=ExtResource("1_o8kws")]
+[node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("1_o8kws")]
 z_index = 1
 position = Vector2(1316, 486)
 scale = Vector2(1.5, 1.5)
+level = NodePath("..")
 
 [node name="Cat" parent="." instance=ExtResource("9_n8gdn")]
 position = Vector2(1228, 514)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://h1io6wyb81ja"]
+[gd_scene load_steps=20 format=3 uid="uid://dhsees36heeua"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_54kib"]
 [ext_resource type="PackedScene" uid="uid://cnoslhxax0v8h" path="res://Scenes/Object Templates/cat.tscn" id="2_xvupu"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dprs3xj4ko2sf" path="res://Scenes/Object Templates/Floor/fog_cloud_3.tscn" id="4_d57q6"]
 [ext_resource type="PackedScene" uid="uid://ccbfx4qidqsrm" path="res://Scenes/Object Templates/Background/trunk_3_night.tscn" id="5_6cbc3"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="6_4xyi3"]
-[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="8_ntw3c"]
+[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Scenes/Levels/bg_night.png" id="8_ntw3c"]
 [ext_resource type="PackedScene" uid="uid://cedhxnkrmjvbf" path="res://Scenes/Object Templates/Platforms/branch_2_night.tscn" id="14_xvqm8"]
 [ext_resource type="PackedScene" uid="uid://ck1un67nyp7ug" path="res://Scenes/Object Templates/Platforms/branch_1_night_rotated.tscn" id="15_0i05g"]
 [ext_resource type="PackedScene" uid="uid://d0ho02cf6nphd" path="res://Scenes/Object Templates/Platforms/long_platform_night.tscn" id="15_1pl8i"]
@@ -79,12 +79,15 @@ position = Vector2(2778, 553)
 position = Vector2(3242, 551)
 
 [node name="Branch1Night" parent="Platforms" instance=ExtResource("16_mf1v0")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(1062, 557)
 
 [node name="Branch1Night3" parent="Platforms" instance=ExtResource("16_mf1v0")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(2198, -100)
 
 [node name="Branch1Night2" parent="Platforms" instance=ExtResource("16_mf1v0")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(839, -112)
 
 [node name="Branch4Night" parent="Platforms" instance=ExtResource("17_jutqh")]
@@ -94,527 +97,660 @@ position = Vector2(466, 388)
 position = Vector2(962, 203)
 
 [node name="Branch2Night" parent="Platforms" instance=ExtResource("14_xvqm8")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(774, 475)
 
 [node name="Branch2Night2" parent="Platforms" instance=ExtResource("14_xvqm8")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(495, -74)
 
 [node name="Branch2Night3" parent="Platforms" instance=ExtResource("14_xvqm8")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(722, 119)
 
 [node name="Branch2NightRotated" parent="Platforms" instance=ExtResource("15_k8gv5")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(705, 291)
 
 [node name="Branch2NightRotated2" parent="Platforms" instance=ExtResource("15_k8gv5")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(745, -287)
 
 [node name="Branch1NightRotated" parent="Platforms" instance=ExtResource("15_0i05g")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(449, 38)
 
 [node name="Branch1NightRotated2" parent="Platforms" instance=ExtResource("15_0i05g")]
+modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(1740, -144)
 
 [node name="Bird" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(1272, -194)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird5" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2799, -161)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird3" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(1226, -193)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird2" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(1323, -195)
 moveDirection = Vector2(250, 0)
 
 [node name="Bird4" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(1371, -195)
 moveDirection = Vector2(250, 0)
 
 [node name="Bird6" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2542, -151)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird7" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2700, -135)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird8" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2458, -143)
 moveDirection = Vector2(250, 0)
 
 [node name="Bird9" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2567, -187)
 moveDirection = Vector2(250, 0)
 
 [node name="Bird10" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2659, 151)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird11" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2596, 284)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird12" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2626, 451)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird13" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2568, 46)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird21" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2757, 165)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird22" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2707, 293)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird23" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2809, 409)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird24" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2692, 83)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird25" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2734, 106)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird26" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2758, 329)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird27" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2852, 366)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird28" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2601, 128)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird29" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2709, 224)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird30" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2794, 262)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird31" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2663, 390)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird32" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2647, 40)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird33" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2827, 80)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird34" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2764, 213)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird35" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2794, 380)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird36" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2736, -25)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird37" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2935, 96)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird38" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2875, 222)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird39" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2977, 338)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird40" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2860, 12)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird41" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2902, 35)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird42" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2926, 258)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird43" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3020, 295)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird44" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2769, 57)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird45" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2877, 153)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird46" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2962, 191)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird47" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2831, 319)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird49" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2642, 301)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird62" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2547, 146)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird63" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2484, 279)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird64" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2514, 446)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird65" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2456, 41)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird66" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2580, 78)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird67" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2489, 123)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird68" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2551, 385)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird69" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2535, 35)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird70" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2530, 296)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird50" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2753, 310)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird51" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2855, 426)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird52" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2804, 346)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird53" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2898, 383)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird54" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2755, 241)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird55" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2840, 279)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird56" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2709, 407)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird57" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2810, 230)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird71" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2624, 32)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird72" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2561, 165)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird73" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2533, -73)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird74" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2722, 46)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird75" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2672, 174)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird76" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2657, -36)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird77" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2699, -13)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird78" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2723, 210)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird79" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2566, 9)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird80" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2674, 105)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird81" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2759, 143)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird82" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2628, 271)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird83" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2612, -79)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird84" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2729, 94)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird85" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2759, 261)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird86" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2734, -62)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird87" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2607, 182)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird88" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2545, -41)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird89" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2718, 191)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird90" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2769, 227)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird91" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2720, 122)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird93" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3031, 178)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird94" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2968, 311)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird95" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2998, 478)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird96" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2940, 73)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird97" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3079, 320)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird98" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3064, 110)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird99" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2973, 155)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird100" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3081, 251)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird101" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3035, 417)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird102" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3014, 328)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird103" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2919, 173)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird104" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2856, 306)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird105" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2886, 473)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird106" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2952, 105)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird107" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2861, 150)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird108" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2923, 412)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird109" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2902, 323)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird110" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3081, 434)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird111" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2933, 192)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird112" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3094, 73)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird113" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3044, 201)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird114" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3095, 237)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird115" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3046, 132)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird116" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3000, 298)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird117" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2979, 209)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird118" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3090, 218)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird119" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3092, 149)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird92" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2775, 111)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird58" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2840, 397)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird59" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2921, 239)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird60" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2972, 275)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird61" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2877, 336)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird120" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2832, 246)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird121" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2875, 203)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird122" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2817, 217)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird123" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2878, 263)
 moveDirection = Vector2(0, -300)
 
 [node name="Bird124" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2827, 183)
 moveDirection = Vector2(0, 300)
 
 [node name="Bird125" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2863, 234)
 moveDirection = Vector2(-200, -300)
 
 [node name="Bird126" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2900, 173)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird48" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2815, -31)
 moveDirection = Vector2(-200, 300)
 
 [node name="Bird14" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2725, -234)
 moveDirection = Vector2(-250, 50)
 
 [node name="Bird15" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2824, -108)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird16" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2567, -98)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird17" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2725, -82)
 moveDirection = Vector2(-250, 0)
 
 [node name="Bird18" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2483, -90)
 moveDirection = Vector2(250, 0)
 
 [node name="Bird19" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2592, -134)
 moveDirection = Vector2(250, 0)
 
 [node name="Bird20" parent="Platforms" instance=ExtResource("16_u0sb5")]
+modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2750, -181)
 moveDirection = Vector2(-250, 50)
 

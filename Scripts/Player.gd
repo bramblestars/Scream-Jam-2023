@@ -16,6 +16,7 @@ var timerStopped : bool = true
 @onready var canvas : CanvasLayer = get_parent().get_node("OptionCanvas")
 @onready var respawnTimer : Timer = $Timer
 @export var shadowLevel : bool = false
+@export var level : Node2D
 
 var inventory = {}
 
@@ -91,6 +92,7 @@ func _on_jumpscare_animation_animation_finished():
 	elif nextLevel:
 		nextLevel = false
 		paused = false
+		get_tree().change_scene_to_file(level.nextLevelFilePath)
 	else:
 		gameOver()
 
