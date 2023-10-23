@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dv3kwn43vg33p"]
+[gd_scene load_steps=22 format=3 uid="uid://dv3kwn43vg33p"]
 
 [ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="1_1xhhg"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_x4fh4"]
@@ -19,20 +19,19 @@
 [ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="16_7qq4y"]
 [ext_resource type="PackedScene" uid="uid://cw1vk73drmek3" path="res://Scenes/Object Templates/Platforms/branch_3.tscn" id="18_6o71q"]
 [ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="19_pf1c8"]
+[ext_resource type="Script" path="res://Scripts/CatStopper.gd" id="20_or4gy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_63qta"]
+a = Vector2(-1, -76)
+b = Vector2(1, 83)
 
 [node name="level_2_light" type="Node2D"]
 
 [node name="OptionCanvas" parent="." instance=ExtResource("1_x4fh4")]
-visible = false
 textValues = ["That was weird.", "Where am I?", "Skia! Is it really you this time?"]
 
 [node name="Player" parent="." instance=ExtResource("2_lbdpd")]
 position = Vector2(1668, 508)
-
-[node name="Cat" parent="." instance=ExtResource("3_nx1u7")]
-position = Vector2(-1687, 529)
-rotation = 3.14159
-scale = Vector2(0.1, -0.1)
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -280,20 +279,28 @@ position = Vector2(-4301.5, 515)
 z_index = -1
 position = Vector2(-4423.5, 514)
 
-[node name="RespawnPoint" parent="Spikes" instance=ExtResource("12_tdads")]
+[node name="RespawnPoints" type="Node2D" parent="Spikes"]
+
+[node name="RespawnPoint" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
 position = Vector2(1198, 20)
 
-[node name="RespawnPoint2" parent="Spikes" instance=ExtResource("12_tdads")]
+[node name="RespawnPoint2" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
 position = Vector2(880, 18)
 
-[node name="RespawnPoint3" parent="Spikes" instance=ExtResource("12_tdads")]
+[node name="RespawnPoint3" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
 position = Vector2(679, 16)
 
-[node name="RespawnPoint4" parent="Spikes" instance=ExtResource("12_tdads")]
+[node name="RespawnPoint4" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
 position = Vector2(-484, 25)
 
-[node name="RespawnPoint5" parent="Spikes" instance=ExtResource("12_tdads")]
+[node name="RespawnPoint5" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
 position = Vector2(-9, 300)
+
+[node name="RespawnPoint6" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(-1296, 29)
+
+[node name="RespawnPoint7" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(-1773, 3)
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -346,3 +353,17 @@ position = Vector2(-606, 445)
 
 [node name="Branch4Day3" parent="Platforms" instance=ExtResource("19_pf1c8")]
 position = Vector2(409, 429)
+
+[node name="Cat" parent="." instance=ExtResource("3_nx1u7")]
+position = Vector2(-1644, 522)
+scale = Vector2(0.1, 0.1)
+
+[node name="CatStopper" type="StaticBody2D" parent="."]
+position = Vector2(-4254, 354)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatStopper"]
+position = Vector2(2517, 107)
+shape = SubResource("SegmentShape2D_63qta")
+script = ExtResource("20_or4gy")

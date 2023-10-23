@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bo7ion2s0brn4"]
+[gd_scene load_steps=36 format=3 uid="uid://bo7ion2s0brn4"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_o8kws"]
 [ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_vtuc0"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dunrnh61jc7rw" path="res://Scenes/Object Templates/Background/trunk_3.tscn" id="9_1eww8"]
 [ext_resource type="PackedScene" uid="uid://cnoslhxax0v8h" path="res://Scenes/Object Templates/cat.tscn" id="9_n8gdn"]
 [ext_resource type="PackedScene" uid="uid://bsouwlt160kfj" path="res://Scenes/Object Templates/Platforms/branch_1.tscn" id="12_tb0xv"]
-[ext_resource type="Script" path="res://Scripts/Spike.gd" id="13_6psbr"]
 [ext_resource type="PackedScene" uid="uid://nwqp2i8dgv8g" path="res://Scenes/Object Templates/Platforms/small_platform.tscn" id="14_qthfj"]
 [ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="15_3lnwr"]
 [ext_resource type="PackedScene" uid="uid://dv5ppksvapw64" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="16_14fog"]
@@ -190,27 +189,22 @@ position = Vector2(2034, 505)
 [node name="RightSpike3" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2268, 504)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike4" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2374, 507)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike5" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2374, 507)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike6" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2157, 504)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike7" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(1913, 502)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike8" parent="Spikes" instance=ExtResource("6_g3bv6")]
 z_index = -1
@@ -223,27 +217,22 @@ position = Vector2(-1975, 515)
 [node name="LeftSpike10" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1741, 514)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike11" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1635, 517)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike12" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1635, 517)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike13" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1852, 514)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike14" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-2096, 512)
-script = ExtResource("13_6psbr")
 
 [node name="MiddleSpike1" parent="Spikes" instance=ExtResource("6_g3bv6")]
 z_index = -1
