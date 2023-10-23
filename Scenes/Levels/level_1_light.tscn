@@ -46,14 +46,15 @@ size = Vector2(332, 310)
 size = Vector2(280, 249)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndq8t"]
-size = Vector2(229, 130)
+size = Vector2(255, 281)
 
 [node name="level_1_light" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
 position = Vector2(46, -10)
 script = ExtResource("1_vtuc0")
 optionCanvas = NodePath("OptionCanvas")
 
-[node name="OptionCanvas" parent="." instance=ExtResource("2_3ntt0")]
+[node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_3ntt0")]
+player = NodePath("../Player")
 textValues = ["[center]Oh no, come back![/center]", "[center]I need to find her![/center]", "[center]There you are! Let's go home.[/center]", "[center]Oh no! What's happening?[/center]"]
 
 [node name="Player" parent="." instance=ExtResource("1_o8kws")]
@@ -383,7 +384,7 @@ script = ExtResource("31_wo5f7")
 optionCanvas = NodePath("../OptionCanvas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
-position = Vector2(72.5, 21)
+position = Vector2(85.5, -54.5)
 shape = SubResource("RectangleShape2D_ndq8t")
 
 [connection signal="body_entered" from="Instructions/MoveInstructionsArea" to="Instructions/MoveInstructionsArea" method="_on_body_entered"]
