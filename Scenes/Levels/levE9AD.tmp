@@ -1,0 +1,396 @@
+[gd_scene load_steps=37 format=3 uid="uid://bo7ion2s0brn4"]
+
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_o8kws"]
+[ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_vtuc0"]
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_3ntt0"]
+[ext_resource type="Texture2D" uid="uid://dl3piweeqbjbf" path="res://Sprites/Setting/bg_day.png" id="2_wf6j1"]
+[ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="3_lmtun"]
+[ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="4_8w2h4"]
+[ext_resource type="PackedScene" uid="uid://fsegp5dnwqlc" path="res://Scenes/Object Templates/Background/cottage_day.tscn" id="5_0cjyp"]
+[ext_resource type="PackedScene" uid="uid://d2yh7c2c3hnc3" path="res://Scenes/Object Templates/Obstacles/spike_1.tscn" id="6_g3bv6"]
+[ext_resource type="PackedScene" uid="uid://dedyjchea0vih" path="res://Scenes/Object Templates/Background/trunk_1.tscn" id="7_cxnl6"]
+[ext_resource type="PackedScene" uid="uid://t8x4ixo1woab" path="res://Scenes/Object Templates/Obstacles/spike_2.tscn" id="7_fvy7y"]
+[ext_resource type="PackedScene" uid="uid://cyjldj78whpfg" path="res://Scenes/Object Templates/Background/trunk_2.tscn" id="8_022h6"]
+[ext_resource type="PackedScene" uid="uid://dunrnh61jc7rw" path="res://Scenes/Object Templates/Background/trunk_3.tscn" id="9_1eww8"]
+[ext_resource type="PackedScene" uid="uid://cnoslhxax0v8h" path="res://Scenes/Object Templates/cat.tscn" id="9_n8gdn"]
+[ext_resource type="PackedScene" uid="uid://bsouwlt160kfj" path="res://Scenes/Object Templates/Platforms/branch_1.tscn" id="12_tb0xv"]
+[ext_resource type="Script" path="res://Scripts/Spike.gd" id="13_6psbr"]
+[ext_resource type="PackedScene" uid="uid://nwqp2i8dgv8g" path="res://Scenes/Object Templates/Platforms/small_platform.tscn" id="14_qthfj"]
+[ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="15_3lnwr"]
+[ext_resource type="PackedScene" uid="uid://dv5ppksvapw64" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="16_14fog"]
+[ext_resource type="PackedScene" uid="uid://cw1vk73drmek3" path="res://Scenes/Object Templates/Platforms/branch_3.tscn" id="16_kgrua"]
+[ext_resource type="PackedScene" uid="uid://b23wobrrg5fsv" path="res://Scenes/Object Templates/Platforms/medium_platform.tscn" id="18_h1msg"]
+[ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="19_pcqiu"]
+[ext_resource type="PackedScene" uid="uid://cs3tlqkso7g41" path="res://Scenes/Object Templates/Platforms/branch_2_rotated.tscn" id="20_g3kqg"]
+[ext_resource type="Script" path="res://Scripts/CatStopper.gd" id="21_cgql3"]
+[ext_resource type="PackedScene" uid="uid://chbbxyu4h8jc6" path="res://Scenes/Object Templates/respawn_point.tscn" id="23_jwwra"]
+[ext_resource type="Script" path="res://Scripts/Instructions/MoveInstructionsArea.gd" id="25_csxcu"]
+[ext_resource type="Texture2D" uid="uid://c6y647m18cimy" path="res://Sprites/UI/move_instructions.png" id="26_b8888"]
+[ext_resource type="Script" path="res://Scripts/Instructions/JumpInstructions.gd" id="26_nhhyt"]
+[ext_resource type="Script" path="res://Scripts/Instructions/CrowInstructions.gd" id="27_brkwd"]
+[ext_resource type="Texture2D" uid="uid://bpfgn1cqqd4dh" path="res://Sprites/UI/jump_instructions.png" id="27_prc7f"]
+[ext_resource type="Texture2D" uid="uid://chuohccolqsjo" path="res://Sprites/UI/crow_instructions.png" id="29_nhjqp"]
+[ext_resource type="Script" path="res://Scripts/LevelEnd.gd" id="31_wo5f7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_01doq"]
+a = Vector2(-1, -76)
+b = Vector2(1, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf7hw"]
+size = Vector2(339.75, 319)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyust"]
+size = Vector2(332, 310)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2xuw"]
+size = Vector2(280, 249)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndq8t"]
+size = Vector2(229, 130)
+
+[node name="level_1_light" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
+position = Vector2(46, -10)
+script = ExtResource("1_vtuc0")
+optionCanvas = NodePath("OptionCanvas")
+
+[node name="OptionCanvas" parent="." instance=ExtResource("2_3ntt0")]
+textValues = ["[center]Oh no, come back![/center]", "[center]I need to find her![/center]", "[center]There you are! Let's go home.[/center]", "[center]Oh no! What's happening?[/center]"]
+dialogueStopValues = null
+
+[node name="Player" parent="." instance=ExtResource("1_o8kws")]
+z_index = 1
+position = Vector2(1316, 486)
+scale = Vector2(1.5, 1.5)
+
+[node name="Cat" parent="." instance=ExtResource("9_n8gdn")]
+position = Vector2(1228, 514)
+scale = Vector2(0.1, 0.1)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Background"]
+modulate = Color(0.776471, 0.87451, 1, 1)
+z_index = -100
+position = Vector2(-760, 246)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_wf6j1")
+
+[node name="Background2" type="Sprite2D" parent="Background"]
+modulate = Color(0.776471, 0.87451, 1, 1)
+z_index = -100
+position = Vector2(2034, 235)
+scale = Vector2(-0.4, 0.4)
+texture = ExtResource("2_wf6j1")
+
+[node name="Ground" type="Node2D" parent="Background"]
+position = Vector2(316, 20)
+
+[node name="Ground" parent="Background/Ground" instance=ExtResource("3_lmtun")]
+position = Vector2(1476, 332)
+
+[node name="Ground2" parent="Background/Ground" instance=ExtResource("3_lmtun")]
+position = Vector2(2246, 333)
+
+[node name="Ground3" parent="Background/Ground" instance=ExtResource("3_lmtun")]
+position = Vector2(699, 334)
+
+[node name="Ground4" parent="Background/Ground" instance=ExtResource("3_lmtun")]
+position = Vector2(-72, 338)
+
+[node name="Ground5" parent="Background/Ground" instance=ExtResource("3_lmtun")]
+position = Vector2(-849, 346)
+
+[node name="Ground6" parent="Background/Ground" instance=ExtResource("3_lmtun")]
+position = Vector2(-1629, 345)
+
+[node name="GroundGrass" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(2053, 600)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass2" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(1616, 597)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass3" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(1187, 595)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass4" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(755, 596)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass5" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(329, 597)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass6" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(-104, 597)
+rotation = -0.0244444
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass7" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(-531, 603)
+rotation = -0.0244444
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass8" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(-969, 608)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass9" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(-1394, 605)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass10" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(-1824, 604)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass11" parent="Background/Ground" instance=ExtResource("4_8w2h4")]
+z_index = 3
+position = Vector2(-2219, 601)
+scale = Vector2(1, 0.8)
+
+[node name="CottageDay" parent="Background" instance=ExtResource("5_0cjyp")]
+position = Vector2(1382, 402)
+
+[node name="TreeTrunks" type="Node2D" parent="Background"]
+
+[node name="Trunk1Day" parent="Background/TreeTrunks" instance=ExtResource("7_cxnl6")]
+z_index = -2
+position = Vector2(567, 359)
+
+[node name="Trunk2Day" parent="Background/TreeTrunks" instance=ExtResource("8_022h6")]
+z_index = -2
+position = Vector2(22, 301)
+
+[node name="Trunk3" parent="Background/TreeTrunks" instance=ExtResource("9_1eww8")]
+z_index = -2
+position = Vector2(-520, 324)
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="RightSpike" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(1800, 505)
+
+[node name="RightSpike2" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(2034, 505)
+
+[node name="RightSpike3" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(2268, 504)
+script = ExtResource("13_6psbr")
+
+[node name="RightSpike4" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(2374, 507)
+script = ExtResource("13_6psbr")
+
+[node name="RightSpike5" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(2374, 507)
+script = ExtResource("13_6psbr")
+
+[node name="RightSpike6" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(2157, 504)
+script = ExtResource("13_6psbr")
+
+[node name="RightSpike7" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(1913, 502)
+script = ExtResource("13_6psbr")
+
+[node name="LeftSpike8" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(-2209, 515)
+
+[node name="LeftSpike9" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(-1975, 515)
+
+[node name="LeftSpike10" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(-1741, 514)
+script = ExtResource("13_6psbr")
+
+[node name="LeftSpike11" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(-1635, 517)
+script = ExtResource("13_6psbr")
+
+[node name="LeftSpike12" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(-1635, 517)
+script = ExtResource("13_6psbr")
+
+[node name="LeftSpike13" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(-1852, 514)
+script = ExtResource("13_6psbr")
+
+[node name="LeftSpike14" parent="Spikes" instance=ExtResource("7_fvy7y")]
+z_index = -1
+position = Vector2(-2096, 512)
+script = ExtResource("13_6psbr")
+
+[node name="MiddleSpike1" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(218, 517)
+
+[node name="MiddleSpike2" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(90, 517)
+
+[node name="MiddleSpike3" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(-766, 516)
+
+[node name="MiddleSpike4" parent="Spikes" instance=ExtResource("6_g3bv6")]
+z_index = -1
+position = Vector2(-894, 516)
+
+[node name="Platforms" type="Node2D" parent="."]
+position = Vector2(-523, 293)
+
+[node name="Branch1Day" parent="Platforms" instance=ExtResource("12_tb0xv")]
+position = Vector2(1128, 30)
+
+[node name="SmallPlayformDay" parent="Platforms" instance=ExtResource("14_qthfj")]
+modulate = Color(0.886275, 1, 0.823529, 1)
+position = Vector2(1360, 138)
+
+[node name="MediumPlatformDay" parent="Platforms" instance=ExtResource("18_h1msg")]
+modulate = Color(0.886275, 1, 0.823529, 1)
+position = Vector2(413, 121)
+
+[node name="MediumPlatformDay2" parent="Platforms" instance=ExtResource("18_h1msg")]
+modulate = Color(0.886275, 1, 0.823529, 1)
+position = Vector2(-399, 100)
+
+[node name="SmallPlayformDay2" parent="Platforms" instance=ExtResource("14_qthfj")]
+modulate = Color(0.886275, 1, 0.823529, 1)
+position = Vector2(264, 182)
+
+[node name="SmallPlayformDay3" parent="Platforms" instance=ExtResource("14_qthfj")]
+modulate = Color(0.886275, 1, 0.823529, 1)
+position = Vector2(-614, 164)
+
+[node name="Branch2Day" parent="Platforms" instance=ExtResource("15_3lnwr")]
+position = Vector2(901, -20)
+
+[node name="Branch3Day" parent="Platforms" instance=ExtResource("16_kgrua")]
+position = Vector2(641, 2)
+
+[node name="Bird" parent="Platforms" instance=ExtResource("16_14fog")]
+z_index = 3
+position = Vector2(408, -74)
+scale = Vector2(2, 2)
+moveSpeed = 80.0
+
+[node name="Branch4Day" parent="Platforms" instance=ExtResource("19_pcqiu")]
+position = Vector2(-112, 69)
+
+[node name="Branch2Rotated" parent="Platforms" instance=ExtResource("20_g3kqg")]
+position = Vector2(61, 20)
+
+[node name="CatStopper" type="StaticBody2D" parent="."]
+position = Vector2(-4055, 364)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatStopper"]
+position = Vector2(2517, 107)
+shape = SubResource("SegmentShape2D_01doq")
+script = ExtResource("21_cgql3")
+
+[node name="SpikeRespawnPoints" type="Node2D" parent="."]
+
+[node name="RespawnPoint6" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
+position = Vector2(1679, -2)
+
+[node name="RespawnPoint" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
+position = Vector2(364, -15)
+
+[node name="RespawnPoint2" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
+position = Vector2(-46, 305)
+
+[node name="RespawnPoint3" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
+position = Vector2(-661, 6)
+
+[node name="RespawnPoint4" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
+position = Vector2(-1039, 6)
+
+[node name="RespawnPoint5" parent="SpikeRespawnPoints" instance=ExtResource("23_jwwra")]
+position = Vector2(-1535, 6)
+
+[node name="Instructions" type="Node2D" parent="."]
+
+[node name="MoveInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("moveInstructions")]
+position = Vector2(1204, 400)
+script = ExtResource("25_csxcu")
+moveInstructions = NodePath("../Instructions/MoveInstructions")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/MoveInstructionsArea"]
+position = Vector2(129.25, 45.5)
+shape = SubResource("RectangleShape2D_pf7hw")
+
+[node name="JumpInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("jumpInstructions")]
+position = Vector2(1204, 400)
+script = ExtResource("26_nhhyt")
+jumpInstructions = NodePath("../Instructions/JumpInstructions")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/JumpInstructionsArea"]
+position = Vector2(-229, 42)
+shape = SubResource("RectangleShape2D_dyust")
+
+[node name="CrowInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("crowInstructions")]
+script = ExtResource("27_brkwd")
+crowInstructions = NodePath("../Instructions/CrowInstructions")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/CrowInstructionsArea"]
+position = Vector2(130, 210.5)
+shape = SubResource("RectangleShape2D_o2xuw")
+
+[node name="Instructions" type="CanvasLayer" parent="Instructions"]
+
+[node name="MoveInstructions" type="Sprite2D" parent="Instructions/Instructions"]
+position = Vector2(322, 127)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("26_b8888")
+
+[node name="JumpInstructions" type="Sprite2D" parent="Instructions/Instructions"]
+position = Vector2(306, 135)
+texture = ExtResource("27_prc7f")
+
+[node name="CrowInstructions" type="Sprite2D" parent="Instructions/Instructions"]
+position = Vector2(340, 150)
+texture = ExtResource("29_nhjqp")
+
+[node name="LevelEnd" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas")]
+position = Vector2(-1516, 478)
+script = ExtResource("31_wo5f7")
+optionCanvas = NodePath("../OptionCanvas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(72.5, 21)
+shape = SubResource("RectangleShape2D_ndq8t")
+
+[connection signal="body_entered" from="Instructions/MoveInstructionsArea" to="Instructions/MoveInstructionsArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Instructions/MoveInstructionsArea" to="Instructions/MoveInstructionsArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Instructions/JumpInstructionsArea" to="Instructions/JumpInstructionsArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Instructions/JumpInstructionsArea" to="Instructions/JumpInstructionsArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Instructions/CrowInstructionsArea" to="Instructions/CrowInstructionsArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Instructions/CrowInstructionsArea" to="Instructions/CrowInstructionsArea" method="_on_body_exited"]
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]

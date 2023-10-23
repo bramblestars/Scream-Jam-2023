@@ -4,6 +4,7 @@ var moveSpeed : float = 150.0
 var jumpForce : float = 400.0
 var gravity : float = 600.0
 var hitSpikes : bool = false
+var nextLevel : bool = false
 var paused : bool = false
 var timerStopped : bool = true
 
@@ -15,6 +16,8 @@ var timerStopped : bool = true
 @onready var canvas : CanvasLayer = get_parent().get_node("OptionCanvas")
 @onready var respawnTimer : Timer = $Timer
 @export var shadowLevel : bool = false
+@export var level : Node2D
+@export var extraMusic : AudioStreamPlayer2D
 
 var inventory = {}
 
@@ -56,11 +59,14 @@ func updateAnimation():
 func respawn():
 	position.x = respawnX
 	position.y = 502
+	velocity.y = 0
 	respawnTimer.start()
 	timerStopped = false
 
 func gameOver():
 	Global.music_progress = Music.get_playback_position()
+	if shadowLevel:
+		Global.dark_music_progress = extraMusic.get_playback_position()
 	get_tree().reload_current_scene()
 	
 func addObject(item):
@@ -86,6 +92,10 @@ func _on_jumpscare_animation_animation_finished():
 		paused = false
 		respawn()
 		jumpScareAnim.hide()
+	elif nextLevel:
+		nextLevel = false
+		paused = false
+		get_tree().change_scene_to_file(level.nextLevelFilePath)
 	else:
 		gameOver()
 

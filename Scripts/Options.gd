@@ -7,12 +7,14 @@ extends CanvasLayer
 @onready var textLabel = get_node("DialogueMenu/Panel/Label")
 
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
+@export var player : CharacterBody2D
 @export_file("*.tscn") var mainMenu
 
 var hidden : bool = false
 var dialogue : bool = false
 var dialogueIndex : int = 0
 @export var textValues : Array = ["Hi", "Bye", "See"]
+@export var dialogueStopValues : Array = [2]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	optionMenu.hide()
@@ -40,10 +42,14 @@ func _process(delta):
 		if dialogue:
 			if Input.is_action_just_released("interact"):
 				dialogueIndex += 1
-				if dialogueIndex >= textValues.size():
+				print(dialogueIndex)
+				if dialogueIndex in dialogueStopValues:
 					dialogueMode(false)
-				else:
-					textLabel.text = textValues[dialogueIndex]
+			if dialogueIndex < textValues.size():
+				textLabel.text = textValues[dialogueIndex]
+			else:
+				player.jumpScare()
+				
 
 func setPauseValue(pause):
 	for chr in movingObject: 
@@ -55,6 +61,7 @@ func dialogueMode(dialogueOn):
 		dialogueMenu.show()	
 	else:
 		dialogueMenu.hide()
+
 
 func _on_continue_pressed():
 	for chr in movingObject:

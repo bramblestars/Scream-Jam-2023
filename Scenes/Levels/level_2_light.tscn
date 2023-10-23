@@ -1,0 +1,393 @@
+[gd_scene load_steps=25 format=3 uid="uid://dv3kwn43vg33p"]
+
+[ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="1_1xhhg"]
+[ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_56coq"]
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_x4fh4"]
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="2_lbdpd"]
+[ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="2_x4moa"]
+[ext_resource type="PackedScene" uid="uid://cnoslhxax0v8h" path="res://Scenes/Object Templates/cat.tscn" id="3_nx1u7"]
+[ext_resource type="Texture2D" uid="uid://dl3piweeqbjbf" path="res://Sprites/Setting/bg_day.png" id="3_v3fjd"]
+[ext_resource type="PackedScene" uid="uid://d2yh7c2c3hnc3" path="res://Scenes/Object Templates/Obstacles/spike_1.tscn" id="4_nk5fn"]
+[ext_resource type="PackedScene" uid="uid://t8x4ixo1woab" path="res://Scenes/Object Templates/Obstacles/spike_2.tscn" id="5_p4jm1"]
+[ext_resource type="PackedScene" uid="uid://cyjldj78whpfg" path="res://Scenes/Object Templates/Background/trunk_2.tscn" id="6_qdwwv"]
+[ext_resource type="PackedScene" uid="uid://dunrnh61jc7rw" path="res://Scenes/Object Templates/Background/trunk_3.tscn" id="7_0clbs"]
+[ext_resource type="PackedScene" uid="uid://dedyjchea0vih" path="res://Scenes/Object Templates/Background/trunk_1.tscn" id="9_lekpl"]
+[ext_resource type="PackedScene" uid="uid://dn70hb0rpvhwh" path="res://Scenes/Object Templates/Platforms/long_platform.tscn" id="12_kohol"]
+[ext_resource type="PackedScene" uid="uid://chbbxyu4h8jc6" path="res://Scenes/Object Templates/respawn_point.tscn" id="12_tdads"]
+[ext_resource type="PackedScene" uid="uid://nwqp2i8dgv8g" path="res://Scenes/Object Templates/Platforms/small_platform.tscn" id="13_8b7ax"]
+[ext_resource type="PackedScene" uid="uid://cs3tlqkso7g41" path="res://Scenes/Object Templates/Platforms/branch_2_rotated.tscn" id="15_3nyfp"]
+[ext_resource type="PackedScene" uid="uid://dv5ppksvapw64" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="15_y7bh7"]
+[ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="16_7qq4y"]
+[ext_resource type="PackedScene" uid="uid://cw1vk73drmek3" path="res://Scenes/Object Templates/Platforms/branch_3.tscn" id="18_6o71q"]
+[ext_resource type="PackedScene" uid="uid://keiovxqjopak" path="res://Scenes/Object Templates/Platforms/branch_4.tscn" id="19_pf1c8"]
+[ext_resource type="Script" path="res://Scripts/CatStopper.gd" id="20_or4gy"]
+[ext_resource type="Script" path="res://Scripts/LevelEnd.gd" id="22_82b3q"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_63qta"]
+a = Vector2(-1, -76)
+b = Vector2(1, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aihw4"]
+size = Vector2(255, 281)
+
+[node name="level_2_light" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
+script = ExtResource("1_56coq")
+optionCanvas = NodePath("OptionCanvas")
+
+[node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_x4fh4")]
+player = NodePath("../Player")
+textValues = ["[center]That was weird.[/center]", "[center]Where am I?[/center]", "[center]Skia![/center]"]
+
+[node name="Player" parent="." instance=ExtResource("2_lbdpd")]
+z_index = 2
+position = Vector2(1668, 508)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Ground" type="Node2D" parent="Background"]
+position = Vector2(316, 20)
+
+[node name="Ground" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(1476, 332)
+
+[node name="Ground2" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(2246, 333)
+
+[node name="Ground3" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(699, 334)
+
+[node name="Ground4" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-72, 338)
+
+[node name="Ground5" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-849, 346)
+
+[node name="Ground6" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-1629, 345)
+
+[node name="GroundGrass" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(2053, 600)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass2" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(1616, 597)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass3" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(1187, 595)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass4" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(755, 596)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass5" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(329, 597)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass6" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-104, 597)
+rotation = -0.0244444
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass7" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-531, 603)
+rotation = -0.0244444
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass8" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-969, 608)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass9" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-1394, 605)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass10" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-1824, 604)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass11" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-2219, 601)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass12" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-2638, 590.2)
+scale = Vector2(1, 0.64)
+
+[node name="GroundGrass13" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-3068, 589.4)
+scale = Vector2(1, 0.64)
+
+[node name="GroundGrass14" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-3463, 587)
+scale = Vector2(1, 0.64)
+
+[node name="GroundGrass15" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-3879, 563)
+scale = Vector2(1, 0.4096)
+
+[node name="GroundGrass16" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-4313, 564)
+scale = Vector2(1, 0.4096)
+
+[node name="TreeTrunks" type="Node2D" parent="Background"]
+
+[node name="Trunk1Day" parent="Background/TreeTrunks" instance=ExtResource("9_lekpl")]
+position = Vector2(1148, 359)
+
+[node name="Trunk2Day" parent="Background/TreeTrunks" instance=ExtResource("6_qdwwv")]
+position = Vector2(538, 308)
+
+[node name="Trunk3" parent="Background/TreeTrunks" instance=ExtResource("7_0clbs")]
+position = Vector2(-536, 323)
+
+[node name="Trunk2Day2" parent="Background/TreeTrunks" instance=ExtResource("6_qdwwv")]
+position = Vector2(-1137, 310)
+
+[node name="Background" type="Sprite2D" parent="Background"]
+modulate = Color(0.776471, 0.87451, 1, 1)
+z_index = -100
+position = Vector2(-1077, 246)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_v3fjd")
+
+[node name="Background2" type="Sprite2D" parent="Background"]
+modulate = Color(0.776471, 0.87451, 1, 1)
+z_index = -100
+position = Vector2(1717, 235)
+rotation = 3.14159
+scale = Vector2(0.4, -0.4)
+texture = ExtResource("3_v3fjd")
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="RightBoundary" type="Node2D" parent="Spikes"]
+
+[node name="RightSpike" parent="Spikes/RightBoundary" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(1801, 517)
+
+[node name="RightSpike2" parent="Spikes/RightBoundary" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(2035, 517)
+
+[node name="RightSpike3" parent="Spikes/RightBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2269, 516)
+
+[node name="RightSpike4" parent="Spikes/RightBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2375, 519)
+
+[node name="RightSpike5" parent="Spikes/RightBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2375, 519)
+
+[node name="RightSpike6" parent="Spikes/RightBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2158, 516)
+
+[node name="RightSpike7" parent="Spikes/RightBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(1914, 514)
+
+[node name="Group1" type="Node2D" parent="Spikes"]
+position = Vector2(-3, 8)
+
+[node name="Spike1Type" parent="Spikes/Group1" instance=ExtResource("4_nk5fn")]
+position = Vector2(983, 497)
+
+[node name="Spike2Type" parent="Spikes/Group1" instance=ExtResource("5_p4jm1")]
+position = Vector2(1104, 502)
+
+[node name="Spike1Type" parent="Spikes" instance=ExtResource("4_nk5fn")]
+position = Vector2(-30, 210)
+scale = Vector2(0.4, 0.4)
+
+[node name="Group2" type="Node2D" parent="Spikes"]
+position = Vector2(-511, 8)
+
+[node name="Spike1Type" parent="Spikes/Group2" instance=ExtResource("4_nk5fn")]
+position = Vector2(983, 497)
+
+[node name="Spike2Type" parent="Spikes/Group2" instance=ExtResource("5_p4jm1")]
+position = Vector2(1104, 502)
+
+[node name="Group3" type="Node2D" parent="Spikes"]
+position = Vector2(-1319, 24)
+
+[node name="Spike1Type" parent="Spikes/Group3" instance=ExtResource("4_nk5fn")]
+position = Vector2(983, 497)
+
+[node name="Spike2Type" parent="Spikes/Group3" instance=ExtResource("5_p4jm1")]
+position = Vector2(1104, 502)
+
+[node name="Group4" type="Node2D" parent="Spikes"]
+position = Vector2(-1928, 24)
+
+[node name="Spike1Type" parent="Spikes/Group4" instance=ExtResource("4_nk5fn")]
+position = Vector2(983, 497)
+
+[node name="Spike2Type" parent="Spikes/Group4" instance=ExtResource("5_p4jm1")]
+position = Vector2(1104, 502)
+
+[node name="Spike2Type2" parent="Spikes/Group4" instance=ExtResource("5_p4jm1")]
+position = Vector2(753, 493)
+
+[node name="Spike1Type2" parent="Spikes/Group4" instance=ExtResource("4_nk5fn")]
+position = Vector2(1217, 500)
+
+[node name="Spike1Type3" parent="Spikes/Group4" instance=ExtResource("4_nk5fn")]
+position = Vector2(860, 495)
+
+[node name="LeftBoundary" type="Node2D" parent="Spikes"]
+position = Vector2(2299, 0)
+
+[node name="LeftSpike" parent="Spikes/LeftBoundary" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(-4480, 515.5)
+
+[node name="LeftSpike2" parent="Spikes/LeftBoundary" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(-4363, 515.5)
+
+[node name="LeftSpike3" parent="Spikes/LeftBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4246, 515)
+
+[node name="LeftSpike4" parent="Spikes/LeftBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4193, 516.5)
+
+[node name="LeftSpike5" parent="Spikes/LeftBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4193, 516.5)
+
+[node name="LeftSpike6" parent="Spikes/LeftBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4301.5, 515)
+
+[node name="LeftSpike7" parent="Spikes/LeftBoundary" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4423.5, 514)
+
+[node name="RespawnPoints" type="Node2D" parent="Spikes"]
+
+[node name="RespawnPoint" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(1198, 20)
+
+[node name="RespawnPoint2" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(880, 18)
+
+[node name="RespawnPoint3" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(679, 16)
+
+[node name="RespawnPoint4" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(-484, 25)
+
+[node name="RespawnPoint5" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(-9, 300)
+
+[node name="RespawnPoint6" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(-1296, 29)
+
+[node name="RespawnPoint7" parent="Spikes/RespawnPoints" instance=ExtResource("12_tdads")]
+position = Vector2(-1773, 3)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="LongPlatform" parent="Platforms" instance=ExtResource("12_kohol")]
+position = Vector2(-20, 258)
+
+[node name="SmallPlayformDay" parent="Platforms" instance=ExtResource("13_8b7ax")]
+position = Vector2(1508, 446)
+
+[node name="Branch2Rotated" parent="Platforms" instance=ExtResource("15_3nyfp")]
+position = Vector2(1115, 296)
+
+[node name="Bird" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
+position = Vector2(1340, 382)
+
+[node name="SmallPlayformDay2" parent="Platforms" instance=ExtResource("13_8b7ax")]
+position = Vector2(376, 291)
+
+[node name="Branch2Day" parent="Platforms" instance=ExtResource("16_7qq4y")]
+position = Vector2(945, 342)
+
+[node name="Branch3Day" parent="Platforms" instance=ExtResource("18_6o71q")]
+position = Vector2(641, 320)
+
+[node name="SmallPlayformDay3" parent="Platforms" instance=ExtResource("13_8b7ax")]
+position = Vector2(791, 439)
+
+[node name="Bird2" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
+position = Vector2(-747, 283)
+
+[node name="Bird3" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
+position = Vector2(-962, 345)
+
+[node name="Bird4" parent="Platforms" instance=ExtResource("15_y7bh7")]
+z_index = 10
+position = Vector2(-635, 346)
+
+[node name="Branch4Day" parent="Platforms" instance=ExtResource("19_pf1c8")]
+position = Vector2(-438, 343)
+rotation = 3.14159
+scale = Vector2(0.5, -0.5)
+
+[node name="Branch3Day2" parent="Platforms" instance=ExtResource("18_6o71q")]
+position = Vector2(-1057, 276)
+
+[node name="Branch4Day2" parent="Platforms" instance=ExtResource("19_pf1c8")]
+position = Vector2(-1265, 361)
+
+[node name="Branch2Day2" parent="Platforms" instance=ExtResource("16_7qq4y")]
+position = Vector2(-606, 445)
+
+[node name="Branch4Day3" parent="Platforms" instance=ExtResource("19_pf1c8")]
+position = Vector2(409, 429)
+
+[node name="Cat" parent="." instance=ExtResource("3_nx1u7")]
+position = Vector2(-1644, 522)
+scale = Vector2(0.1, 0.1)
+
+[node name="CatStopper" type="StaticBody2D" parent="."]
+position = Vector2(-4254, 354)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatStopper"]
+position = Vector2(2517, 107)
+shape = SubResource("SegmentShape2D_63qta")
+script = ExtResource("20_or4gy")
+
+[node name="LevelEnd" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas")]
+position = Vector2(-1726, 490)
+script = ExtResource("22_82b3q")
+optionCanvas = NodePath("../OptionCanvas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(85.5, -54.5)
+shape = SubResource("RectangleShape2D_aihw4")
+
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]

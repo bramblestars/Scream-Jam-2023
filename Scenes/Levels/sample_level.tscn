@@ -13,10 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://cyjldj78whpfg" path="res://Scenes/Object Templates/Background/trunk_2.tscn" id="10_w2qe7"]
 [ext_resource type="Texture2D" uid="uid://donjatwafa8qs" path="res://Sprites/Setting/ground.png" id="10_xf4p1"]
 [ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="11_4eo20"]
-[ext_resource type="PackedScene" path="res://Scenes/Object Templates/end_flag.tscn" id="11_b4j4c"]
+[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="11_b4j4c"]
 [ext_resource type="PackedScene" uid="uid://fsegp5dnwqlc" path="res://Scenes/Object Templates/Background/cottage_day.tscn" id="12_lxejg"]
 [ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="15_e7i0g"]
-[ext_resource type="Texture2D" path="res://Sprites/Setting/bg_night.png" id="17_got05"]
+[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="17_got05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8hpl"]
 size = Vector2(2191.67, 320)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bo7ion2s0brn4"]
+[gd_scene load_steps=36 format=3 uid="uid://bo7ion2s0brn4"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_o8kws"]
 [ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_vtuc0"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dunrnh61jc7rw" path="res://Scenes/Object Templates/Background/trunk_3.tscn" id="9_1eww8"]
 [ext_resource type="PackedScene" uid="uid://cnoslhxax0v8h" path="res://Scenes/Object Templates/cat.tscn" id="9_n8gdn"]
 [ext_resource type="PackedScene" uid="uid://bsouwlt160kfj" path="res://Scenes/Object Templates/Platforms/branch_1.tscn" id="12_tb0xv"]
-[ext_resource type="Script" path="res://Scripts/Spike.gd" id="13_6psbr"]
 [ext_resource type="PackedScene" uid="uid://nwqp2i8dgv8g" path="res://Scenes/Object Templates/Platforms/small_platform.tscn" id="14_qthfj"]
 [ext_resource type="PackedScene" uid="uid://cmobt8gudb84g" path="res://Scenes/Object Templates/Platforms/branch_2.tscn" id="15_3lnwr"]
 [ext_resource type="PackedScene" uid="uid://dv5ppksvapw64" path="res://Scenes/Object Templates/Platforms/bird.tscn" id="16_14fog"]
@@ -26,10 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://chbbxyu4h8jc6" path="res://Scenes/Object Templates/respawn_point.tscn" id="23_jwwra"]
 [ext_resource type="Script" path="res://Scripts/Instructions/MoveInstructionsArea.gd" id="25_csxcu"]
 [ext_resource type="Texture2D" uid="uid://c6y647m18cimy" path="res://Sprites/UI/move_instructions.png" id="26_b8888"]
-[ext_resource type="Script" path="res://Scenes/Levels/JumpInstructions.gd" id="26_cxpba"]
-[ext_resource type="Script" path="res://Scenes/Levels/CrowInstructions.gd" id="27_87inh"]
+[ext_resource type="Script" path="res://Scripts/Instructions/JumpInstructions.gd" id="26_nhhyt"]
+[ext_resource type="Script" path="res://Scripts/Instructions/CrowInstructions.gd" id="27_brkwd"]
 [ext_resource type="Texture2D" uid="uid://bpfgn1cqqd4dh" path="res://Sprites/UI/jump_instructions.png" id="27_prc7f"]
 [ext_resource type="Texture2D" uid="uid://chuohccolqsjo" path="res://Sprites/UI/crow_instructions.png" id="29_nhjqp"]
+[ext_resource type="Script" path="res://Scripts/LevelEnd.gd" id="31_wo5f7"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_01doq"]
 a = Vector2(-1, -76)
@@ -44,18 +44,24 @@ size = Vector2(332, 310)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2xuw"]
 size = Vector2(280, 249)
 
-[node name="level_1_light" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndq8t"]
+size = Vector2(255, 281)
+
+[node name="level_1_light" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
 position = Vector2(46, -10)
 script = ExtResource("1_vtuc0")
+optionCanvas = NodePath("OptionCanvas")
+nextLevelFilePath = "res://Scenes/Levels/level_1_dark.tscn"
 
-[node name="OptionCanvas" parent="." instance=ExtResource("2_3ntt0")]
-visible = false
-textValues = ["", "The forest is dangerous. I gotta go find her!"]
+[node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_3ntt0")]
+player = NodePath("../Player")
+textValues = ["[center]Oh no, come back![/center]", "[center]I need to find her![/center]", "[center]There you are! Let's go home.[/center]", "[center]Oh no! What's happening?[/center]"]
 
-[node name="Player" parent="." instance=ExtResource("1_o8kws")]
+[node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("1_o8kws")]
 z_index = 1
 position = Vector2(1316, 486)
 scale = Vector2(1.5, 1.5)
+level = NodePath("..")
 
 [node name="Cat" parent="." instance=ExtResource("9_n8gdn")]
 position = Vector2(1228, 514)
@@ -185,27 +191,22 @@ position = Vector2(2034, 505)
 [node name="RightSpike3" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2268, 504)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike4" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2374, 507)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike5" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2374, 507)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike6" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(2157, 504)
-script = ExtResource("13_6psbr")
 
 [node name="RightSpike7" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(1913, 502)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike8" parent="Spikes" instance=ExtResource("6_g3bv6")]
 z_index = -1
@@ -218,27 +219,22 @@ position = Vector2(-1975, 515)
 [node name="LeftSpike10" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1741, 514)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike11" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1635, 517)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike12" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1635, 517)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike13" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-1852, 514)
-script = ExtResource("13_6psbr")
 
 [node name="LeftSpike14" parent="Spikes" instance=ExtResource("7_fvy7y")]
 z_index = -1
 position = Vector2(-2096, 512)
-script = ExtResource("13_6psbr")
 
 [node name="MiddleSpike1" parent="Spikes" instance=ExtResource("6_g3bv6")]
 z_index = -1
@@ -343,7 +339,7 @@ shape = SubResource("RectangleShape2D_pf7hw")
 
 [node name="JumpInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("jumpInstructions")]
 position = Vector2(1204, 400)
-script = ExtResource("26_cxpba")
+script = ExtResource("26_nhhyt")
 jumpInstructions = NodePath("../Instructions/JumpInstructions")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/JumpInstructionsArea"]
@@ -351,7 +347,7 @@ position = Vector2(-229, 42)
 shape = SubResource("RectangleShape2D_dyust")
 
 [node name="CrowInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("crowInstructions")]
-script = ExtResource("27_87inh")
+script = ExtResource("27_brkwd")
 crowInstructions = NodePath("../Instructions/CrowInstructions")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/CrowInstructionsArea"]
@@ -373,9 +369,19 @@ texture = ExtResource("27_prc7f")
 position = Vector2(340, 150)
 texture = ExtResource("29_nhjqp")
 
+[node name="LevelEnd" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas")]
+position = Vector2(-1516, 478)
+script = ExtResource("31_wo5f7")
+optionCanvas = NodePath("../OptionCanvas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(85.5, -54.5)
+shape = SubResource("RectangleShape2D_ndq8t")
+
 [connection signal="body_entered" from="Instructions/MoveInstructionsArea" to="Instructions/MoveInstructionsArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Instructions/MoveInstructionsArea" to="Instructions/MoveInstructionsArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Instructions/JumpInstructionsArea" to="Instructions/JumpInstructionsArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Instructions/JumpInstructionsArea" to="Instructions/JumpInstructionsArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Instructions/CrowInstructionsArea" to="Instructions/CrowInstructionsArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Instructions/CrowInstructionsArea" to="Instructions/CrowInstructionsArea" method="_on_body_exited"]
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
