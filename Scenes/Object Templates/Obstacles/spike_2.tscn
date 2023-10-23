@@ -1,22 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://t8x4ixo1woab"]
 
+[ext_resource type="Script" path="res://Scripts/Spike.gd" id="1_e7a5w"]
 [ext_resource type="Texture2D" uid="uid://b6i6bc8y6ecnj" path="res://Sprites/Setting/spikes_2.png" id="2_kpush"]
-
-[sub_resource type="GDScript" id="GDScript_ve77i"]
-script/source = "extends Area2D
-
-
-func _on_body_entered(body):
-	if body.is_in_group('Player'):
-		body.gameOver()
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7l4o"]
 size = Vector2(231, 93)
 
 [node name="Spike2Type" type="Area2D"]
 scale = Vector2(0.5, 0.5)
-script = SubResource("GDScript_ve77i")
+script = ExtResource("1_e7a5w")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_kpush")
