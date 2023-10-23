@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1kx231uwonir" path="res://Sprites/Setting/fog_cloud_2.png" id="2_vjf72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbsvp"]
-size = Vector2(20, 11.6781)
+size = Vector2(10.9196, 7.24931)
 
 [node name="FogCloud2" type="Area2D"]
 scale = Vector2(0.5, 0.5)
@@ -14,7 +14,7 @@ script = ExtResource("1_hsyw3")
 texture = ExtResource("2_vjf72")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 286.99)
+position = Vector2(49, 254)
 scale = Vector2(51.4673, 14.898)
 shape = SubResource("RectangleShape2D_wbsvp")
 
