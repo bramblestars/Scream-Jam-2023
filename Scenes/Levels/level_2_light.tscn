@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://dv3kwn43vg33p"]
+[gd_scene load_steps=23 format=3 uid="uid://dv3kwn43vg33p"]
 
 [ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="1_1xhhg"]
+[ext_resource type="Script" path="res://Scripts/LightLevel.gd" id="1_56coq"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_x4fh4"]
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="2_lbdpd"]
 [ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="2_x4moa"]
@@ -26,6 +27,7 @@ a = Vector2(-1, -76)
 b = Vector2(1, 83)
 
 [node name="level_2_light" type="Node2D"]
+script = ExtResource("1_56coq")
 
 [node name="OptionCanvas" parent="." instance=ExtResource("1_x4fh4")]
 textValues = ["That was weird.", "Where am I?", "Skia! Is it really you this time?"]

@@ -1,13 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://dhsees36heeua"]
+[gd_scene load_steps=24 format=3 uid="uid://dhsees36heeua"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_54kib"]
+[ext_resource type="Script" path="res://Scenes/Levels/DarkLevel.gd" id="1_xn3o0"]
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="2_wfsqd"]
 [ext_resource type="PackedScene" uid="uid://cnoslhxax0v8h" path="res://Scenes/Object Templates/cat.tscn" id="2_xvupu"]
 [ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="3_h6cqn"]
 [ext_resource type="PackedScene" uid="uid://vvak38g6m3rh" path="res://Scenes/Object Templates/Floor/fog_cloud_2.tscn" id="3_psnba"]
 [ext_resource type="PackedScene" uid="uid://dprs3xj4ko2sf" path="res://Scenes/Object Templates/Floor/fog_cloud_3.tscn" id="4_d57q6"]
 [ext_resource type="PackedScene" uid="uid://ccbfx4qidqsrm" path="res://Scenes/Object Templates/Background/trunk_3_night.tscn" id="5_6cbc3"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="6_4xyi3"]
-[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Scenes/Levels/bg_night.png" id="8_ntw3c"]
+[ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="8_ntw3c"]
 [ext_resource type="PackedScene" uid="uid://cedhxnkrmjvbf" path="res://Scenes/Object Templates/Platforms/branch_2_night.tscn" id="14_xvqm8"]
 [ext_resource type="PackedScene" uid="uid://ck1un67nyp7ug" path="res://Scenes/Object Templates/Platforms/branch_1_night_rotated.tscn" id="15_0i05g"]
 [ext_resource type="PackedScene" uid="uid://d0ho02cf6nphd" path="res://Scenes/Object Templates/Platforms/long_platform_night.tscn" id="15_1pl8i"]
@@ -17,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://ceg5j3kg16rvv" path="res://Scenes/Object Templates/Platforms/birdNight.tscn" id="16_u0sb5"]
 [ext_resource type="PackedScene" uid="uid://hjeaw20tyyiv" path="res://Scenes/Object Templates/Platforms/branch_4_night.tscn" id="17_jutqh"]
 [ext_resource type="PackedScene" uid="uid://b7t4j5o8uej5s" path="res://Scenes/Object Templates/Platforms/branch_3_night.tscn" id="18_d3ncv"]
+[ext_resource type="PackedScene" uid="uid://dwkt75kp6wq3t" path="res://Scenes/Object Templates/music.tscn" id="20_ic8vc"]
+[ext_resource type="AudioStream" uid="uid://bbvbnn814abpa" path="res://Sprites/Audio/Music/Suspense (night 1).mp3" id="21_1d64c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dsvnd"]
 
@@ -24,12 +28,19 @@
 a = Vector2(-1, -76)
 b = Vector2(1, 83)
 
-[node name="level_1_dark" type="Node2D"]
+[node name="level_1_dark" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
+script = ExtResource("1_xn3o0")
+optionCanvas = NodePath("OptionCanvas")
 
-[node name="Player" parent="." instance=ExtResource("1_54kib")]
+[node name="OptionCanvas" parent="." instance=ExtResource("2_wfsqd")]
+
+[node name="Player" parent="." node_paths=PackedStringArray("level", "extraMusic") instance=ExtResource("1_54kib")]
 z_index = 3
 position = Vector2(0, -200)
 scale = Vector2(1.5, 1.5)
+shadowLevel = true
+level = NodePath("..")
+extraMusic = NodePath("../Music")
 
 [node name="Cat" parent="." instance=ExtResource("2_xvupu")]
 position = Vector2(1762, -183)
@@ -892,3 +903,7 @@ position = Vector2(1510, -746)
 
 [node name="Obstacles" type="Node2D" parent="."]
 position = Vector2(298, -268)
+
+[node name="Music" parent="." instance=ExtResource("20_ic8vc")]
+stream = ExtResource("21_1d64c")
+volume_db = -10.0

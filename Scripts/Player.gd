@@ -17,6 +17,7 @@ var timerStopped : bool = true
 @onready var respawnTimer : Timer = $Timer
 @export var shadowLevel : bool = false
 @export var level : Node2D
+@export var extraMusic : AudioStreamPlayer2D
 
 var inventory = {}
 
@@ -64,6 +65,8 @@ func respawn():
 
 func gameOver():
 	Global.music_progress = Music.get_playback_position()
+	if shadowLevel:
+		Global.dark_music_progress = extraMusic.get_playback_position()
 	get_tree().reload_current_scene()
 	
 func addObject(item):
