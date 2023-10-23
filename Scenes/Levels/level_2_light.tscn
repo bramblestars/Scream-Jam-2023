@@ -1,0 +1,230 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv3kwn43vg33p"]
+
+[ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="1_1xhhg"]
+[ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_x4fh4"]
+[ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="2_lbdpd"]
+[ext_resource type="PackedScene" uid="uid://ceoq65yqbrr0r" path="res://Scenes/Object Templates/Floor/ground_grass.tscn" id="2_x4moa"]
+[ext_resource type="Texture2D" uid="uid://dl3piweeqbjbf" path="res://Sprites/Setting/bg_day.png" id="3_v3fjd"]
+[ext_resource type="PackedScene" uid="uid://d2yh7c2c3hnc3" path="res://Scenes/Object Templates/Obstacles/spike_1.tscn" id="4_nk5fn"]
+[ext_resource type="PackedScene" uid="uid://t8x4ixo1woab" path="res://Scenes/Object Templates/Obstacles/spike_2.tscn" id="5_p4jm1"]
+[ext_resource type="Script" path="res://Scripts/Spike.gd" id="6_dya0g"]
+
+[node name="level_2_light" type="Node2D"]
+
+[node name="OptionCanvas" parent="." instance=ExtResource("1_x4fh4")]
+visible = false
+textValues = ["That was weird.", "Where am I?", "Skia! Is it really you this time?"]
+
+[node name="Player" parent="." instance=ExtResource("2_lbdpd")]
+position = Vector2(1668, 508)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Ground" type="Node2D" parent="Background"]
+position = Vector2(316, 20)
+
+[node name="Ground" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(1476, 332)
+
+[node name="Ground2" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(2246, 333)
+
+[node name="Ground3" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(699, 334)
+
+[node name="Ground4" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-72, 338)
+
+[node name="Ground5" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-849, 346)
+
+[node name="Ground6" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-1629, 345)
+
+[node name="Ground7" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-2410, 345)
+
+[node name="Ground8" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-3188, 345)
+
+[node name="Ground9" parent="Background/Ground" instance=ExtResource("1_1xhhg")]
+position = Vector2(-3960, 343)
+
+[node name="GroundGrass" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(2053, 600)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass2" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(1616, 597)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass3" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(1187, 595)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass4" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(755, 596)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass5" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(329, 597)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass6" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-104, 597)
+rotation = -0.0244444
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass7" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-531, 603)
+rotation = -0.0244444
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass8" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-969, 608)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass9" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-1394, 605)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass10" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-1824, 604)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass11" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-2219, 601)
+scale = Vector2(1, 0.8)
+
+[node name="GroundGrass12" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-2638, 590.2)
+scale = Vector2(1, 0.64)
+
+[node name="GroundGrass13" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-3068, 589.4)
+scale = Vector2(1, 0.64)
+
+[node name="GroundGrass14" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-3463, 587)
+scale = Vector2(1, 0.64)
+
+[node name="GroundGrass15" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-3879, 563)
+scale = Vector2(1, 0.4096)
+
+[node name="GroundGrass16" parent="Background/Ground" instance=ExtResource("2_x4moa")]
+z_index = 3
+position = Vector2(-4313, 564)
+scale = Vector2(1, 0.4096)
+
+[node name="Background3" type="Sprite2D" parent="Background"]
+modulate = Color(0.776471, 0.87451, 1, 1)
+z_index = -100
+position = Vector2(-3875, 241)
+scale = Vector2(-0.4, 0.4)
+texture = ExtResource("3_v3fjd")
+
+[node name="Background" type="Sprite2D" parent="Background"]
+modulate = Color(0.776471, 0.87451, 1, 1)
+z_index = -100
+position = Vector2(-1077, 246)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_v3fjd")
+
+[node name="Background2" type="Sprite2D" parent="Background"]
+modulate = Color(0.776471, 0.87451, 1, 1)
+z_index = -100
+position = Vector2(1717, 235)
+rotation = 3.14159
+scale = Vector2(0.4, -0.4)
+texture = ExtResource("3_v3fjd")
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="RightSpike" parent="Spikes" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(1801, 517)
+
+[node name="RightSpike2" parent="Spikes" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(2035, 517)
+
+[node name="RightSpike3" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2269, 516)
+script = ExtResource("6_dya0g")
+
+[node name="RightSpike4" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2375, 519)
+script = ExtResource("6_dya0g")
+
+[node name="RightSpike5" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2375, 519)
+script = ExtResource("6_dya0g")
+
+[node name="RightSpike6" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(2158, 516)
+script = ExtResource("6_dya0g")
+
+[node name="RightSpike7" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(1914, 514)
+script = ExtResource("6_dya0g")
+
+[node name="LeftSpike" parent="Spikes" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(-4332, 530.5)
+scale = Vector2(0.25, 0.25)
+
+[node name="LeftSpike2" parent="Spikes" instance=ExtResource("4_nk5fn")]
+z_index = -1
+position = Vector2(-4215, 530.5)
+scale = Vector2(0.25, 0.25)
+
+[node name="LeftSpike3" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4098, 530)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_dya0g")
+
+[node name="LeftSpike4" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4045, 531.5)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_dya0g")
+
+[node name="LeftSpike5" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4045, 531.5)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_dya0g")
+
+[node name="LeftSpike6" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4153.5, 530)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_dya0g")
+
+[node name="LeftSpike7" parent="Spikes" instance=ExtResource("5_p4jm1")]
+z_index = -1
+position = Vector2(-4275.5, 529)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_dya0g")
