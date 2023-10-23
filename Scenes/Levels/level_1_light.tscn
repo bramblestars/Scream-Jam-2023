@@ -26,8 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://chbbxyu4h8jc6" path="res://Scenes/Object Templates/respawn_point.tscn" id="23_jwwra"]
 [ext_resource type="Script" path="res://Scripts/Instructions/MoveInstructionsArea.gd" id="25_csxcu"]
 [ext_resource type="Texture2D" uid="uid://c6y647m18cimy" path="res://Sprites/UI/move_instructions.png" id="26_b8888"]
-[ext_resource type="Script" path="res://Scenes/Levels/JumpInstructions.gd" id="26_cxpba"]
-[ext_resource type="Script" path="res://Scenes/Levels/CrowInstructions.gd" id="27_87inh"]
+[ext_resource type="Script" path="res://Scripts/Instructions/JumpInstructions.gd" id="26_nhhyt"]
+[ext_resource type="Script" path="res://Scripts/Instructions/CrowInstructions.gd" id="27_brkwd"]
 [ext_resource type="Texture2D" uid="uid://bpfgn1cqqd4dh" path="res://Sprites/UI/jump_instructions.png" id="27_prc7f"]
 [ext_resource type="Texture2D" uid="uid://chuohccolqsjo" path="res://Sprites/UI/crow_instructions.png" id="29_nhjqp"]
 
@@ -345,7 +345,7 @@ shape = SubResource("RectangleShape2D_pf7hw")
 
 [node name="JumpInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("jumpInstructions")]
 position = Vector2(1204, 400)
-script = ExtResource("26_cxpba")
+script = ExtResource("26_nhhyt")
 jumpInstructions = NodePath("../Instructions/JumpInstructions")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/JumpInstructionsArea"]
@@ -353,7 +353,7 @@ position = Vector2(-229, 42)
 shape = SubResource("RectangleShape2D_dyust")
 
 [node name="CrowInstructionsArea" type="Area2D" parent="Instructions" node_paths=PackedStringArray("crowInstructions")]
-script = ExtResource("27_87inh")
+script = ExtResource("27_brkwd")
 crowInstructions = NodePath("../Instructions/CrowInstructions")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Instructions/CrowInstructionsArea"]
@@ -375,10 +375,10 @@ texture = ExtResource("27_prc7f")
 position = Vector2(340, 150)
 texture = ExtResource("29_nhjqp")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="LevelEnd" type="Area2D" parent="."]
 position = Vector2(-1516, 478)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
 position = Vector2(11, 21)
 shape = SubResource("RectangleShape2D_ndq8t")
 
