@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dhsees36heeua"]
+[gd_scene load_steps=25 format=3 uid="uid://dhsees36heeua"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_54kib"]
 [ext_resource type="Script" path="res://Scenes/Levels/DarkLevel.gd" id="1_xn3o0"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="3_h6cqn"]
 [ext_resource type="PackedScene" uid="uid://vvak38g6m3rh" path="res://Scenes/Object Templates/Floor/fog_cloud_2.tscn" id="3_psnba"]
 [ext_resource type="PackedScene" uid="uid://dprs3xj4ko2sf" path="res://Scenes/Object Templates/Floor/fog_cloud_3.tscn" id="4_d57q6"]
-[ext_resource type="Script" path="res://Scripts/LevelEnd.gd" id="4_ga5b2"]
 [ext_resource type="PackedScene" uid="uid://ccbfx4qidqsrm" path="res://Scenes/Object Templates/Background/trunk_3_night.tscn" id="5_6cbc3"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="6_4xyi3"]
 [ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="8_ntw3c"]
@@ -22,9 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://b7t4j5o8uej5s" path="res://Scenes/Object Templates/Platforms/branch_3_night.tscn" id="18_d3ncv"]
 [ext_resource type="PackedScene" uid="uid://dwkt75kp6wq3t" path="res://Scenes/Object Templates/music.tscn" id="20_ic8vc"]
 [ext_resource type="AudioStream" uid="uid://bbvbnn814abpa" path="res://Sprites/Audio/Music/Suspense (night 1).mp3" id="21_1d64c"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s30bl"]
-size = Vector2(1242, 1450)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dsvnd"]
 
@@ -41,10 +37,7 @@ script = ExtResource("1_xn3o0")
 optionCanvas = NodePath("OptionCanvas")
 nextLevelFilePath = "res://Scenes/Levels/level_2_light.tscn"
 
-[node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_wfsqd")]
-player = NodePath("../Player")
-mainMenu = "res://Scenes/Levels/level_1_light.tscn"
-textValues = ["[center]Skia?[/center]"]
+[node name="OptionCanvas" parent="." instance=ExtResource("2_wfsqd")]
 
 [node name="Player" parent="." node_paths=PackedStringArray("level", "extraMusic") instance=ExtResource("1_54kib")]
 z_index = 3
@@ -54,17 +47,6 @@ shadowLevel = true
 level = NodePath("..")
 extraMusic = NodePath("../Music")
 
-[node name="LevelEnd" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas")]
-position = Vector2(1699, -180)
-scale = Vector2(0.1, 0.1)
-script = ExtResource("4_ga5b2")
-optionCanvas = NodePath("../OptionCanvas")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
-position = Vector2(579, -225)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_s30bl")
-
 [node name="Cat" parent="." instance=ExtResource("2_xvupu")]
 position = Vector2(1762, -178)
 scale = Vector2(0.1, 0.1)
@@ -72,8 +54,12 @@ catRun = "<null>"
 darkLevel = true
 
 [node name="ChaseShadow" parent="." instance=ExtResource("3_h6cqn")]
+<<<<<<< HEAD
+position = Vector2(-198, -196)
+=======
 z_index = 10
 position = Vector2(1, -336)
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -97,6 +83,7 @@ position = Vector2(355, -924)
 scale = Vector2(2, 2)
 
 [node name="Background1" type="Sprite2D" parent="Background"]
+visible = false
 z_index = -6
 position = Vector2(226, -637)
 scale = Vector2(0.663457, 0.739399)
@@ -190,11 +177,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2542, -151)
 moveDirection = Vector2(-250, 0)
 
+<<<<<<< HEAD
+=======
 [node name="Bird7" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2700, -135)
 moveDirection = Vector2(-250, 0)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird8" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2458, -143)
@@ -225,11 +215,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2568, 46)
 moveDirection = Vector2(0, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird21" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2757, 165)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird22" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2707, 293)
@@ -240,11 +233,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2809, 409)
 moveDirection = Vector2(0, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird24" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2692, 83)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird25" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2734, 106)
@@ -275,6 +271,8 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2794, 262)
 moveDirection = Vector2(0, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird31" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2663, 390)
@@ -285,6 +283,7 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2647, 40)
 moveDirection = Vector2(0, 300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird33" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2827, 80)
@@ -300,11 +299,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2794, 380)
 moveDirection = Vector2(-200, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird36" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2736, -25)
 moveDirection = Vector2(-200, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird37" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2935, 96)
@@ -330,11 +332,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2902, 35)
 moveDirection = Vector2(-200, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird42" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2926, 258)
 moveDirection = Vector2(-200, 300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird43" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3020, 295)
@@ -360,11 +365,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2831, 319)
 moveDirection = Vector2(-200, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird49" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2642, 301)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird62" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2547, 146)
@@ -385,11 +393,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2456, 41)
 moveDirection = Vector2(0, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird66" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2580, 78)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird67" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2489, 123)
@@ -405,6 +416,8 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2535, 35)
 moveDirection = Vector2(0, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird70" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2530, 296)
@@ -440,6 +453,7 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2840, 279)
 moveDirection = Vector2(0, 300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird56" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2709, 407)
@@ -450,6 +464,8 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2810, 230)
 moveDirection = Vector2(-200, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird71" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2624, 32)
@@ -475,6 +491,7 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2672, 174)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird76" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2657, -36)
@@ -485,11 +502,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2699, -13)
 moveDirection = Vector2(0, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird78" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2723, 210)
 moveDirection = Vector2(0, 300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird79" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2566, 9)
@@ -500,16 +520,21 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2674, 105)
 moveDirection = Vector2(0, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird81" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2759, 143)
 moveDirection = Vector2(0, 300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird82" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2628, 271)
 moveDirection = Vector2(0, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird83" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2612, -79)
@@ -525,16 +550,20 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2759, 261)
 moveDirection = Vector2(-200, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird86" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2734, -62)
 moveDirection = Vector2(-200, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird87" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2607, 182)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird88" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2545, -41)
@@ -545,6 +574,8 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2718, 191)
 moveDirection = Vector2(0, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird90" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2769, 227)
@@ -555,6 +586,7 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2720, 122)
 moveDirection = Vector2(0, 300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird93" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3031, 178)
@@ -565,11 +597,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2968, 311)
 moveDirection = Vector2(0, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird95" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2998, 478)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird96" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2940, 73)
@@ -600,11 +635,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3035, 417)
 moveDirection = Vector2(0, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird102" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3014, 328)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird103" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2919, 173)
@@ -615,11 +653,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2856, 306)
 moveDirection = Vector2(0, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird105" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2886, 473)
 moveDirection = Vector2(0, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird106" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2952, 105)
@@ -640,11 +681,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2902, 323)
 moveDirection = Vector2(0, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird110" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(3081, 434)
 moveDirection = Vector2(0, 300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird111" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2933, 192)
@@ -695,11 +739,14 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2775, 111)
 moveDirection = Vector2(-200, -300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird58" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2840, 397)
 moveDirection = Vector2(-200, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird59" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2921, 239)
@@ -710,6 +757,8 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2972, 275)
 moveDirection = Vector2(-200, 300)
 
+<<<<<<< HEAD
+=======
 [node name="Bird61" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2877, 336)
@@ -745,6 +794,7 @@ modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2863, 234)
 moveDirection = Vector2(-200, -300)
 
+>>>>>>> 05a7bd6cc41b3618e74d0a7f6ec9b79fd606b3a0
 [node name="Bird126" parent="Platforms" instance=ExtResource("16_u0sb5")]
 modulate = Color(0.701961, 0.611765, 1, 1)
 position = Vector2(2900, 173)
@@ -836,9 +886,6 @@ position = Vector2(-606, -751)
 [node name="FogCloud8" parent="Ground" instance=ExtResource("3_psnba")]
 position = Vector2(-260, -792)
 
-[node name="FogCloud22" parent="Ground" instance=ExtResource("3_psnba")]
-position = Vector2(-699, -1389)
-
 [node name="FogCloud23" parent="Ground" instance=ExtResource("3_psnba")]
 position = Vector2(-651, -1088)
 
@@ -848,6 +895,9 @@ position = Vector2(-669, -943)
 [node name="FogCloud24" parent="Ground" instance=ExtResource("3_psnba")]
 position = Vector2(-681, -1224)
 
+[node name="FogCloud28" parent="Ground" instance=ExtResource("3_psnba")]
+position = Vector2(-706, -1368)
+
 [node name="FogCloud27" parent="Ground" instance=ExtResource("3_psnba")]
 position = Vector2(-74, -1230)
 rotation = -1.97222
@@ -855,10 +905,6 @@ rotation = -1.97222
 [node name="FogCloud34" parent="Ground" instance=ExtResource("3_psnba")]
 position = Vector2(-74, -1230)
 rotation = -1.97222
-
-[node name="FogCloud28" parent="Ground" instance=ExtResource("3_psnba")]
-position = Vector2(193, -968)
-rotation = -2.82045
 
 [node name="FogCloud29" parent="Ground" instance=ExtResource("3_psnba")]
 position = Vector2(-146, -1407)
@@ -909,7 +955,7 @@ position = Vector2(-165, -1813)
 rotation = -1.95651
 
 [node name="FogCloud26" parent="Ground" instance=ExtResource("3_psnba")]
-position = Vector2(-742, -1511)
+position = Vector2(-755, -1528)
 
 [node name="FogCloud9" parent="Ground" instance=ExtResource("4_d57q6")]
 position = Vector2(97, -749)
@@ -946,5 +992,3 @@ visibility_layer = 2
 position = Vector2(2517, 107)
 shape = SubResource("SegmentShape2D_1n1ox")
 script = ExtResource("16_q7qpi")
-
-[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
