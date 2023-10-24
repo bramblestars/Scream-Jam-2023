@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dhsees36heeua"]
+[gd_scene load_steps=27 format=3 uid="uid://dhsees36heeua"]
 
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="1_54kib"]
 [ext_resource type="Script" path="res://Scenes/Levels/DarkLevel.gd" id="1_xn3o0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d4lr4m1c6ncr1" path="res://Scenes/Object Templates/chase_shadow.tscn" id="3_h6cqn"]
 [ext_resource type="PackedScene" uid="uid://vvak38g6m3rh" path="res://Scenes/Object Templates/Floor/fog_cloud_2.tscn" id="3_psnba"]
 [ext_resource type="PackedScene" uid="uid://dprs3xj4ko2sf" path="res://Scenes/Object Templates/Floor/fog_cloud_3.tscn" id="4_d57q6"]
+[ext_resource type="Script" path="res://Scripts/LevelEnd.gd" id="4_ga5b2"]
 [ext_resource type="PackedScene" uid="uid://ccbfx4qidqsrm" path="res://Scenes/Object Templates/Background/trunk_3_night.tscn" id="5_6cbc3"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="6_4xyi3"]
 [ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="8_ntw3c"]
@@ -21,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://b7t4j5o8uej5s" path="res://Scenes/Object Templates/Platforms/branch_3_night.tscn" id="18_d3ncv"]
 [ext_resource type="PackedScene" uid="uid://dwkt75kp6wq3t" path="res://Scenes/Object Templates/music.tscn" id="20_ic8vc"]
 [ext_resource type="AudioStream" uid="uid://bbvbnn814abpa" path="res://Sprites/Audio/Music/Suspense (night 1).mp3" id="21_1d64c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s30bl"]
+size = Vector2(1242, 1450)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dsvnd"]
 
@@ -37,7 +41,10 @@ script = ExtResource("1_xn3o0")
 optionCanvas = NodePath("OptionCanvas")
 nextLevelFilePath = "res://Scenes/Levels/level_2_light.tscn"
 
-[node name="OptionCanvas" parent="." instance=ExtResource("2_wfsqd")]
+[node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_wfsqd")]
+player = NodePath("../Player")
+mainMenu = "res://Scenes/Levels/level_1_light.tscn"
+textValues = ["[center]Skia?[/center]"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("level", "extraMusic") instance=ExtResource("1_54kib")]
 z_index = 3
@@ -46,6 +53,17 @@ scale = Vector2(1.5, 1.5)
 shadowLevel = true
 level = NodePath("..")
 extraMusic = NodePath("../Music")
+
+[node name="LevelEnd" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas")]
+position = Vector2(1699, -180)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("4_ga5b2")
+optionCanvas = NodePath("../OptionCanvas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(579, -225)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_s30bl")
 
 [node name="Cat" parent="." instance=ExtResource("2_xvupu")]
 position = Vector2(1762, -178)
@@ -928,3 +946,5 @@ visibility_layer = 2
 position = Vector2(2517, 107)
 shape = SubResource("SegmentShape2D_1n1ox")
 script = ExtResource("16_q7qpi")
+
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
