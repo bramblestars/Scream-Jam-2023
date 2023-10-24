@@ -8,8 +8,20 @@
 
 [node name="end_menu" type="Node2D"]
 
-[node name="MainMenu" type="CanvasLayer" parent="."]
+[node name="MainMenu" type="CanvasLayer" parent="." node_paths=PackedStringArray("creditsText", "menuButtons", "titleArt", "title")]
 script = ExtResource("1_f1b3s")
+creditsText = NodePath("Control/credits text")
+menuButtons = NodePath("Control/buttons")
+titleArt = NodePath("TextureRect")
+title = NodePath("Title")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+offset_left = 57.0
+offset_top = 63.0
+offset_right = 1205.0
+offset_bottom = 1245.0
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("5_qaqbo")
 
 [node name="Title" type="Sprite2D" parent="MainMenu"]
 position = Vector2(591, 191)
@@ -107,11 +119,6 @@ modulate = Color(0.827451, 0.909804, 0.996078, 1)
 position = Vector2(1085, 277)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_tobdd")
-
-[node name="EndScreen" type="Sprite2D" parent="."]
-position = Vector2(420, 488)
-scale = Vector2(0.633449, 0.633449)
-texture = ExtResource("5_qaqbo")
 
 [connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_button_pressed"]
