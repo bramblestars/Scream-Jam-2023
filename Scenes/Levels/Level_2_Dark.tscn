@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c73ibonva68nv"]
+[gd_scene load_steps=22 format=3 uid="uid://c73ibonva68nv"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/DarkLevel2.gd" id="1_nj2t1"]
 [ext_resource type="PackedScene" uid="uid://woq60hl2l3mm" path="res://Scenes/Object Templates/option_canvas.tscn" id="1_npb5q"]
 [ext_resource type="PackedScene" uid="uid://cvqx4vbkv6cmv" path="res://Scenes/Object Templates/player.tscn" id="2_xb6kp"]
-[ext_resource type="PackedScene" uid="uid://bx74mp5gsqot" path="res://Scenes/Object Templates/end_flag.tscn" id="3_sh8ed"]
 [ext_resource type="PackedScene" uid="uid://bdkankbwnpm45" path="res://Scenes/Object Templates/Background/trunk_1_night.tscn" id="4_b3qec"]
 [ext_resource type="PackedScene" uid="uid://bi1euc8fxdmv8" path="res://Scenes/Object Templates/Background/trunk_2_night.tscn" id="5_km61q"]
 [ext_resource type="PackedScene" uid="uid://xcngm1ouddo8" path="res://Scenes/Object Templates/Floor/ground.tscn" id="6_pvwwe"]
@@ -15,29 +15,41 @@
 [ext_resource type="PackedScene" uid="uid://bqmcbdxren24i" path="res://Scenes/Object Templates/Floor/fog_cloud_1.tscn" id="13_2245k"]
 [ext_resource type="PackedScene" uid="uid://vvak38g6m3rh" path="res://Scenes/Object Templates/Floor/fog_cloud_2.tscn" id="14_dng62"]
 [ext_resource type="PackedScene" uid="uid://dprs3xj4ko2sf" path="res://Scenes/Object Templates/Floor/fog_cloud_3.tscn" id="15_eueh2"]
+[ext_resource type="PackedScene" uid="uid://d2yh7c2c3hnc3" path="res://Scenes/Object Templates/Obstacles/spike_1.tscn" id="17_ox3ng"]
+[ext_resource type="PackedScene" uid="uid://t8x4ixo1woab" path="res://Scenes/Object Templates/Obstacles/spike_2.tscn" id="18_btfnt"]
+[ext_resource type="Script" path="res://Scenes/Levels/LevelEnd2.gd" id="20_q4ry8"]
+[ext_resource type="PackedScene" uid="uid://bout7wd6382bv" path="res://Scenes/Object Templates/Platforms/small_platform_night.tscn" id="21_alw03"]
+[ext_resource type="PackedScene" uid="uid://ceg5j3kg16rvv" path="res://Scenes/Object Templates/Platforms/birdNight.tscn" id="21_xtghg"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks8n8"]
+size = Vector2(529, 262)
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
 modulate = Color(0.631373, 0.643137, 0.909804, 1)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_nj2t1")
+optionCanvas = NodePath("OptionCanvas")
+nextLevelFilePath = "res://Scenes/Levels/end_menu.tscn"
 
-[node name="OptionCanvas" parent="." instance=ExtResource("1_npb5q")]
-visible = false
+[node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_npb5q")]
+player = NodePath("../Player")
+textValues = ["[center]I think the shadow wants to go home...[/center]", ""]
+dialogueStopValues = [1]
 
-[node name="Player" parent="." instance=ExtResource("2_xb6kp")]
+[node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_xb6kp")]
 z_index = 5
 position = Vector2(-1037, -2)
+scale = Vector2(1.5, 1.5)
 floor_stop_on_slope = false
 shadowLevel = true
+level = NodePath("..")
 
-[node name="MirrorShadow" parent="." instance=ExtResource("11_ljah5")]
+[node name="MirrorShadow" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_ljah5")]
 z_index = 4
 position = Vector2(-1042, 147)
 rotation = 3.14159
 floor_stop_on_slope = false
-
-[node name="EndFlag" parent="." instance=ExtResource("3_sh8ed")]
-position = Vector2(222, 218)
-nextScene = "res://Scenes/Levels/end_menu.tscn"
+player = NodePath("../Player")
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -54,47 +66,68 @@ position = Vector2(-297, 80)
 [node name="GroundSurface" type="Node" parent="Background"]
 
 [node name="Ground" parent="Background/GroundSurface" instance=ExtResource("6_pvwwe")]
-position = Vector2(268, -130)
+position = Vector2(-654, -43)
 scale = Vector2(1.5, -1)
 
 [node name="GroundGrass" parent="Background/GroundSurface" instance=ExtResource("7_31mo6")]
 modulate = Color(0.627451, 0.619608, 1, 1)
-position = Vector2(-723, -408)
+position = Vector2(-1645, -321)
 scale = Vector2(1, -1)
 
 [node name="GroundGrass2" parent="Background/GroundSurface" instance=ExtResource("7_31mo6")]
 modulate = Color(0.627451, 0.619608, 1, 1)
-position = Vector2(-287, -404)
+position = Vector2(-1209, -317)
 scale = Vector2(1, -1)
 
 [node name="GroundGrass3" parent="Background/GroundSurface" instance=ExtResource("7_31mo6")]
 modulate = Color(0.627451, 0.619608, 1, 1)
-position = Vector2(6, -403)
+position = Vector2(-916, -316)
 scale = Vector2(1, -1)
 
 [node name="GroundSurface2" type="Node" parent="Background"]
 
 [node name="Ground" parent="Background/GroundSurface2" instance=ExtResource("6_pvwwe")]
-position = Vector2(887, -123)
+position = Vector2(508, -41)
 scale = Vector2(1.5, -1)
 
 [node name="GroundGrass" parent="Background/GroundSurface2" instance=ExtResource("7_31mo6")]
 modulate = Color(0.627451, 0.619608, 1, 1)
-position = Vector2(-104, -401)
+position = Vector2(-483, -319)
 scale = Vector2(1, -1)
 
 [node name="GroundGrass2" parent="Background/GroundSurface2" instance=ExtResource("7_31mo6")]
 modulate = Color(0.627451, 0.619608, 1, 1)
-position = Vector2(332, -397)
+position = Vector2(-47, -315)
 scale = Vector2(1, -1)
 
 [node name="GroundGrass3" parent="Background/GroundSurface2" instance=ExtResource("7_31mo6")]
 modulate = Color(0.627451, 0.619608, 1, 1)
-position = Vector2(625, -396)
+position = Vector2(246, -314)
+scale = Vector2(1, -1)
+
+[node name="GroundSurface3" type="Node" parent="Background"]
+
+[node name="Ground" parent="Background/GroundSurface3" instance=ExtResource("6_pvwwe")]
+position = Vector2(1662, -41)
+scale = Vector2(1.5, -1)
+
+[node name="GroundGrass" parent="Background/GroundSurface3" instance=ExtResource("7_31mo6")]
+modulate = Color(0.627451, 0.619608, 1, 1)
+position = Vector2(671, -319)
+scale = Vector2(1, -1)
+
+[node name="GroundGrass2" parent="Background/GroundSurface3" instance=ExtResource("7_31mo6")]
+modulate = Color(0.627451, 0.619608, 1, 1)
+position = Vector2(1107, -315)
+scale = Vector2(1, -1)
+
+[node name="GroundGrass3" parent="Background/GroundSurface3" instance=ExtResource("7_31mo6")]
+modulate = Color(0.627451, 0.619608, 1, 1)
+position = Vector2(1400, -314)
 scale = Vector2(1, -1)
 
 [node name="CottageNight" parent="Background" instance=ExtResource("8_q6del")]
-position = Vector2(526, -456)
+position = Vector2(676, -230)
 scale = Vector2(0.5, -0.5)
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -106,46 +139,21 @@ position = Vector2(-930, -25)
 [node name="Ground1Night6" parent="Platforms" instance=ExtResource("9_4yxo3")]
 position = Vector2(-732, -103)
 
-[node name="Ground1Night7" parent="Platforms" instance=ExtResource("9_4yxo3")]
-position = Vector2(-543, -165)
-
 [node name="Ground1Night10" parent="Platforms" instance=ExtResource("9_4yxo3")]
-position = Vector2(82, -16)
+position = Vector2(197.667, 21.6667)
 
 [node name="Ground1Night8" parent="Platforms" instance=ExtResource("9_4yxo3")]
 position = Vector2(-147, -127)
 
 [node name="Ground1Night11" parent="Platforms" instance=ExtResource("9_4yxo3")]
-position = Vector2(-147, -127)
+position = Vector2(426, -168.333)
 
 [node name="Ground1Night9" parent="Platforms" instance=ExtResource("9_4yxo3")]
 position = Vector2(32, -220)
 
-[node name="HalfSizeGround1Night5" parent="Platforms" instance=ExtResource("9_4yxo3")]
-position = Vector2(-102, -331)
-scale = Vector2(0.25, 0.5)
-
-[node name="HalfSizeGround1Night7" parent="Platforms" instance=ExtResource("9_4yxo3")]
-position = Vector2(-6, -97)
-scale = Vector2(0.25, 0.5)
-
-[node name="HalfSizeGround1Night6" parent="Platforms" instance=ExtResource("9_4yxo3")]
-position = Vector2(-211, -388)
-scale = Vector2(0.25, 0.5)
-
 [node name="long_platform_night2" parent="Platforms" instance=ExtResource("10_0ucog")]
-position = Vector2(-365, -40)
-scale = Vector2(0.2, 0.4)
-
-[node name="long_platform_night4" parent="Platforms" instance=ExtResource("10_0ucog")]
-position = Vector2(-112, 42)
-scale = Vector2(0.2, 0.4)
-
-[node name="long_platform_night3" parent="Platforms" instance=ExtResource("10_0ucog")]
-position = Vector2(-367, -457)
-scale = Vector2(0.2, 0.4)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-280.667, 9.99998)
+scale = Vector2(0.4, 0.4)
 
 [node name="BgNight" type="Sprite2D" parent="."]
 z_index = -100
@@ -189,3 +197,53 @@ position = Vector2(802, 450)
 
 [node name="FogCloud12" parent="FogClouds" instance=ExtResource("14_dng62")]
 position = Vector2(440, 370)
+
+[node name="Spikes" type="Node2D" parent="."]
+position = Vector2(105, 275)
+
+[node name="Group4" type="Node2D" parent="Spikes"]
+position = Vector2(-1448, -128)
+scale = Vector2(1, -1)
+
+[node name="Spike2Type2" parent="Spikes/Group4" instance=ExtResource("18_btfnt")]
+position = Vector2(753, 493)
+
+[node name="Group5" type="Node2D" parent="Spikes"]
+position = Vector2(-2000, -123)
+scale = Vector2(1, -1)
+
+[node name="Spike1Type" parent="Spikes/Group5" instance=ExtResource("17_ox3ng")]
+position = Vector2(983, 497)
+
+[node name="Spike2Type" parent="Spikes/Group5" instance=ExtResource("18_btfnt")]
+position = Vector2(1104, 502)
+
+[node name="Spike2Type2" parent="Spikes/Group5" instance=ExtResource("18_btfnt")]
+position = Vector2(753, 493)
+
+[node name="Spike1Type2" parent="Spikes/Group5" instance=ExtResource("17_ox3ng")]
+position = Vector2(1217, 500)
+
+[node name="Spike1Type3" parent="Spikes/Group5" instance=ExtResource("17_ox3ng")]
+position = Vector2(860, 495)
+
+[node name="LevelEnd" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas", "level")]
+position = Vector2(393, -459)
+script = ExtResource("20_q4ry8")
+optionCanvas = NodePath("../OptionCanvas")
+level = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(317, 102.333)
+shape = SubResource("RectangleShape2D_ks8n8")
+
+[node name="Bird3" parent="." instance=ExtResource("21_xtghg")]
+position = Vector2(173.333, -173.333)
+
+[node name="SmallPlatformNight" parent="." instance=ExtResource("21_alw03")]
+position = Vector2(511.667, 16.6667)
+
+[node name="SmallPlatformNight2" parent="." instance=ExtResource("21_alw03")]
+position = Vector2(640, 80)
+
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]

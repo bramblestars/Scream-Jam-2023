@@ -244,7 +244,7 @@ libraries = {
 
 [node name="JumpscareAnimation" type="AnimatedSprite2D" parent="."]
 z_index = 10
-scale = Vector2(0.3, 0.28)
+scale = Vector2(0.375, 0.35)
 sprite_frames = SubResource("SpriteFrames_esdjl")
 speed_scale = 0.8
 

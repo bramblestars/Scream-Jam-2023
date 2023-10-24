@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://rrx4v40ylfty"]
+[gd_scene load_steps=7 format=3 uid="uid://rrx4v40ylfty"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_emfa6"]
 [ext_resource type="Texture2D" uid="uid://drj3jq87qygpl" path="res://Sprites/scream jam transp.png" id="2_ncn7p"]
 [ext_resource type="Texture2D" uid="uid://c4e1purr3ro4b" path="res://Sprites/title.png" id="3_81mki"]
 [ext_resource type="Theme" uid="uid://begoq4afaqmfm" path="res://ui_theme.tres" id="4_yx5lv"]
 [ext_resource type="Texture2D" uid="uid://bmory7jglcvu1" path="res://Sprites/Setting/bg_night.png" id="5_60dca"]
+[ext_resource type="FontFile" uid="uid://bnt147iqfegws" path="res://Sprites/UI/YellowPumpkin-Eaew9.otf" id="5_vql41"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,6 +15,7 @@ creditsText = NodePath("Control/credits text")
 menuButtons = NodePath("Control/buttons")
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,6 +29,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Title" type="Sprite2D" parent="MainMenu"]
+visible = false
 position = Vector2(591, 191)
 texture = ExtResource("3_81mki")
 
@@ -79,7 +82,6 @@ theme_override_font_sizes/font_size = 70
 text = "CREDITS"
 
 [node name="credits text" type="MarginContainer" parent="MainMenu/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,12 +106,11 @@ theme_override_constants/shadow_outline_size = 18
 theme_override_constants/line_separation = 8
 theme_override_constants/text_highlight_h_padding = 8
 theme_override_constants/text_highlight_v_padding = 8
+theme_override_fonts/normal_font = ExtResource("5_vql41")
 theme_override_font_sizes/normal_font_size = 50
-text = "Credits
-Coding
-Art
-Story
-Music"
+bbcode_enabled = true
+text = "[center]Credits
+"
 fit_content = true
 
 [node name="Close" type="Button" parent="MainMenu/Control/credits text/VBoxContainer"]
@@ -123,8 +124,8 @@ position = Vector2(1085, 277)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_60dca")
 
-[connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Play" to="MainMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
 [connection signal="pressed" from="MainMenu/Control/buttons/VBoxContainer/Credits" to="MainMenu" method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/Control/credits text/VBoxContainer/Close" to="MainMenu" method="_on_close_credits_pressed"]

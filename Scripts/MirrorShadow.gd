@@ -7,10 +7,14 @@ var grounded : float = true
 var paused : bool = false
 @onready var sprite : Sprite2D = $Sprite
 @onready var ap : AnimationPlayer = $AnimationPlayer
+@export var player : CharacterBody2D
 
 func gameOver():
 	Global.music_progress = Music.get_playback_position()
-	get_tree().reload_current_scene()
+	player.jumpScare()
+	
+func jumpScare():
+	player.jumpScare()
 	
 func _physics_process(delta):
 	if not paused:
