@@ -36,7 +36,6 @@ optionCanvas = NodePath("OptionCanvas")
 nextLevelFilePath = "res://Scenes/Levels/Level_2_Dark.tscn"
 
 [node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_x4fh4")]
-visible = false
 player = NodePath("../Player")
 textValues = ["[center]That was weird.[/center]", "[center]Where am I?[/center]", "[center]There you are![/center]", "[center]Skia![/center]"]
 
