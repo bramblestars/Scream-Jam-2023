@@ -8,12 +8,15 @@ extends CharacterBody2D
 var gravity : float = 500
 var moveSpeed : float = -200
 var paused : bool = false
+
+@export var darkLevel : bool = false
+
 func _ready():
 	catSit = load("res://Sprites/Character/cat_sitting.png")
 	catRun = load("res://Sprites/Character/cat_running.png")
 	
 func _physics_process(delta):
-	if not paused:
+	if not paused and not darkLevel:
 		if not is_on_floor():
 			velocity.y += gravity * delta
 		velocity.x = 0
