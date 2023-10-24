@@ -36,6 +36,7 @@ optionCanvas = NodePath("OptionCanvas")
 nextLevelFilePath = "res://Scenes/Levels/Level_2_Dark.tscn"
 
 [node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_x4fh4")]
+visible = false
 player = NodePath("../Player")
 textValues = ["[center]That was weird.[/center]", "[center]Where am I?[/center]", "[center]There you are![/center]", "[center]Skia![/center]"]
 
@@ -220,7 +221,7 @@ position = Vector2(983, 497)
 position = Vector2(1104, 502)
 
 [node name="Spike1Type" parent="Spikes" instance=ExtResource("4_nk5fn")]
-position = Vector2(-30, 210)
+position = Vector2(-32, 216)
 scale = Vector2(0.4, 0.4)
 
 [node name="Group2" type="Node2D" parent="Spikes"]
@@ -317,6 +318,7 @@ position = Vector2(-1773, 3)
 
 [node name="LongPlatform" parent="Platforms" instance=ExtResource("12_kohol")]
 position = Vector2(-20, 258)
+scale = Vector2(0.4, 0.4)
 
 [node name="SmallPlayformDay" parent="Platforms" instance=ExtResource("13_8b7ax")]
 position = Vector2(1508, 446)
@@ -392,14 +394,4 @@ optionCanvas = NodePath("../OptionCanvas")
 position = Vector2(54.5, 17)
 shape = SubResource("RectangleShape2D_aihw4")
 
-[node name="LevelEnd2" type="Area2D" parent="." node_paths=PackedStringArray("optionCanvas")]
-position = Vector2(-1631, 358)
-script = ExtResource("22_82b3q")
-optionCanvas = NodePath("../OptionCanvas")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd2"]
-position = Vector2(54.5, 17)
-shape = SubResource("RectangleShape2D_aihw4")
-
 [connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
-[connection signal="body_entered" from="LevelEnd2" to="LevelEnd2" method="_on_body_entered"]

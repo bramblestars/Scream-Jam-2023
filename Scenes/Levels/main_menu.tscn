@@ -9,13 +9,14 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="MainMenu" type="CanvasLayer" parent="." node_paths=PackedStringArray("creditsText", "menuButtons")]
+[node name="MainMenu" type="CanvasLayer" parent="." node_paths=PackedStringArray("creditsText", "menuButtons", "titleArt", "title")]
 script = ExtResource("1_emfa6")
 creditsText = NodePath("Control/credits text")
 menuButtons = NodePath("Control/buttons")
+titleArt = NodePath("TextureRect")
+title = NodePath("Title")
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,7 +30,6 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Title" type="Sprite2D" parent="MainMenu"]
-visible = false
 position = Vector2(591, 191)
 texture = ExtResource("3_81mki")
 
@@ -82,6 +82,7 @@ theme_override_font_sizes/font_size = 70
 text = "CREDITS"
 
 [node name="credits text" type="MarginContainer" parent="MainMenu/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,7 +96,8 @@ theme_override_constants/margin_bottom = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control/credits text"]
 layout_mode = 2
-theme_override_constants/separation = 50
+size_flags_stretch_ratio = 3.94
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="CreditsText" type="RichTextLabel" parent="MainMenu/Control/credits text/VBoxContainer"]
@@ -111,6 +113,58 @@ theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center]Credits
 "
+fit_content = true
+
+[node name="CreditsText2" type="RichTextLabel" parent="MainMenu/Control/credits text/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/shadow_outline_size = 18
+theme_override_constants/line_separation = 8
+theme_override_constants/text_highlight_h_padding = 8
+theme_override_constants/text_highlight_v_padding = 8
+theme_override_fonts/normal_font = ExtResource("5_vql41")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Tracy Cui - Production, art, programming
+Lisa Lo - production, programming
+Biff Lister- background and title screen art
+Juan Berrio - level design, programming
+Kalpa Anjur - Level Design, Programming 
+"
+fit_content = true
+
+[node name="CreditsText4" type="RichTextLabel" parent="MainMenu/Control/credits text/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/shadow_outline_size = 18
+theme_override_constants/line_separation = 8
+theme_override_constants/text_highlight_h_padding = 8
+theme_override_constants/text_highlight_v_padding = 8
+theme_override_fonts/normal_font = ExtResource("5_vql41")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Music
+"
+fit_content = true
+
+[node name="CreditsText3" type="RichTextLabel" parent="MainMenu/Control/credits text/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/shadow_outline_size = 18
+theme_override_constants/line_separation = 8
+theme_override_constants/text_highlight_h_padding = 8
+theme_override_constants/text_highlight_v_padding = 8
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Illusory Realm by Darren Curtis | https://www.darrencurtismusic.com/
+Music promoted on https://www.chosic.com/free-music/all/
+Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+https://creativecommons.org/licenses/by/3.0/
+
+Action Epic by Komiku"
 fit_content = true
 
 [node name="Close" type="Button" parent="MainMenu/Control/credits text/VBoxContainer"]

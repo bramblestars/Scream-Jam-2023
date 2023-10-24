@@ -70,8 +70,11 @@ func _on_continue_pressed():
 	backPanel.hide()
 	hidden = true
 
-func _on_quit_pressed():
+func _on_main_menu_pressed():
 	get_tree().change_scene_to_file(mainMenu)
+
+func _on_quit_pressed():
+	get_tree().quit()
 
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
@@ -91,3 +94,6 @@ func _on_audio_value_changed(value):
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < 0.05)
 	Global.volume = value
+
+
+

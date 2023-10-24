@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvqx4vbkv6cmv"]
+[gd_scene load_steps=19 format=3 uid="uid://cvqx4vbkv6cmv"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_am05y"]
 [ext_resource type="Texture2D" uid="uid://ced8rmg5ovti8" path="res://Sprites/Character/witch_sprites.png" id="2_pklbu"]
 [ext_resource type="Texture2D" uid="uid://dunvg7enr40ak" path="res://Sprites/Object/spooky.png" id="3_108ps"]
+[ext_resource type="AudioStream" uid="uid://doomr11mybql1" path="res://Sprites/Audio/SFX/static.wav" id="4_emean"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr033"]
 radius = 9.0
@@ -250,6 +251,11 @@ speed_scale = 0.8
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="StaticSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_emean")
+volume_db = -50.0
+bus = &"SFX"
 
 [connection signal="animation_finished" from="JumpscareAnimation" to="." method="_on_jumpscare_animation_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -79,8 +79,9 @@ func setPause(isPaused):
 	paused = isPaused
 	
 func jumpScare():
-	if canvas:
+	if canvas and not hitSpikes:
 		canvas.hide()
+	$StaticSFX.play()
 	jumpScareAnim.show()
 	jumpScareAnim.speed_scale = 1.5
 	jumpScareAnim.play("default")
