@@ -31,6 +31,7 @@ b = Vector2(1, 83)
 [node name="level_1_dark" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
 script = ExtResource("1_xn3o0")
 optionCanvas = NodePath("OptionCanvas")
+nextLevelFilePath = "res://Scenes/Levels/level_2_light.tscn"
 
 [node name="OptionCanvas" parent="." instance=ExtResource("2_wfsqd")]
 
@@ -102,7 +103,7 @@ modulate = Color(0.772549, 0.694118, 1, 1)
 position = Vector2(839, -112)
 
 [node name="Branch4Night" parent="Platforms" instance=ExtResource("17_jutqh")]
-position = Vector2(466, 388)
+position = Vector2(484, 388)
 
 [node name="Branch3Night" parent="Platforms" instance=ExtResource("18_d3ncv")]
 position = Vector2(962, 203)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dprs3xj4ko2sf"]
 
-[ext_resource type="Script" path="res://Scripts/FogCloud3.gd" id="1_8ifn7"]
+[ext_resource type="Script" path="res://Scripts/FogCloud.gd" id="1_hec3r"]
 [ext_resource type="Texture2D" uid="uid://bwljjni88wuod" path="res://Sprites/Setting/fog_cloud_3.png" id="2_d47p0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vro8q"]
@@ -8,7 +8,7 @@ size = Vector2(20, 8.33237)
 
 [node name="FogCloud3" type="Area2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_8ifn7")
+script = ExtResource("1_hec3r")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_d47p0")

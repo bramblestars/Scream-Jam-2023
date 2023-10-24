@@ -28,19 +28,21 @@ a = Vector2(-1, -76)
 b = Vector2(1, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aihw4"]
-size = Vector2(255, 281)
+size = Vector2(193, 138)
 
 [node name="level_2_light" type="Node2D" node_paths=PackedStringArray("optionCanvas")]
 script = ExtResource("1_56coq")
 optionCanvas = NodePath("OptionCanvas")
+nextLevelFilePath = "res://Scenes/Levels/Level_2_Dark.tscn"
 
 [node name="OptionCanvas" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_x4fh4")]
 player = NodePath("../Player")
 textValues = ["[center]That was weird.[/center]", "[center]Where am I?[/center]", "[center]Skia![/center]"]
 
-[node name="Player" parent="." instance=ExtResource("2_lbdpd")]
+[node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_lbdpd")]
 z_index = 2
 position = Vector2(1668, 508)
+level = NodePath("..")
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -162,14 +164,14 @@ position = Vector2(-536, 323)
 position = Vector2(-1137, 310)
 
 [node name="Background" type="Sprite2D" parent="Background"]
-modulate = Color(0.776471, 0.87451, 1, 1)
+modulate = Color(0.552941, 0.752941, 1, 1)
 z_index = -100
 position = Vector2(-1077, 246)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_v3fjd")
 
 [node name="Background2" type="Sprite2D" parent="Background"]
-modulate = Color(0.776471, 0.87451, 1, 1)
+modulate = Color(0.552941, 0.752941, 1, 1)
 z_index = -100
 position = Vector2(1717, 235)
 rotation = 3.14159
@@ -387,7 +389,7 @@ script = ExtResource("22_82b3q")
 optionCanvas = NodePath("../OptionCanvas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
-position = Vector2(85.5, -54.5)
+position = Vector2(54.5, 17)
 shape = SubResource("RectangleShape2D_aihw4")
 
 [connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
